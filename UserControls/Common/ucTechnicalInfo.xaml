@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="myCollections.UserControls.Common.UcTechnicalInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{DynamicResource lblFileFormat}" Grid.Row="0" Grid.Column="0" Margin="5" ToolTip="{DynamicResource lblFileFormat}"/>
+        <ComboBox Name="cboFileFormat" Grid.Row="0" Grid.Column="1" Margin="0,3" IsSynchronizedWithCurrentItem="True" DisplayMemberPath="Name"/>
+
+        <TextBlock Text="{DynamicResource lblAspectRatio}" Grid.Row="0" Grid.Column="2" Margin="5" ToolTip="{DynamicResource lblAspectRatio}" Name="lblAspectRatio"/>
+        <ComboBox Name="cboAspectRatio" Grid.Row="0" Grid.Column="3" Margin="0,3" IsSynchronizedWithCurrentItem="True" DisplayMemberPath="Name"/>
+
+        <TextBlock Text="{DynamicResource lblAudio}" Grid.Row="1" Grid.Column="0" Margin="5"  VerticalAlignment="Top" ToolTip="{DynamicResource lblAudio}"/>
+        <StackPanel Name="CurrentAudios" Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+        <TextBlock Text="{DynamicResource lblSub}" Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Top" ToolTip="{DynamicResource lblSub}" />
+        <StackPanel Name="CurrentSubs" Orientation="Vertical" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1"  Grid.ColumnSpan="3"/>
+
+        <TextBlock Text="{DynamicResource MetaData}" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Top" ToolTip="{DynamicResource lblSub}" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Left" Grid.ColumnSpan="3">
+            <WrapPanel Name="RootPanel" VerticalAlignment="Center" HorizontalAlignment="Center" ItemHeight="30" ItemWidth="150" Orientation="Horizontal"/>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

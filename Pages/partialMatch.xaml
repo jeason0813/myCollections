@@ -1,0 +1,139 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.partialMatch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:myCollections.Controls"
+    WindowStartupLocation="CenterScreen"  Width="600" Height="500" ShowClose="False" ResizeMode="NoResize">
+    <Window.Resources>
+        <DataTemplate x:Key="StackTemplate">
+            <Control>
+                <Control.Template>
+                    <ControlTemplate>
+                        <Border x:Name="bd" Width="600" Focusable="True" Margin="0,1,0,1">
+                            <StackPanel Orientation="Horizontal">
+                                <Image MaxHeight="100" MaxWidth="70" Source="{Binding Path=ImageUrl,IsAsync=True}"/>
+                                <TextBlock Text="{Binding Path=Title,IsAsync=True}"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="{DynamicResource BorderColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Control.Template>
+            </Control>
+        </DataTemplate>
+        <DataTemplate x:Key="MusicTemplate">
+            <Control>
+                <Control.Template>
+                    <ControlTemplate>
+                        <Border x:Name="bd" Width="600" Focusable="True" Margin="0,1,0,1">
+                            <StackPanel Orientation="Horizontal">
+                                <Image MaxHeight="100" MaxWidth="70" Source="{Binding Path=ImageUrl,IsAsync=True}"/>
+                                <TextBlock Text="{Binding Path=Artist,IsAsync=True}"/>
+                                <TextBlock Text="{Binding Path=Title,IsAsync=True}" Margin="5,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="{DynamicResource BorderColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Control.Template>
+            </Control>
+        </DataTemplate>
+        <DataTemplate x:Key="SerieTemplate">
+            <Control>
+                <Control.Template>
+                    <ControlTemplate>
+                        <Border x:Name="bd" Width="600" Focusable="True" Margin="0,1,0,1">
+                            <StackPanel Orientation="Horizontal">
+                                <Image MaxHeight="70" Source="{Binding Path=ImageUrl,IsAsync=True}"/>
+                                <TextBlock Text="{Binding Path=Title,IsAsync=True}" Margin="5,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="{DynamicResource BorderColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Control.Template>
+            </Control>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ListBox Name="MainStack" KeyboardNavigation.TabNavigation="Cycle"
+                Background="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}" 
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                ItemTemplate="{StaticResource StackTemplate}" 
+                ItemsSource="{Binding}" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}">
+            <ListBox.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="DarkGray" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="DarkGray" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+                <Style x:Key="ListBoxItemStyle1" TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Padding" Value="2,0,0,0"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                <Border x:Name="Bd" BorderBrush="{x:Null}" BorderThickness="0" Background="{TemplateBinding Background}" Padding="0" SnapsToDevicePixels="true">
+                                    <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="true">
+                                        <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                                    </Trigger>
+                                    <MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsSelected" Value="true"/>
+                                            <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                                        </MultiTrigger.Conditions>
+                                        <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                    </MultiTrigger>
+                                    <Trigger Property="IsEnabled" Value="false">
+                                        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
+
+        <Grid Grid.Row="1" Background="{DynamicResource WorkBackgroundBrush}">
+            <Grid  Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Ok" Style="{DynamicResource ButtonStyle}" Click="cmdOk_Click"  IsDefault="True" HorizontalAlignment="Right" Grid.Column="2">
+                    <Button.Content>
+                        <Image Source="/Images/check.png" ToolTip="Ok"/>
+                    </Button.Content>
+                </Button>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                           Text="{DynamicResource CorrectTitle}" Style="{DynamicResource WaitTextStyle}" />
+                <Button x:Name="Cancel" Style="{DynamicResource ButtonStyle}" Click="cmdCancel_Click"  IsCancel="True"  HorizontalAlignment="Left" Grid.Column="0">
+                    <Button.Content>
+                        <Image Source="/Images/cancel.png" ToolTip="Cancel"/>
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Controls:BorderLessWindow>

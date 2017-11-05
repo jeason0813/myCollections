@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Theme>
+  <Elements>
+    <Output height="955" width="1700" format="jpg"></Output>
+
+    <Title visible="true"
+           verticalPos="100" horisontalPos="424"
+           fontName="Arial" fontSize="40" fontBold="true" foreColor="-1"></Title>
+
+    <OriginalTitle visible="true"
+                   verticalPos="170" horisontalPos="1100"
+                   fontName="Arial" fontSize="20" fontBold="true" foreColor="-1"></OriginalTitle>
+
+    <Description visible="true" height="190" width="1200"
+                 verticalPos="220" horisontalPos="429"
+                 fontName="Arial" fontSize="16" fontBold="true" foreColor="-1"></Description>
+
+    <Actors visible="true" Separator=", " Orientation="H" MaximumValues="5"
+          displayPic="false" picHeight="10" picWidth="10"
+          verticalPos="420" horisontalPos="429"
+          fontName="Arial" fontSize="16" fontBold="true" foreColor="-1" ></Actors>
+
+    <Genres visible="true" Separator=", " Orientation="H" MaximumValues="5"
+            displayPic="false" picHeight="10" picWidth="10"
+            verticalPos="445" horisontalPos="429"
+            fontName="Arial" fontSize="16" fontBold="true" foreColor="-1"></Genres>
+
+    <Rating visible="true"
+            displayPic="false" picPath=".\star_yellow_24x24.png" picHeight="10" picWidth="10"
+            verticalPos="470" horisontalPos="508"
+            fontName="Arial" fontSize="16" fontBold="true" foreColor="-1"
+            title="Rating :" titleForeColor="-1" titleVerticalPos="470" titleHorisontalPos="429"></Rating>
+
+    <Runtime visible="true"
+           verticalPos="470" horisontalPos="835"
+           fontName="Arial" fontSize="16" fontBold="true" foreColor="-1"
+           title="Runtime :" titleForeColor="-1" titleVerticalPos="470" titleHorisontalPos="729"></Runtime>
+
+    <RelaeseDate visible="true"
+                 verticalPos="470" horisontalPos="1100" 
+                 fontName="Arial" fontSize="16" fontBold="true" foreColor="-1"
+                 title="Date :" titleForeColor="-1" titleVerticalPos="470" titleHorisontalPos="1029"></RelaeseDate>
+
+    <Season visible="true" verticalPos="170" horisontalPos="1220"
+            fontName="Arial" fontSize="20" fontBold="true" foreColor="-1"
+            title="Season :" titleForeColor="-1"  titleVerticalPos="170" titleHorisontalPos="1100"></Season>
+
+    <Background visible="true" useItemBackground="true" 
+                defaultBackground="../../Images/BlackBackground_1920_1080.jpg" ></Background>
+    
+    <Cover visible="true" 
+           height="468" width="351" verticalPos="156" horisontalPos="68"></Cover>
+  </Elements>
+  <Separators>
+    <Rectangle height="673" width="1205" verticalPos="156" horisontalPos="424"
+               LinearGradientBrushColor1="-16777216" LinearGradientBrushColor2="16777215" LinearGradientBrushDirection="Vertical"></Rectangle>
+  </Separators>
+</Theme>

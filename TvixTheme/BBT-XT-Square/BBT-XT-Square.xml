@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Theme>
+  <Elements>
+    <Output height="720" width="1280" format="jpg"></Output>
+
+    <Actors visible="true" MaximumValues="3"
+            displayPic="false" picHeight="10" picWidth="10"
+            height="60" width="210" verticalPos="530" horisontalPos="1074"
+            fontName="Arial" fontSize="12" fontBold="true" foreColor="-1" 
+            title="Cast :"  titleForeColor="-65536" titleVerticalPos="530" titleHorisontalPos="990"></Actors>
+
+    <Genres visible="true" Separator=", " MaximumValues="3" 
+            displayPic="false" picHeight="10" picWidth="10"
+            height="955" width="1200" verticalPos="600" horisontalPos="1074" 
+            fontName="Arial" fontSize="12" fontBold="true" foreColor="-1"
+            title="Genres :"  titleForeColor="-65536" titleVerticalPos="600" titleHorisontalPos="990"></Genres>
+
+    <Rating visible="true" height="20" width="110"
+            verticalPos="439" horisontalPos="1074"
+            fontName="Arial" fontSize="13" fontBold="true" foreColor="-1"
+            displayPic="false" picPath=".\star_yellow_24x24.png" picHeight="10" picWidth="10"
+            title="Rating :" titleForeColor="-65536" titleVerticalPos="439" titleHorisontalPos="990" ></Rating>
+
+    <Title visible="true" height="35" width="653" verticalPos="435" horisontalPos="431"
+            fontName="Arial" fontSize="18" fontBold="true" foreColor="-65536"/>
+
+    <OriginalTitle visible="true" verticalPos="690" horisontalPos="800" 
+                   fontName="Arial" fontSize="8" fontBold="false" foreColor="-1"/>
+
+    <Runtime visible="true" verticalPos="496" horisontalPos="1074"
+             fontName="Arial" fontSize="12" fontBold="true" foreColor="-1"
+             title="Runtime :" titleForeColor="-65536" titleVerticalPos="496" titleHorisontalPos="990"></Runtime>
+
+    <Description visible="true" height="240" width="653"
+                 verticalPos="470" horisontalPos="310"
+                 fontName="Arial" fontSize="13" fontBold="true" foreColor="-1"></Description>
+
+    <RelaeseDate visible="true" verticalPos="470" horisontalPos="1074"
+                 fontName="Arial" fontSize="12" fontBold="true" foreColor="-1"
+                 title="Date :" titleForeColor="-65536" titleVerticalPos="470" titleHorisontalPos="990"></RelaeseDate>
+
+    <Season visible="true" verticalPos="690" horisontalPos="1074"
+             fontName="Arial" fontSize="8" fontBold="true" foreColor="-1"
+             title="Season :" titleForeColor="-65536"  titleVerticalPos="690" titleHorisontalPos="990"></Season>
+    
+    <Background visible="true" useItemBackground="true" defaultBackground=".\TvixTheme\BBT-XT-Square\Fond.jpg" ></Background>
+    <Cover visible="true" height="374" width="374" verticalPos="322" horisontalPos="40" defaultCover="" ></Cover>
+  </Elements>
+  <Separators>
+    <Image height="286" width="1280" verticalPos="434" horisontalPos="0" Opacity="60" path=".\TvixTheme\BBT-XT-Square\FondInfo.png"/>
+    <Image height="4" width="1280" verticalPos="430" horisontalPos="0" Opacity="100" path=".\TvixTheme\BBT-XT-Square\LH1.png"/>
+    <Image height="435" width="500" verticalPos="463" horisontalPos="310" Opacity="100" path=".\TvixTheme\BBT-XT-Square\LB.png"/>
+    <Image height="5" width="250" verticalPos="461" horisontalPos="1030" Opacity="100" path=".\TvixTheme\BBT-XT-Square\LB.png"/>
+    <Image height="5" width="250" verticalPos="489" horisontalPos="1030" Opacity="100" path=".\TvixTheme\BBT-XT-Square\LB.png"/>
+    <Image height="5" width="250" verticalPos="517" horisontalPos="1030" Opacity="100" path=".\TvixTheme\BBT-XT-Square\LB.png"/>
+    <Image height="5" width="250" verticalPos="590" horisontalPos="1030" Opacity="100" path=".\TvixTheme\BBT-XT-Square\LB.png"/>
+  </Separators>
+  <Effects>
+    <Effect Name=""></Effect>
+  </Effects>
+</Theme>

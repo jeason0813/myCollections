@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="myCollections.UserControls.Common.UcBuyLink"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="25" Opacity="1" Background="Transparent">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="lblTitle" Grid.Column="0" HorizontalAlignment="Left"/>
+        <TextBlock Name="lblToBuy" Grid.Column="1" HorizontalAlignment="Right">
+            <Hyperlink Name="lnkToBuy" TextDecorations="None" Click="lnkToBuy_Click">
+                <Image Source="/myCollections;component/Images/Cart.png" />
+            </Hyperlink>
+        </TextBlock>
+    </Grid>
+</UserControl>

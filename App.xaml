@@ -1,0 +1,15 @@
+﻿<Application x:Class="myCollections.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="Main.xaml" Startup="Application_Startup" ShutdownMode="OnMainWindowClose" 
+    DispatcherUnhandledException="Application_DispatcherUnhandledException">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Language\English.xaml" />
+                <ResourceDictionary Source="Controls\Rating\RatingResourceDictionary.xaml" />
+                <ResourceDictionary Source="Skins/SugarBrown/SugarBrown.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

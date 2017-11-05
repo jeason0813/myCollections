@@ -1,0 +1,3 @@
+﻿ConfigString : myCollectionsSQLiteEntities
+NameSpace : myCollections.Data
+FileName : SqlLite.edmx

@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Theme">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Output">
+                <xs:complexType>
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="format" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Actors">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="Separator" type="xs:string" use="required" />
+                  <xs:attribute name="MaximumValues" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Orientation" type="xs:string" use="required" />
+                  <xs:attribute name="displayPic" type="xs:boolean" use="required" />
+                  <xs:attribute name="picHeight" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="picWidth" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="fontName" type="xs:string" use="required" />
+                  <xs:attribute name="fontSize" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="fontBold" type="xs:boolean" use="required" />
+                  <xs:attribute name="foreColor" type="xs:int" use="required" />
+                  <xs:attribute name="title" type="xs:string" use="required" />
+                  <xs:attribute name="titleForeColor" type="xs:int" use="required" />
+                  <xs:attribute name="titleVerticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="titleHorisontalPos" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Genres">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="Separator" type="xs:string" use="required" />
+                  <xs:attribute name="MaximumValues" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="Orientation" type="xs:string" use="required" />
+                  <xs:attribute name="displayPic" type="xs:boolean" use="required" />
+                  <xs:attribute name="picHeight" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="picWidth" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="fontName" type="xs:string" use="required" />
+                  <xs:attribute name="fontSize" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="fontBold" type="xs:boolean" use="required" />
+                  <xs:attribute name="foreColor" type="xs:int" use="required" />
+                  <xs:attribute name="title" type="xs:string" use="required" />
+                  <xs:attribute name="titleForeColor" type="xs:int" use="required" />
+                  <xs:attribute name="titleVerticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="titleHorisontalPos" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Rating">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="displayPic" type="xs:boolean" use="required" />
+                  <xs:attribute name="picPath" type="xs:string" use="required" />
+                  <xs:attribute name="picHeight" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="picWidth" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="fontName" type="xs:string" use="required" />
+                  <xs:attribute name="fontSize" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="fontBold" type="xs:boolean" use="required" />
+                  <xs:attribute name="foreColor" type="xs:int" use="required" />
+                  <xs:attribute name="title" type="xs:string" use="required" />
+                  <xs:attribute name="titleForeColor" type="xs:int" use="required" />
+                  <xs:attribute name="titleVerticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="titleHorisontalPos" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Title">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="fontName" type="xs:string" use="required" />
+                  <xs:attribute name="fontSize" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="fontBold" type="xs:boolean" use="required" />
+                  <xs:attribute name="foreColor" type="xs:int" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TagLine">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="fontName" type="xs:string" use="required" />
+                  <xs:attribute name="fontSize" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="fontBold" type="xs:boolean" use="required" />
+                  <xs:attribute name="foreColor" type="xs:int" use="required" />
+                  <xs:attribute name="title" type="xs:string" use="required" />
+                  <xs:attribute name="titleForeColor" type="xs:int" use="required" />
+                  <xs:attribute name="titleVerticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="titleHorisontalPos" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="OriginalTitle">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="fontName" type="xs:string" use="required" />
+                  <xs:attribute name="fontSize" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="fontBold" type="xs:boolean" use="required" />
+                  <xs:attribute name="foreColor" type="xs:int" use="required" />
+                  <xs:attribute name="title" type="xs:string" use="required" />
+                  <xs:attribute name="titleForeColor" type="xs:int" use="required" />
+                  <xs:attribute name="titleVerticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="titleHorisontalPos" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Runtime">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="fontName" type="xs:string" use="required" />
+                  <xs:attribute name="fontSize" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="fontBold" type="xs:boolean" use="required" />
+                  <xs:attribute name="foreColor" type="xs:int" use="required" />
+                  <xs:attribute name="title" type="xs:string" use="required" />
+                  <xs:attribute name="titleForeColor" type="xs:int" use="required" />
+                  <xs:attribute name="titleVerticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="titleHorisontalPos" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Description">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="fontName" type="xs:string" use="required" />
+                  <xs:attribute name="fontSize" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="fontBold" type="xs:boolean" use="required" />
+                  <xs:attribute name="foreColor" type="xs:int" use="required" />
+                  <xs:attribute name="title" type="xs:string" use="required" />
+                  <xs:attribute name="titleForeColor" type="xs:int" use="required" />
+                  <xs:attribute name="titleVerticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="titleHorisontalPos" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="RelaeseDate">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="fontName" type="xs:string" use="required" />
+                  <xs:attribute name="fontSize" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="fontBold" type="xs:boolean" use="required" />
+                  <xs:attribute name="foreColor" type="xs:int" use="required" />
+                  <xs:attribute name="title" type="xs:string" use="required" />
+                  <xs:attribute name="titleForeColor" type="xs:int" use="required" />
+                  <xs:attribute name="titleVerticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="titleHorisontalPos" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Season">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="fontName" type="xs:string" use="required" />
+                  <xs:attribute name="fontSize" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="fontBold" type="xs:boolean" use="required" />
+                  <xs:attribute name="foreColor" type="xs:int" use="required" />
+                  <xs:attribute name="title" type="xs:string" use="required" />
+                  <xs:attribute name="titleForeColor" type="xs:int" use="required" />
+                  <xs:attribute name="titleVerticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="titleHorisontalPos" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Background">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="useItemBackground" type="xs:boolean" use="required" />
+                  <xs:attribute name="defaultBackground" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Cover">
+                <xs:complexType>
+                  <xs:attribute name="visible" type="xs:boolean" use="required" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="defaultCover" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Separators">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Image">
+                <xs:complexType>
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="Opacity" type="xs:string" use="required" />
+                  <xs:attribute name="path" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="Rectangle">
+                <xs:complexType>
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="SolidBrushColor" type="xs:int" use="required" />
+                  <xs:attribute name="LinearGradientBrushColor1" type="xs:int" use="required" />
+                  <xs:attribute name="LinearGradientBrushColor2" type="xs:int" use="required" />
+                  <xs:attribute name="LinearGradientBrushDirection" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="Line">
+                <xs:complexType>
+                  <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="verticalPos" type="xs:unsignedShort" use="required" />
+                  <xs:attribute name="horisontalPos" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Effects">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Effect">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

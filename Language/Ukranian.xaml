@@ -1,0 +1,645 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--Common-->
+    <system:String x:Key="cmdCancel">Скасувати</system:String>
+    <system:String x:Key="cmdClean">Видалити</system:String>
+    <system:String x:Key="cmdReadNfo">Оновлення інформації</system:String>
+    <system:String x:Key="cmdViewNfo">Показати інформацію</system:String>
+    <system:String x:Key="cmdUpdateWeb">Web оновлення</system:String>
+    <system:String x:Key="cmdUpdate">Зберегти</system:String>
+    <system:String x:Key="cmdItemInfo">Інформація</system:String>
+    <system:String x:Key="cmdTypes">Типи</system:String>
+    <system:String x:Key="cmdGenres">Жанри</system:String>
+    <system:String x:Key="cmdOk">добре</system:String>
+    <system:String x:Key="cmdDelete">Видалити</system:String>
+    <system:String x:Key="cmdAdd">Додати</system:String>
+    <system:String x:Key="cmdBrowse">Огляд</system:String>
+    <system:String x:Key="cmdTvixCover">Create Cover</system:String>
+    <system:String x:Key="cmdCast">Роль</system:String>
+    <system:String x:Key="hedRealName">Оригинальне ім"я</system:String>
+    <system:String x:Key="hedDisplayName">Відображуване ім"я</system:String>
+    <system:String x:Key="hedStatus">Статус :</system:String>
+    <system:String x:Key="lblMedia">Медіа :</system:String>
+    <system:String x:Key="lblBarcode">Бар код :</system:String>
+    <system:String x:Key="lblFilePath">Шлях до файлу:</system:String>
+    <system:String x:Key="lblFileName">Ім"я файлу :</system:String>
+    <system:String x:Key="lblDateAdded">Дата додавання :</system:String>
+    <system:String x:Key="lblDateReleased">Дата релізу :</system:String>
+    <system:String x:Key="lblLanguage">Мова :</system:String>
+    <system:String x:Key="lblLinks">Лінки :</system:String>
+    <system:String x:Key="lblType">Тип :</system:String>
+    <system:String x:Key="lblRating">Рейтинг :</system:String>
+    <system:String x:Key="lblDescription">Опис :</system:String>
+    <system:String x:Key="lblComments">Коментарі:</system:String>
+    <system:String x:Key="lblEditor">Редактор :</system:String>
+    <system:String x:Key="lblTested">Перевірено :</system:String>
+    <system:String x:Key="lblToBeDeleted">До видаленню:</system:String>
+    <system:String x:Key="lblDeleted">Видалено :</system:String>
+    <system:String x:Key="lblComplete">Закінчено :</system:String>
+    <system:String x:Key="lblWish">Купити:</system:String>
+    <system:String x:Key="lblLinksDelete">Видалити всі лінки</system:String>
+    <system:String x:Key="lblFormat">Формат :</system:String>
+    <system:String x:Key="lblRated">Оцінений:</system:String>
+    <system:String x:Key="lblGenre">Жанр:</system:String>
+    <system:String x:Key="lblRunTime">Час виконання :</system:String>
+    <system:String x:Key="lblSeen">Переглянуто:</system:String>
+    <system:String x:Key="lblStudio">Студія :</system:String>
+    <system:String x:Key="lblSelectAll">Вибрати всі</system:String>
+    <system:String x:Key="lblUnselectAll">Відмінити всі</system:String>
+    <system:String x:Key="lblLinksAdd">Додати лінк</system:String>
+    <system:String x:Key="lblTitle">Заголовок:</system:String>
+    <system:String x:Key="cmdTechnicalInfo">Технічна інформація</system:String>
+    <system:String x:Key="lblAudio">Аудіо:</system:String>
+    <system:String x:Key="lblSub">Субтитри :</system:String>
+    <system:String x:Key="lblToWatch">дивитися :</system:String>
+    <system:String x:Key="lblToTest">для тестування :</system:String>
+    <system:String x:Key="lblToRead">Читати :</system:String>
+    <system:String x:Key="lblToHear">почути :</system:String>
+
+    <!--!Main Screen-->
+    <system:String x:Key="Apps">Програми</system:String>
+    <system:String x:Key="Books">Книжки</system:String>
+    <system:String x:Key="Gamez">Ігри</system:String>
+    <system:String x:Key="Movies">Фільми</system:String>
+    <system:String x:Key="Music">Музика</system:String>
+    <system:String x:Key="NDS">NDS</system:String>
+    <system:String x:Key="Series">Серіали</system:String>
+    <system:String x:Key="XXX">XXX</system:String>
+    <system:String x:Key="DetailsPane">Подробиці</system:String>
+    <system:String x:Key="Search">Пошук...</system:String>
+    <system:String x:Key="Search2">Пошук</system:String>
+    <system:String x:Key="InCategories">по</system:String>
+    <system:String x:Key="Donate">Жертвувати</system:String>
+
+    <!--Messages-->
+    <system:String x:Key="BackupErrorMessageConfirmation">Вибачте, але ми не можемо зробити резервну копію бази даних. Будь-ласка, зробіть це вручну. Бажаєте виконати оновлення у будь-якому разі?</system:String>
+    <system:String x:Key="DBUpgradeSucess">База даних оновлена успішно до версії:</system:String>
+    <system:String x:Key="AccesDenied">Доступ заборонений</system:String>
+    <system:String x:Key="ExportFolder">Виберіть папку для експорту :</system:String>
+    <system:String x:Key="ExportDone">Експорт завершено</system:String>
+    <system:String x:Key="CantDupe">Будь ласка, в першу чергу виберіть категорію</system:String>
+    <system:String x:Key="DBDirty">База даних все ще містить дані. Будь ласка, прочитайте лог.</system:String>
+    <system:String x:Key="EraseDB">Ця дія призведе до видалення всіх даних у базі даних, ви впевнені, що хочете продовжувати?</system:String>
+    <system:String x:Key="EraseDBTitle">Видалити всі дані.</system:String>
+    <system:String x:Key="DBEmpty">База даних в даний момент порожня.</system:String>
+    <system:String x:Key="ImportBooksDone">Імпортовані книги</system:String>
+    <system:String x:Key="ImportMusicDone">Музика імпортовані</system:String>
+    <system:String x:Key="ImportLoanerDone">позичальників імпортовані</system:String>
+    <system:String x:Key="UpdateDbFromPrevious">Ви хочете імпортувати дані з попередньої версії?</system:String>
+    <system:String x:Key="EveythingOk">Імпорт був Sucessfull. Будь ласка, перезапустіть додаток.?</system:String>
+
+    <!--Maine Menu-->
+    <system:String x:Key="Actions">Дії</system:String>
+    <system:String x:Key="Add">Додати</system:String>
+    <system:String x:Key="AddApps">Додати програми</system:String>
+    <system:String x:Key="ToolTipAddApps">Додати нову програму</system:String>
+    <system:String x:Key="AddBook">Додати книжки</system:String>
+    <system:String x:Key="ToolTipAddBook">Додати нову книжку</system:String>
+    <system:String x:Key="AddGames">Додати ігри</system:String>
+    <system:String x:Key="ToolTipAddGames">Додати нову гру</system:String>
+    <system:String x:Key="AddMedia">Додати медіа</system:String>
+    <system:String x:Key="ToolTipAddMedia">Додати новий медіа файл(HD,DVD..)</system:String>
+    <system:String x:Key="AddMovie">Додати фільм</system:String>
+    <system:String x:Key="ToolTipAddMovie">Додати новий фільм</system:String>
+    <system:String x:Key="AddMusic">Додати музику</system:String>
+    <system:String x:Key="ToolTipAddMusic">Додати новий музичний файл</system:String>
+    <system:String x:Key="AddNds">Додати Nds</system:String>
+    <system:String x:Key="ToolTipAddNDS">Додати новий Nds файл</system:String>
+    <system:String x:Key="AddSeries">Додати серіали</system:String>
+    <system:String x:Key="ToolTipAddSeries">Додати нову серію сезона</system:String>
+    <system:String x:Key="AddXXX">Додати XXX</system:String>
+    <system:String x:Key="ToolTipAddXXX">Додати новий порно фільм</system:String>
+
+    <system:String x:Key="Delete">Видалити</system:String>
+    <system:String x:Key="DeleteMedia">Видалити медіа</system:String>
+
+    <system:String x:Key="Export">Експорт</system:String>
+    <system:String x:Key="ExportAll">все</system:String>
+    <system:String x:Key="ToolTipExportAll">Експорт всіх елементів у HTML</system:String>
+    <system:String x:Key="ToolTipExportApps">Експортувати програми в HTML</system:String>
+    <system:String x:Key="ToolTipExportBooks">Експортувати книжки в HTML</system:String>
+    <system:String x:Key="ToolTipExportGames">Експортувати ігри в HTML</system:String>
+    <system:String x:Key="ToolTipExportMovie">Експортувати фільми в HTML</system:String>
+    <system:String x:Key="ToolTipExportMusic">Експортувати музику в HTML</system:String>
+    <system:String x:Key="ToolTipExportNds">Експортувати Nds в HTML</system:String>
+    <system:String x:Key="ToolTipExportSeries">Експортувати серіали в HTML</system:String>
+    <system:String x:Key="ToolTipExportXXX">Експортувати XXX в HTML</system:String>
+    <system:String x:Key="ToolTipExportAllXML">Експорт всіх елементів у XML</system:String>
+    <system:String x:Key="ToolTipExportAppsXML">Експортувати програми в XML</system:String>
+    <system:String x:Key="ToolTipExportBooksXML">Експортувати книжки в XML</system:String>
+    <system:String x:Key="ToolTipExportGamesXML">Експортувати ігри в XML</system:String>
+    <system:String x:Key="ToolTipExportMovieXML">Експортувати фільми в XML</system:String>
+    <system:String x:Key="ToolTipExportMusicXML">Експортувати музику в XML</system:String>
+    <system:String x:Key="ToolTipExportNdsXML">Експортувати Nds в XML</system:String>
+    <system:String x:Key="ToolTipExportSeriesXML">Експортувати серіали в XML</system:String>
+    <system:String x:Key="ToolTipExportXXXXML">Експортувати XXX в XML</system:String>
+    <system:String x:Key="ToolTipExportAllCSV">Експорт всіх елементів у CSV</system:String>
+    <system:String x:Key="ToolTipExportAppsCSV">Експортувати програми в CSV</system:String>
+    <system:String x:Key="ToolTipExportBooksCSV">Експортувати книжки в CSV</system:String>
+    <system:String x:Key="ToolTipExportGamesCSV">Експортувати ігри в CSV</system:String>
+    <system:String x:Key="ToolTipExportMovieCSV">Експортувати фільми в CSV</system:String>
+    <system:String x:Key="ToolTipExportMusicCSV">Експортувати музику в CSV</system:String>
+    <system:String x:Key="ToolTipExportNdsCSV">Експортувати Nds в CSV</system:String>
+    <system:String x:Key="ToolTipExportSeriesCSV">Експортувати серіали в CSV</system:String>
+    <system:String x:Key="ToolTipExportXXXCSV">Експортувати XXX в CSV</system:String>
+    <system:String x:Key="ToolTipExportAllPDF">Експорт всіх елементів у PDF</system:String>
+    <system:String x:Key="ToolTipExportAppsPDF">Експортувати програми в PDF</system:String>
+    <system:String x:Key="ToolTipExportBooksPDF">Експортувати книжки в PDF</system:String>
+    <system:String x:Key="ToolTipExportGamesPDF">Експортувати ігри в PDF</system:String>
+    <system:String x:Key="ToolTipExportMoviePDF">Експортувати фільми в PDF</system:String>
+    <system:String x:Key="ToolTipExportMusicPDF">Експортувати музику в PDF</system:String>
+    <system:String x:Key="ToolTipExportNdsPDF">Експортувати Nds в PDF</system:String>
+    <system:String x:Key="ToolTipExportSeriesPDF">Експортувати серіали в PDF</system:String>
+    <system:String x:Key="ToolTipExportXXXPDF">Експортувати XXX в PDF</system:String>
+    <system:String x:Key="Import">Імпортувати</system:String>
+    <system:String x:Key="ImportBibtex">Із Bibtex файла</system:String>
+    <system:String x:Key="ToolTiImportBibtex">Імпортувати книжки із Bibtex XML файла</system:String>
+    <system:String x:Key="ImportCSV">Із Csv файла</system:String>
+    <system:String x:Key="ToolTiImportMusicCsv">Імпортувати музику із Csv файла</system:String>
+    <system:String x:Key="Loaner">позикодавець</system:String>
+    <system:String x:Key="ToolTiImporLoanerCsv">Імпорт позичальника Від CSV-файл</system:String>
+
+    <system:String x:Key="View">Показати</system:String>
+    <system:String x:Key="ViewAll">Все</system:String>
+    <system:String x:Key="ToBeDeleted">До видаленню</system:String>
+    <system:String x:Key="Deleted">Видалено</system:String>
+    <system:String x:Key="Wish">Купити</system:String>
+    <system:String x:Key="ViewComplete">Закінчено</system:String>
+    <system:String x:Key="NotComplete">Не закінчено</system:String>
+    <system:String x:Key="WithoutCover">Без обкладинки</system:String>
+    <system:String x:Key="WithCover">З обкладинкою</system:String>
+    <system:String x:Key="ViewSeen">Переглянуто</system:String>
+    <system:String x:Key="NotSeen">Не переглянуто</system:String>
+    <system:String x:Key="Tested">Перевірено</system:String>
+    <system:String x:Key="NotTested">Не перевірено</system:String>
+    <system:String x:Key="Read">Читати</system:String>
+    <system:String x:Key="NotRead">Не читати</system:String>
+    <system:String x:Key="Heard">Слухати</system:String>
+    <system:String x:Key="NotHeard">Не слухати</system:String>
+    <system:String x:Key="ToWatch">дивитися</system:String>
+    <system:String x:Key="ToHear">почути</system:String>
+    <system:String x:Key="ToTest">для тестування</system:String>
+    <system:String x:Key="ToRead">Читати</system:String>
+
+    <system:String x:Key="CoverView">Вид обкладинки</system:String>
+    <system:String x:Key="CardView">Вид картки</system:String>
+    <system:String x:Key="CoverFlowView">Вид CoverFlow</system:String>
+    <system:String x:Key="CubeView">перегляд куба</system:String>
+    <system:String x:Key="ArtistView">художник Переглянути</system:String>
+
+    <system:String x:Key="OrderBy">Сортувати за</system:String>
+    <system:String x:Key="OrderByName">Ім"я</system:String>
+    <system:String x:Key="OrderByLastAdded">Останній доданий</system:String>
+    <system:String x:Key="OrderByRunTime">Час виконання</system:String>
+    <system:String x:Key="OrderByRating">Рейтинг</system:String>
+    <system:String x:Key="OrderByMedia">Медіа</system:String>
+    <system:String x:Key="GroupBy">Групувати за</system:String>
+    <system:String x:Key="GroupByDefault">За замовчуванням</system:String>
+    <system:String x:Key="GroupByGenre">Жанром</system:String>
+    <system:String x:Key="GroupByMedia">Медіа</system:String>
+    <system:String x:Key="GroupByAlbum">Альбомом</system:String>
+    <system:String x:Key="GroupByArtist">Виконавцем</system:String>
+    <system:String x:Key="GroupBySeries">Серіями</system:String>
+    <system:String x:Key="GroupByAuthor">Автором</system:String>
+
+    <system:String x:Key="Options">Функції</system:String>
+    <system:String x:Key="WebUpdateConfiguration">Веб оновлення конфігурації</system:String>
+    <system:String x:Key="Preferences">Уподобання</system:String>
+    <system:String x:Key="TvixThemeManager">Менеджер теми</system:String>
+    <system:String x:Key="ProxySettings">Proxy Configuration</system:String>
+
+    <system:String x:Key="Loan">Позики</system:String>
+    <system:String x:Key="ViewLoan">Показати всі позики</system:String>
+    <system:String x:Key="ToolViewLoan">Показати всі позики</system:String>
+    <system:String x:Key="ViewLateLoan">Показати останні позики</system:String>
+    <system:String x:Key="ToolTipViewLateLoan">Показати тільки останні позики</system:String>
+    <system:String x:Key="ManageFriends">Управління друзями</system:String>
+    <system:String x:Key="ToolTipManageFriends">Додати/Видалити позичальника</system:String>
+
+    <system:String x:Key="Tools">Інструменти</system:String>
+    <system:String x:Key="UpdateAllFromWeb">Оновити все із Web</system:String>
+    <system:String x:Key="FindDuplicate">Знайти копії</system:String>
+    <system:String x:Key="ToolsDatabase">База даних</system:String>
+    <system:String x:Key="CommonData">Загальні дані</system:String>
+    <system:String x:Key="ManageLanguage">Управління мовами</system:String>
+    <system:String x:Key="AppsData">Програмні дані</system:String>
+    <system:String x:Key="ManageType">Управління типами</system:String>
+    <system:String x:Key="BookData">Дані книжок</system:String>
+    <system:String x:Key="GamesData">Дані ігр</system:String>
+    <system:String x:Key="MovieData">Дані фільмів</system:String>
+    <system:String x:Key="ManageMovieGenre">Управління жанром фільму</system:String>
+    <system:String x:Key="ManageMovieStudio">Управління студією фільму</system:String>
+    <system:String x:Key="MusicData">Дані музики</system:String>
+    <system:String x:Key="ManageMusicGenre">Управління музичним жанром</system:String>
+    <system:String x:Key="ManageMusicStudio">Управління музичною студією</system:String>
+    <system:String x:Key="XXXData">Дані XXX</system:String>
+    <system:String x:Key="ManageXXXGenre">Управління XXX жанром</system:String>
+    <system:String x:Key="ManageXXXStudio">Управління XXX студією</system:String>
+    <system:String x:Key="ChangeMediaInformations">Змінити медіа інформацію</system:String>
+    <system:String x:Key="ResetDatabase">Скинути базу даних</system:String>
+    <system:String x:Key="CleanDatabase">Чистити базу даних</system:String>
+    <system:String x:Key="BackupDatabase">Зробити резервну копію бази даних</system:String>
+    <system:String x:Key="RefreshImage">Оновити зображення</system:String>
+    <system:String x:Key="ExtractTo">Видобути в</system:String>
+    <system:String x:Key="ManageEditor">Управління редактором</system:String>
+    <system:String x:Key="ManageCleanTitle">Управління чистим заголовком</system:String>
+
+    <system:String x:Key="Skin">Обкладинка</system:String>
+
+    <system:String x:Key="Charts">Діаграми</system:String>
+    <system:String x:Key="AppsTypeCharts">Типи діаграм програм</system:String>
+    <system:String x:Key="BooksTypeCharts">Типи діаграм книжок</system:String>
+    <system:String x:Key="GamesTypeCharts">Типи діаграм ігр</system:String>
+    <system:String x:Key="MovieGenreCharts">Типи діаграм фільмів</system:String>
+    <system:String x:Key="MusicGenreCharts">Типи діаграм музики</system:String>
+    <system:String x:Key="NdsTypeCharts">Типи діаграм Nds</system:String>
+    <system:String x:Key="SeriesGenreCharts">Діаграми жанрів серіалів</system:String>
+    <system:String x:Key="XXXGenreCharts">Діаграми жанру XXX</system:String>
+
+    <system:String x:Key="Language">Мови</system:String>
+    <system:String x:Key="English">Англійська</system:String>
+    <system:String x:Key="French">Французька</system:String>
+    <system:String x:Key="Dutch">Нідерландська</system:String>
+    <system:String x:Key="Spanish">Іспанська</system:String>
+    <system:String x:Key="German">Німецька</system:String>
+    <system:String x:Key="Portuguese">Португальська</system:String>
+    <system:String x:Key="Russian">Російська</system:String>
+    <system:String x:Key="Ukranian">Українська</system:String>
+    <system:String x:Key="Chinese">китайський</system:String>
+    <system:String x:Key="Italian">Італійська</system:String>
+    <system:String x:Key="Turkish">Турецька</system:String>
+
+    <system:String x:Key="About">Про</system:String>
+
+    <system:String x:Key="AddImage">Додати нове зображення</system:String>
+    <system:String x:Key="DeleteImage">Видалити зображення</system:String>
+    <system:String x:Key="ReplaceImage">Перемістити зображення</system:String>
+
+    <system:String x:Key="SetCover">Встановити як обкладинку</system:String>
+    <system:String x:Key="SetBackground">Зробити фоновим малюнком</system:String>
+
+    <!--Main Screen Context Menu -->
+    <system:String x:Key="Play">Грати</system:String>
+    <system:String x:Key="ManualUpdate">Оновлення вручну</system:String>
+    <system:String x:Key="UpdateFromWeb">Оновлення із Web</system:String>
+    <system:String x:Key="SetNotComplete">Встановити не закінченим</system:String>
+    <system:String x:Key="LoanTo">Позичити</system:String>
+    <system:String x:Key="LoanInfo">Показати деталі позики</system:String>
+    <system:String x:Key="SetBack">Повернути з позики</system:String>
+    <system:String x:Key="GenerateTvix">створення етикетки</system:String>
+    <system:String x:Key="CleanSelected">Очистити</system:String>
+    <system:String x:Key="SetGenre">визначити Жанр</system:String>
+
+    <!--About Screen-->
+    <system:String x:Key="TitleAbout">Про</system:String>
+    <system:String x:Key="Version">Версія</system:String>
+    <system:String x:Key="Contact">Контакти :</system:String>
+    <system:String x:Key="Home">Домашня сторінка:</system:String>
+    <system:String x:Key="Credits">Подяка:</system:String>
+    <system:String x:Key="AboutCharts">Створити діаграму:</system:String>
+    <system:String x:Key="Mp3">Mp3 мітки:</system:String>
+    <system:String x:Key="SqlLite">SqlLite з’єднання:</system:String>
+    <system:String x:Key="PDF">PDF парсинг :</system:String>
+    <system:String x:Key="HtmlExport">Html експорт:</system:String>
+    <system:String x:Key="FLAC">FLAC мітки:</system:String>
+    <system:String x:Key="CoverFlowBy">Cover Flow:</system:String>
+
+    <system:String x:Key="TesterLead">Керівник тестування:</system:String>
+    <system:String x:Key="TitleAddMedia">Додати медіа</system:String>
+    <system:String x:Key="lblMediaType">Тип медіа:</system:String>
+    <system:String x:Key="lblPath">Шлях:</system:String>
+    <system:String x:Key="lblSearchPattern">Шаблон для пошуку:</system:String>
+    <system:String x:Key="lblSubFolder">Шукати дочірню папку :</system:String>
+    <system:String x:Key="lblFolderImage">Використовувати зображення в папкі</system:String>
+    <system:String x:Key="lblUseNfo">Парсити інфо файли</system:String>
+    <system:String x:Key="cmdNext">Наступний >></system:String>
+    <system:String x:Key="cmdFinish">Закінчити</system:String>
+    <system:String x:Key="tltNext">Парсити ім'я перед додавання файлів</system:String>
+    <system:String x:Key="tltFinish">Виконати лишесдодавання файлів</system:String>
+    <system:String x:Key="lblResults">Кількість знайдених пунктів:</system:String>
+    <system:String x:Key="lblParseFrom">Шаблон парсинга:</system:String>
+    <system:String x:Key="lblMapping">Вибрати заголовок:</system:String>
+    <system:String x:Key="cmdBack">Назад</system:String>
+
+
+    <!--Apps Update Screen-->
+    <system:String x:Key="TitleAppsUpdate">Оновити програми</system:String>
+    <system:String x:Key="AppsDeleteImage">Видалити зображення</system:String>
+
+    <!--Artist Detail Screen-->
+    <system:String x:Key="TitleArtistDetail">Інформація про артиста</system:String>
+
+    <!--Book Update Screen-->
+    <system:String x:Key="TitleBooksUpdate">Оновити книжки</system:String>
+    <system:String x:Key="BooksDeleteImage">Видалити зображення</system:String>
+
+    <!--Browser Screen-->
+    <system:String x:Key="TitleBrowser">Перегляд</system:String>
+
+    <!--Media Info Screen-->
+    <system:String x:Key="TitleMediaInfo">Інформація про медіа</system:String>
+    <system:String x:Key="txbMedia">Медіа :</system:String>
+    <system:String x:Key="txbMediaName">Медіа ім"я:</system:String>
+    <system:String x:Key="txbMediaCurentPath">Шлях:</system:String>
+    <system:String x:Key="txbMediaFreeSpace">Доступний простір:</system:String>
+    <system:String x:Key="txbMediaTotalSpace">Загальний простір:</system:String>
+    <system:String x:Key="txbMediaLastUpdate">Останнє оновлення:</system:String>
+
+    <!--Chart Screen-->
+    <system:String x:Key="TitleChart">Діаграми</system:String>
+
+    <!--MessageBox Screen-->
+    <system:String x:Key="TitleMsgBox">Інформація</system:String>
+
+    <!--DeleteMedia Screen-->
+    <system:String x:Key="TitleDeleteMedia">Видалити медіа</system:String>
+    <system:String x:Key="txbDeleteMedia">Вибрати до видалення:</system:String>
+
+    <!--Game Update Screen-->
+    <system:String x:Key="TitleGamesUpdate">Оновлення ігр</system:String>
+    <system:String x:Key="GamesDeleteImage">Видалити зображення</system:String>
+    <system:String x:Key="lblPlateform">Платформа:</system:String>
+
+    <!--LoanTo Screen-->
+    <system:String x:Key="TitleLoanTo">Позичити...</system:String>
+    <system:String x:Key="txbTitleToLoan">Предмет позики:</system:String>
+    <system:String x:Key="txbLoanTo">Позичити:</system:String>
+    <system:String x:Key="txbLoanBegin">Початок позики :</system:String>
+    <system:String x:Key="txbLoanEnd">Кінець позики :</system:String>
+
+    <!--Manage Apps Type  Screen-->
+    <system:String x:Key="TitleManageAppsType">Управління типами програм</system:String>
+
+    <!--Manage Studio Screen-->
+    <system:String x:Key="TitleManageStudio">Додавання, зміна або видалення назви</system:String>
+    <system:String x:Key="hedStudio">студії</system:String>
+
+    <!--Manage Books Type  Screen-->
+    <system:String x:Key="TitleManageBooksType">Управління типами книг</system:String>
+
+    <!--Manage Friends  Screen-->
+    <system:String x:Key="TitleManageFriends">Управління друзями</system:String>
+    <system:String x:Key="hedUsers">Користувачі :</system:String>
+    <system:String x:Key="hedUsersInfos">Інформація про користувачів :</system:String>
+    <system:String x:Key="lblAlias">Псевдонім :</system:String>
+    <system:String x:Key="lblFirstName">Ім"я :</system:String>
+    <system:String x:Key="lblLastName">Призвіще:</system:String>
+    <system:String x:Key="lblBirthDate">Дата народження :</system:String>
+    <system:String x:Key="lblSex">Стать :</system:String>
+    <system:String x:Key="lblEmail">E-Mail :</system:String>
+    <system:String x:Key="lblAdress">Адреса :</system:String>
+    <system:String x:Key="lblPhoneNumber">Тел. :</system:String>
+    <system:String x:Key="lblCurrentLoan">Поточна заборгованість:</system:String>
+    <system:String x:Key="lblMaxLoan">Максимальна заборгованість:</system:String>
+
+    <!--Manage Games Type  Screen-->
+    <system:String x:Key="TitleManageGamesType">Управління типами ігор</system:String>
+
+    <!--Manage Language Screen-->
+    <system:String x:Key="TitleManageLanguage">Управління мовою</system:String>
+    <system:String x:Key="hedShortName">Коротке ім"я</system:String>
+    <system:String x:Key="hedLongName">Довге ім"я</system:String>
+
+    <!--Manage Movie Genre  Screen-->
+    <system:String x:Key="TitleManageMovieGenre">Управління жанром фільмів</system:String>
+
+    <!--Manage Music Genre  Screen-->
+    <system:String x:Key="TitleManageMusicGenre">Управління жанром музики</system:String>
+
+    <!--Manage Clean Title-->
+    <system:String x:Key="TitleManageCleanTitle">Видалити дані з заголовка</system:String>
+    <system:String x:Key="hedValue">Значення</system:String>
+    <system:String x:Key="hedCategory">Категорія</system:String>
+
+    <!--Preferences  Screen-->
+    <system:String x:Key="TitlePreferences">Мої уподобання</system:String>
+    <system:String x:Key="hedShowCatgerory">Показати категорію</system:String>
+    <system:String x:Key="lblHideApps">Сховати програми (доступне використання Alt-A)</system:String>
+    <system:String x:Key="lblHideBooks">Сховати книжки (доступне використання Alt-B)</system:String>
+    <system:String x:Key="lblHideGames">Сховати ігри (доступне використання Alt-G)</system:String>
+    <system:String x:Key="lblHideMovies">Сховати фільми(доступне використання Alt-M)</system:String>
+    <system:String x:Key="lblHideMusic">Сховати музику (доступне використання Alt-U)</system:String>
+    <system:String x:Key="lblHideNds">Сховати Nds(доступне використання Alt-N)</system:String>
+    <system:String x:Key="lblHideSeries">Сховати серіали(доступне використання Alt-S)</system:String>
+    <system:String x:Key="lblHideXXX">Сховати XXX(доступне використання Alt-X)</system:String>
+    <system:String x:Key="lblCleanTitle">Авто очистка заголовка</system:String>
+    <system:String x:Key="lblDbClick">Подвійний клік :</system:String>
+    <system:String x:Key="rdbLaunch">Запустити</system:String>
+    <system:String x:Key="rdbUpdate">Оновити</system:String>
+    <system:String x:Key="lblXXXPassword">XXX пароль :</system:String>
+    <system:String x:Key="lblCurrentDb">Поточна база даних:</system:String>
+    <system:String x:Key="lblCheckUpdate">Перевірити наявність оновлень</system:String>
+    <system:String x:Key="lblTvixOutput2">або в :</system:String>
+    <system:String x:Key="tlpTvixOutput">Змінити Folder вихідні дані</system:String>
+    <system:String x:Key="hedOthers">Інше</system:String>
+    <system:String x:Key="tlpChangeDb">Змінити базу даних</system:String>
+    <system:String x:Key="chkTvixFolder">Зберегти в папці</system:String>
+    <system:String x:Key="lblHideDetails">Приховати панель деталей</system:String>
+
+    <!--Manage Sites  Screen-->
+    <system:String x:Key="TitleManageSites">Управління сайтами</system:String>
+    <system:String x:Key="hedUsSites">Англійські</system:String>
+    <system:String x:Key="chkSelectAll">Вибрати все</system:String>
+    <system:String x:Key="lblAppsSites">програм :</system:String>
+    <system:String x:Key="lblBookSites">книжок :</system:String>
+    <system:String x:Key="lblGamesSites">ігор :</system:String>
+    <system:String x:Key="lblMoviesSites">фільмів :</system:String>
+    <system:String x:Key="lblMusicSites">музики :</system:String>
+    <system:String x:Key="lblNdsSites">Nintendo DS :</system:String>
+    <system:String x:Key="lblSeriesSites">серіалів:</system:String>
+    <system:String x:Key="lblXXXSites">XXX :</system:String>
+    <system:String x:Key="hedFrenchSites">Французькі</system:String>
+    <system:String x:Key="lblBing">Bing</system:String>
+    <system:String x:Key="hedGermanSites">Німецькі</system:String>
+    <system:String x:Key="hedItalianSites">Італійська</system:String>
+    <system:String x:Key="hedChineseSites">китайський</system:String>
+    <system:String x:Key="hedSpanishSites">Іспанська</system:String>
+
+
+    <!--Manage XXX Genre  Screen-->
+    <system:String x:Key="TitleManageXXXGenre">Управління жанром XXX</system:String>
+
+    <!--Movie Update Screen-->
+    <system:String x:Key="TitleMoviesUpdate">Оновлення фільмів</system:String>
+
+    <!--Music Update Screen-->
+    <system:String x:Key="TitleMusicUpdate">Оновлення музики</system:String>
+    <system:String x:Key="MusicDeleteImage">Видалити зображення</system:String>
+    <system:String x:Key="cmdTracks">Доріжки</system:String>
+
+    <!--Nds Update Screen-->
+    <system:String x:Key="TitleNdsUpdate">Оновлення ігр Nintendo DS</system:String>
+    <system:String x:Key="NdsDeleteImage">Видалити зображення</system:String>
+
+    <!--Parental Control Screen-->
+    <system:String x:Key="TitleParentalControl">Батьківський контроль</system:String>
+    <system:String x:Key="lblPassword">Пароль :</system:String>
+
+    <!--Partial Match Screen-->
+    <system:String x:Key="TitlePartialMatch">Вибрати правильний заголовок</system:String>
+    <system:String x:Key="hedImage">Зображення</system:String>
+    <system:String x:Key="hedTitle">Заголовок</system:String>
+    <system:String x:Key="hedArtist">Артист</system:String>
+
+    <!--Progress Bar Screen-->
+    <system:String x:Key="TitleProgressBar">Будь ласка, зачекайте...</system:String>
+    <system:String x:Key="lblProcess">Обробка:</system:String>
+    <system:String x:Key="lblOf">із</system:String>
+
+    <!--Select File Screen-->
+    <system:String x:Key="TitleSelectFile">Вибрати файл для запуску</system:String>
+    <system:String x:Key="hedSelection">Добірка</system:String>
+
+    <!--Series Update Screen-->
+    <system:String x:Key="TitleSeriesUpdate">Оновлення серіалів</system:String>
+    <system:String x:Key="SeriesDeleteImage">Видалити зображення</system:String>
+
+    <!--Show Nfo Screen-->
+    <system:String x:Key="TitleShowNfo">Показати інформацію</system:String>
+
+    <!--XXX Update Screen-->
+    <system:String x:Key="TitleXXXUpdate">Оновлення XXX</system:String>
+    <system:String x:Key="XXXDeleteImage">Видалити зображення</system:String>
+
+    <!--Apps-->
+    <system:String x:Key="appsVersion">Версія :</system:String>
+    <system:String x:Key="hedAppsInfo">Інформація про програми</system:String>
+
+    <!--Books-->
+    <system:String x:Key="hedBooksInfo">Інформація про книжки</system:String>
+    <system:String x:Key="lblISBN">ISBN :</system:String>
+    <system:String x:Key="lblAuthor">Автор :</system:String>
+    <system:String x:Key="lblPages">Кіл-сть стр. :</system:String>
+    <system:String x:Key="lblRead">Читати :</system:String>
+
+    <!--Artist-->
+    <system:String x:Key="tltDetails">Деталі</system:String>
+    <system:String x:Key="tltChangePicture">Змінити зображення</system:String>
+    <system:String x:Key="tltDelete">Видалити</system:String>
+    <system:String x:Key="tltUpdateWeb">Знайти зображення в інтернеті</system:String>
+    <system:String x:Key="tltDirector">директор</system:String>
+    <system:String x:Key="tltAddArtist">Додати художника</system:String>
+    <system:String x:Key="lblAge">років</system:String>
+
+    <!--Games-->
+    <system:String x:Key="hedGamesInfo">Інформація про ігри</system:String>
+
+    <!--Movies-->
+    <system:String x:Key="hedMoviesInfo">Інформація про фільми</system:String>
+    <system:String x:Key="lblFileFormat">Формат файлів :</system:String>
+    <system:String x:Key="lblOriginalTitle">Оригінальна назва :</system:String>
+    <system:String x:Key="lblAlloCineRating">AlloCine рейтинг :</system:String>
+    <system:String x:Key="lblIMDBRating">IMDB рейтинг :</system:String>
+    <system:String x:Key="lblTagLine">Короткий опис:</system:String>
+    <system:String x:Key="lblAspectRatio">Формат екрану :</system:String>
+
+    <!--Music-->
+    <system:String x:Key="hedMusicInfo">Інформація про музику</system:String>
+    <system:String x:Key="lblMusicArtist">Співак :</system:String>
+    <system:String x:Key="lblAlbum">Альбом :</system:String>
+    <system:String x:Key="lblBitRate">BitRate :</system:String>
+    <system:String x:Key="lblHeared">Прослухано :</system:String>
+    <system:String x:Key="lblArtistName">Ім"я співака :</system:String>
+
+    <!--Series-->
+    <system:String x:Key="hedSeriesInfo">Інформація про серіали</system:String>
+    <system:String x:Key="lblTotalEpisodes">Всього серій :</system:String>
+    <system:String x:Key="lblOwnEpisodes">Мої серії :</system:String>
+    <system:String x:Key="lblMissingEpisodes">Пропущені серії :</system:String>
+    <system:String x:Key="lblSeason">Сезон :</system:String>
+    <system:String x:Key="cmdAddSeason">Додати новий сезон</system:String>
+
+    <!--XXX-->
+    <system:String x:Key="hedXXXInfo">Інформація про XXX</system:String>
+
+    <!--Tvix Theme Manager-->
+    <system:String x:Key="hedTvixUsed">Використовувати цю тему для:</system:String>
+    <system:String x:Key="hedTvixOutput">Створити файли в :</system:String>
+    <system:String x:Key="cmdGenerate">Створити зразок</system:String>
+    <system:String x:Key="mniPreviewTvix">Поперед. перегляд</system:String>
+    <system:String x:Key="mniChangeTheme">Змінити тему</system:String>
+    <system:String x:Key="cmdGenerateFile">Зберегти зображення</system:String>
+    <system:String x:Key="hedSelectTheme">Вибрати теми</system:String>
+
+    <!--newVersionViewer-->
+    <system:String x:Key="lblNewVersion">Нова версія доступна</system:String>
+    <system:String x:Key="lblDownloadHere">Завантажуй тут :</system:String>
+
+    <!--Proxy-->
+    <system:String x:Key="lbluseProxy">проксі-сервер</system:String>
+    <system:String x:Key="lblIpAdress">Адреса :</system:String>
+    <system:String x:Key="lblIpPort">портвейн :</system:String>
+    <system:String x:Key="lblLogin">Увійти :</system:String>
+    <system:String x:Key="lblPWD">пароль :</system:String>
+
+    <system:String x:Key="WrapPanelOptim">WrapPanel Optimisation :</system:String>
+    <system:String x:Key="MetroStyleBy">Metro Style By :</system:String>
+
+    <system:String x:Key="tltRename">Перейменувати файл з назвою</system:String>
+    <system:String x:Key="lblAutoRename">Автоматичне перейменування файлу з назви</system:String>
+    <system:String x:Key="lblAddCustomType">Додати новий тип</system:String>
+    <system:String x:Key="lblValue">вартість :</system:String>
+    <system:String x:Key="OrderByArtist">художник</system:String>
+    <system:String x:Key="lblFastSearch">Використовуйте швидкий пошук (швидше, але менш інформація, витягнута)</system:String>
+    <system:String x:Key="hedSelectDevice">Виберіть ваш пристрій</system:String>
+    <system:String x:Key="cmdUpdateId3">оновлення Id3</system:String>
+    <system:String x:Key="AutoUpdateId3">Оновлення Музика ID3 при збереженні</system:String>
+    <system:String x:Key="ImportXml">З файлу XML</system:String>
+    <system:String x:Key="ToolTipImportXML">Книги Імпорт з файлу XML myCollections</system:String>
+    <system:String x:Key="ImportFilmotechCSV">З файлу CSV Filmotech</system:String>
+    <system:String x:Key="ToolTiImportFilmotechCsv">Фільми імпорту з файлу CSV Filmotech</system:String>
+    <system:String x:Key="ImportFilmotechXML">З файлу XML Filmotech</system:String>
+    <system:String x:Key="ToolTiImportFilmotechXML">Фільми імпорту з файлу XML Filmotech</system:String>
+    <system:String x:Key="ImportMoviesDone">Фільм (и), що ввозяться</system:String>
+    <system:String x:Key="ManagePlateform">управління платформою</system:String>
+    <system:String x:Key="Folders">папки</system:String>
+    <system:String x:Key="Files">файли</system:String>
+    <system:String x:Key="ImportDone">пункт імпортовані</system:String>
+    <system:String x:Key="HtmlTransform">Створення HTML-файла, будь ласка, почекайте</system:String>
+    <system:String x:Key="CorrectTitle">Будь ласка, виберіть правильну назву</system:String>
+    <system:String x:Key="GettingInfo1">Отримання інформації для </system:String>
+    <system:String x:Key="GettingInfo2"> від </system:String>
+    <system:String x:Key="NoResults">Не можете знайти будь-які результати</system:String>
+    <system:String x:Key="Processing1">Обробка інформації для</system:String>
+    <system:String x:Key="PleaseWait">, Будь ласка, почекайте</system:String>
+    <system:String x:Key="Preparing1">Підготовка інформації для відображення ...</system:String>
+    <system:String x:Key="Searching1">Пошук інформації від</system:String>
+    <system:String x:Key="SendLog">Надіслати використання інформації</system:String>
+    <system:String x:Key="SendError">Помилки передачі інформації</system:String>
+    <system:String x:Key="AutoBackupDB">Автоматичне резервне копіювання бази даних</system:String>
+    <system:String x:Key="Help">помічник</system:String>
+    <system:String x:Key="Documentation">документація</system:String>
+    <system:String x:Key="Video">відео-підручник</system:String>
+    <system:String x:Key="Video1">Як додати один фільм</system:String>
+    <system:String x:Key="Video2">Як додати кілька фільмів</system:String>
+    <system:String x:Key="Video3">Загальна презентація</system:String>
+    <system:String x:Key="SendKindle">Надіслати Kindle</system:String>
+    <system:String x:Key="CopyKindleOK">тепер доступна на вашому Kindle.</system:String>
+    <system:String x:Key="CopyKindleKO">Неможливо скопіювати на Kindle.</system:String>
+    <system:String x:Key="NoKindle">Kindle не підключений</system:String>
+    <system:String x:Key="ShowToolbarIcons">Відображення значків в панелі інструментів</system:String>
+    <system:String x:Key="Yes">Так</system:String>
+    <system:String x:Key="No">немає</system:String>
+    <system:String x:Key="CreateMedi">немає</system:String>
+    <system:String x:Key="DeleteConfirmation">Ви впевнені, що хочете видалити ?</system:String>
+    <system:String x:Key="ShowDeleteConfirmation">Показати підтвердження перед видаленням</system:String>
+    <system:String x:Key="CopyTo">Копіювати в ...</system:String>
+    <system:String x:Key="OpenLocation">відкритому місці</system:String>
+    <system:String x:Key="Persian">перський</system:String>
+    <system:String x:Key="ScanBarCode">сканування штрих-кодів</system:String>
+    <system:String x:Key="TakePicture">Сфотографуйте</system:String>
+    <system:String x:Key="PublicRating">громадський рейтинг :</system:String>
+    <system:String x:Key="MyRating">Мій рейтинг :</system:String>
+    <system:String x:Key="NumId">Coll # :</system:String>
+    <system:String x:Key="NumIdToolTip">колекція номер</system:String>
+    <system:String x:Key="OrderByPublicRating">громадський рейтинг</system:String>
+    <system:String x:Key="Saving">Eкономія...</system:String>
+    <system:String x:Key="OrderByNumId">Coll #</system:String>
+    <system:String x:Key="Print">Друкувати</system:String>
+    <system:String x:Key="Like">Вам подобається? Покажіть мені, натисніть тут.</system:String>
+    <system:String x:Key="MetaData">метаданих :</system:String>
+    <system:String x:Key="ManageMetaData">управління метаданими</system:String>
+
+</ResourceDictionary>

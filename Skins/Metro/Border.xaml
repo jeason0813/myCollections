@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="BorderCoverView" TargetType="Border" >
+        <Setter Property="Background" Value="{DynamicResource BorderColor}"/>
+        <Setter Property="Focusable" Value="True"/>
+    </Style>
+
+</ResourceDictionary>

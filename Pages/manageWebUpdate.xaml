@@ -1,0 +1,573 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.ManageWebUpdate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:Controls="clr-namespace:myCollections.Controls" ShowClose="False" ResizeMode="NoResize" DontMove="True"
+    WindowStartupLocation="CenterScreen" Width="730" Height="350" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="295"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0">
+            <TabItem Header="{DynamicResource hedUsSites}" FontSize="{DynamicResource SmallTextSize}">
+                <GroupBox>
+                    <GroupBox.Header>
+                        <CheckBox Content="{DynamicResource chkSelectAll}" Click="chkUsSelectAll_Click"/>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Content="{DynamicResource lblAppsSites}" Grid.Column="0" Grid.Row="0"/>
+                        <CheckBox Name="chkAmazonApps" Margin="3,3,0,0" Grid.Column="1" Grid.Row="0"/>
+                        <TextBlock Text="Amazon.com" Margin="3,3,0,0" Grid.Column="2" Grid.Row="0"/>
+                        <CheckBox Name="chkSoftonic" Margin="3,3,0,0" Grid.Column="3" Grid.Row="0"/>
+                        <TextBlock Text="Softonic" Margin="0,3" Grid.Column="4" Grid.Row="0"/>
+                        <CheckBox Name="chkTucows" Margin="3,3,0,0" Grid.Column="5" Grid.Row="0"/>
+                        <TextBlock Text="Tucows" Margin="0,3" Grid.Column="6" Grid.Row="0"/>
+                        <CheckBox Name="chkSoftpedia" Margin="3,3,0,0" Grid.Column="7" Grid.Row="0"/>
+                        <TextBlock Text="Softpedia" Margin="0,3" Grid.Column="8" Grid.Row="0"/>
+                        <CheckBox Name="chkBingApps" Margin="3,3,0,0" Grid.Column="9" Grid.Row="0"/>
+                        <TextBlock Text="{DynamicResource lblBing}" Margin="0,3" Grid.Column="10" Grid.Row="0"/>
+
+                        <Label Content="{DynamicResource lblBookSites}" Grid.Column="0" Grid.Row="1"/>
+                        <CheckBox Name="chkAmazonBooks" Margin="3,3,0,0" Grid.Column="1" Grid.Row="1"/>
+                        <TextBlock Text="Amazon.com" Margin="3,3,0,0" Grid.Column="2" Grid.Row="1"/>
+                        <CheckBox Name="chkBingBooks" Margin="3,3,0,0" Grid.Column="3" Grid.Row="1"/>
+                        <TextBlock Text="{DynamicResource lblBing}" Margin="0,3" Grid.Column="4" Grid.Row="1"/>
+
+                        <Label Content="{DynamicResource lblGamesSites}" Grid.Column="0" Grid.Row="2"/>
+                        <CheckBox Name="chkTGDBGames" Margin="3,3,0,0" Grid.Column="1" Grid.Row="2"/>
+                        <TextBlock Text="TheGamesDB.net" Margin="3,3,0,0" Grid.Column="2" Grid.Row="2"/>
+                        <CheckBox Name="chkAmazonGames" Margin="3,3,0,0" Grid.Column="3" Grid.Row="2"/>
+                        <TextBlock Text="Amazon.com" Margin="3,3,0,0" Grid.Column="4" Grid.Row="2"/>
+                        <CheckBox Name="chkBingGamez" Margin="3,3,0,0" Grid.Column="5" Grid.Row="2"/>
+                        <TextBlock Text="{DynamicResource lblBing}" Margin="0,3" Grid.Column="6" Grid.Row="2"/>
+
+                        <Label Content="{DynamicResource lblMoviesSites}" Grid.Column="0" Grid.Row="3"/>
+                        <CheckBox Name="chkTMDBMovies" Margin="3,3,0,0" Grid.Column="1" Grid.Row="3"/>
+                        <TextBlock Text="The Movie DB Us " Margin="3,3,0,0" Grid.Column="2" Grid.Row="3"/>
+                        <CheckBox Name="chkIMDBMovies" Margin="3,3,0,0" Grid.Column="3" Grid.Row="3"/>
+                        <TextBlock Text="IMDB" Margin="3,3,0,0" Grid.Column="4" Grid.Row="3"/>
+                        <CheckBox Name="chkAmazonMovie" Margin="3,3,0,0" Grid.Column="5" Grid.Row="3"/>
+                        <TextBlock Text="Amazon.com" Margin="3,3,0,0" Grid.Column="6" Grid.Row="3"/>
+                        <CheckBox Name="chkBingMovie" Margin="3,3,0,0" Grid.Column="7" Grid.Row="3"/>
+                        <TextBlock Text="{DynamicResource lblBing}" Margin="0,3" Grid.Column="8" Grid.Row="3"/>
+
+                        <Label Content="{DynamicResource lblMusicSites}" Grid.Column="0" Grid.Row="4"/>
+                        <CheckBox Name="chkNokiaMusicUs" Margin="3,3,0,0" Grid.Column="1" Grid.Row="4"/>
+                        <TextBlock Text="Nokia Music" Margin="3,3,0,0" Grid.Column="2" Grid.Row="4"/>
+                        <CheckBox Name="chkMusicBrainzUs" Margin="3,3,0,0" Grid.Column="3" Grid.Row="4"/>
+                        <TextBlock Text="MusicBrainz" Margin="3,3,0,0" Grid.Column="4" Grid.Row="4"/>
+                        <CheckBox Name="chkAmazonMusic" Margin="3,3,0,0" Grid.Column="5" Grid.Row="4"/>
+                        <TextBlock Text="Amazon.com" Margin="3,3,0,0" Grid.Column="6" Grid.Row="4"/>
+                        <CheckBox Name="chkGraceNoteUs" Margin="3,3,0,0" Grid.Column="7" Grid.Row="4"/>
+                        <TextBlock Text="GraceNote" Margin="3,3,0,0" Grid.Column="8" Grid.Row="4"/>
+                        <CheckBox Name="chkLastFM" Margin="3,3,0,0" Grid.Column="9" Grid.Row="4"/>
+                        <TextBlock Text="LastFM" Margin="3,3,0,0" Grid.Column="10" Grid.Row="4"/>
+                        <CheckBox Name="chkBingMusic" Margin="3,3,0,0" Grid.Column="11" Grid.Row="4"/>
+                        <TextBlock Text="{DynamicResource lblBing}" Margin="0,3" Grid.Column="12" Grid.Row="4"/>
+
+                        <Label Content="{DynamicResource lblNdsSites}" Grid.Column="0" Grid.Row="5"/>
+                        <CheckBox Name="chkTGDBNds" Margin="3,3,0,0" Grid.Column="1" Grid.Row="5"/>
+                        <TextBlock Text="TheGamesDB.net" Margin="3,3,0,0" Grid.Column="2" Grid.Row="5"/>
+                        <CheckBox Name="chkAmazonNds" Margin="3,3,0,0" Grid.Column="3" Grid.Row="5"/>
+                        <TextBlock Text="Amazon.com" Margin="3,3,0,0" Grid.Column="4" Grid.Row="5"/>
+                        <CheckBox Name="chkBingNds" Margin="3,3,0,0" Grid.Column="5" Grid.Row="5"/>
+                        <TextBlock Text="{DynamicResource lblBing}" Margin="0,3" Grid.Column="6" Grid.Row="5"/>
+
+                        <Label Content="{DynamicResource lblSeriesSites}" Grid.Column="0" Grid.Row="6"/>
+                        <CheckBox Name="chkTVDBSeries" Margin="3,3,0,0" Grid.Column="1" Grid.Row="6"/>
+                        <TextBlock Text="The TVDB Us " Margin="3,3,0,0" Grid.Column="2" Grid.Row="6"/>
+                        <CheckBox Name="chkAmazonSeries" Margin="3,3,0,0" Grid.Column="3" Grid.Row="6"/>
+                        <TextBlock Text="Amazon.com" Margin="3,3,0,0" Grid.Column="4" Grid.Row="6"/>
+                        <CheckBox Name="chkIMDBSeries" Margin="3,3,0,0" Grid.Column="5" Grid.Row="6"/>
+                        <TextBlock Text="IMDB" Margin="3,3,0,0" Grid.Column="6" Grid.Row="6"/>
+                        <CheckBox Name="chkBingSeries" Margin="3,3,0,0" Grid.Column="7" Grid.Row="6"/>
+                        <TextBlock Text="{DynamicResource lblBing}" Margin="0,3" Grid.Column="8" Grid.Row="6"/>
+
+                        <Label Content="{DynamicResource lblXXXSites}" Grid.Column="0" Grid.Row="7" Grid.RowSpan="2" VerticalAlignment="Center"/>
+                        <CheckBox Name="chkAdultDvdEmpire" Margin="3,3,0,0" Grid.Column="1" Grid.Row="7"/>
+                        <TextBlock Text="AdultDvdEmpire " Margin="3,3,0,0" Grid.Column="2" Grid.Row="7"/>
+                        <CheckBox Name="chkSugarVod" Margin="3,3,0,0" Grid.Column="3" Grid.Row="7"/>
+                        <TextBlock Text="SugarVod" Margin="3,3,0,0" Grid.Column="4" Grid.Row="7"/>
+                        <CheckBox Name="chkCdUniverse" Margin="3,3,0,0" Grid.Column="5" Grid.Row="7"/>
+                        <TextBlock Text="CdUniverse" Margin="3,3,0,0" Grid.Column="6" Grid.Row="7"/>
+                        <CheckBox Name="chkOrgazmik" Margin="3,3,0,0" Grid.Column="7" Grid.Row="7"/>
+                        <TextBlock Text="Orgazmik" Margin="3,3,0,0" Grid.Column="8" Grid.Row="7"/>
+                        <CheckBox Name="chkHotMovies" Margin="3,3,0,0" Grid.Column="1" Grid.Row="8"/>
+                        <TextBlock Text="HotMovies" Margin="3,3,0,0" Grid.Column="2" Grid.Row="8"/>
+                        <CheckBox Name="chkAdultBluRayHdDvd" Margin="3,3,0,0" Grid.Column="3" Grid.Row="8"/>
+                        <TextBlock Text="AdultBluRayHdDvd" Margin="3,3,0,0" Grid.Column="4" Grid.Row="8"/>
+                        <CheckBox Name="chkTMDBXXX" Margin="3,3,0,0" Grid.Column="5" Grid.Row="8"/>
+                        <TextBlock Text="The Movie DB " Margin="3,3,0,0" Grid.Column="6" Grid.Row="8"/>
+                        <CheckBox Name="chkBingXXX" Margin="3,3,0,0" Grid.Column="7" Grid.Row="8"/>
+                        <TextBlock Text="{DynamicResource lblBing}" Margin="0,3" Grid.Column="8" Grid.Row="8"/>
+                    </Grid>
+                </GroupBox>
+            </TabItem>
+            <TabItem Header="{DynamicResource hedFrenchSites}" FontSize="{DynamicResource SmallTextSize}">
+                <GroupBox>
+                    <GroupBox.Header>
+                        <CheckBox Name="chkFrSelectAll" Content="{DynamicResource chkSelectAll}" Click="chkUsSelectAll_Click"/>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Content="{DynamicResource lblAppsSites}" Grid.Column="0" Grid.Row="0"/>
+                        <CheckBox Name="chkAmazonFrApps" Margin="3,3,0,0" Grid.Column="1" Grid.Row="0"/>
+                        <TextBlock Text="Amazon.fr" Margin="3,3,0,0" Grid.Column="2" Grid.Row="0"/>
+                        
+                        <Label Content="{DynamicResource lblBookSites}" Grid.Column="0" Grid.Row="1"/>
+                        <CheckBox Name="chkAmazonFrBooks" Margin="3,3,0,0" Grid.Column="1" Grid.Row="1"/>
+                        <TextBlock Text="Amazon.fr" Margin="3,3,0,0" Grid.Column="2" Grid.Row="1"/>
+
+                        <Label Content="{DynamicResource lblGamesSites}" Grid.Column="0" Grid.Row="2"/>
+                        <CheckBox Name="chkJeuxVideo" Margin="3,3,0,0" Grid.Column="1" Grid.Row="2"/>
+                        <TextBlock Text="JeuxVideo.com" Margin="3,3,0,0" Grid.Column="2" Grid.Row="2"/>
+                        <CheckBox Name="chkAmazonFrGames" Margin="3,3,0,0" Grid.Column="3" Grid.Row="2"/>
+                        <TextBlock Text="Amazon.fr" Margin="3,3,0,0" Grid.Column="4" Grid.Row="2"/>
+
+                        <Label Content="{DynamicResource lblMoviesSites}" Grid.Column="0" Grid.Row="3"/>
+                        <CheckBox Name="chkTMDBFrMovies" Margin="3,3,0,0" Grid.Column="1" Grid.Row="3"/>
+                        <TextBlock Text="The Movie DB Fr " Margin="3,3,0,0" Grid.Column="2" Grid.Row="3"/>
+                        <CheckBox Name="chkAlloCineMovies" Margin="3,3,0,0" Grid.Column="3" Grid.Row="3"/>
+                        <TextBlock Text="AlloCines" Margin="3,3,0,0" Grid.Column="4" Grid.Row="3"/>
+                        <CheckBox Name="chkAmazonFrMovie" Margin="3,3,0,0" Grid.Column="5" Grid.Row="3"/>
+                        <TextBlock Text="Amazon.fr" Margin="3,3,0,0" Grid.Column="6" Grid.Row="3"/>
+
+                        <Label Content="{DynamicResource lblMusicSites}" Grid.Column="0" Grid.Row="4"/>
+                        <CheckBox Name="chkAmazonFrMusic" Margin="3,3,0,0" Grid.Column="1" Grid.Row="4"/>
+                        <TextBlock Text="Amazon.Fr" Margin="3,3,0,0" Grid.Column="2" Grid.Row="4"/>
+                        <CheckBox Name="chkFnacMusic" Margin="3,3,0,0" Grid.Column="3" Grid.Row="4"/>
+                        <TextBlock Text="Fnac.fr" Margin="3,3,0,0" Grid.Column="4" Grid.Row="4"/>
+
+                        <Label Content="{DynamicResource lblNdsSites}" Grid.Column="0" Grid.Row="5"/>
+                        <CheckBox Name="chkJeuxVideoNds" Margin="3,3,0,0" Grid.Column="1" Grid.Row="5"/>
+                        <TextBlock Text="JeuxVideo.com" Margin="3,3,0,0" Grid.Column="2" Grid.Row="5"/>
+                        <CheckBox Name="chkAmazonFrNds" Margin="3,3,0,0" Grid.Column="3" Grid.Row="5"/>
+                        <TextBlock Text="Amazon.fr" Margin="3,3,0,0" Grid.Column="4" Grid.Row="5"/>
+
+                        <Label Content="{DynamicResource lblSeriesSites}" Grid.Column="0" Grid.Row="6"/>
+                        <CheckBox Name="chkTVDBFrSeries" Margin="3,3,0,0" Grid.Column="1" Grid.Row="6"/>
+                        <TextBlock Text="The TVDB Fr " Margin="3,3,0,0" Grid.Column="2" Grid.Row="6"/>
+                        <CheckBox Name="chkAlloCineSeries" Margin="3,3,0,0" Grid.Column="3" Grid.Row="6"/>
+                        <TextBlock Text="AlloCines" Margin="3,3,0,0" Grid.Column="4" Grid.Row="6"/>
+                        <CheckBox Name="chkAmazonFrSeries" Margin="3,3,0,0" Grid.Column="5" Grid.Row="6"/>
+                        <TextBlock Text="Amazon.fr" Margin="3,3,0,0" Grid.Column="6" Grid.Row="6"/>
+
+                        <Label Content="{DynamicResource lblXXXSites}" Grid.Column="0" Grid.Row="7"/>
+                        <CheckBox Name="chkDorcelShop" Margin="3,3,0,0" Grid.Column="1" Grid.Row="7"/>
+                        <TextBlock Text="Dorcel Shop " Margin="3,3,0,0" Grid.Column="2" Grid.Row="7"/>
+                        <CheckBox Name="chkAmazonFrXXX" Margin="3,3,0,0" Grid.Column="3" Grid.Row="7"/>
+                        <TextBlock Text="Amazon.fr" Margin="3,3,0,0" Grid.Column="4" Grid.Row="7"/>
+                    </Grid>
+                </GroupBox>
+            </TabItem>
+            <TabItem Header="{DynamicResource hedGermanSites}" FontSize="{DynamicResource SmallTextSize}">
+                <GroupBox>
+                    <GroupBox.Header>
+                        <CheckBox Name="chkDeSelectAll" Content="{DynamicResource chkSelectAll}" Click="chkUsSelectAll_Click"/>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Content="{DynamicResource lblAppsSites}" Grid.Column="0" Grid.Row="0"/>
+                        <CheckBox Name="chkAmazonDeApps" Margin="3,3,0,0" Grid.Column="1" Grid.Row="0"/>
+                        <TextBlock Text="Amazon.de" Margin="3,3,0,0" Grid.Column="2" Grid.Row="0"/>
+                        
+                        <Label Content="{DynamicResource lblBookSites}" Grid.Column="0" Grid.Row="1"/>
+                        <CheckBox Name="chkAmazonDeBooks" Margin="3,3,0,0" Grid.Column="1" Grid.Row="1"/>
+                        <TextBlock Text="Amazon.de" Margin="3,3,0,0" Grid.Column="2" Grid.Row="1"/>
+
+                        <Label Content="{DynamicResource lblGamesSites}" Grid.Column="0" Grid.Row="2"/>
+                        <CheckBox Name="chkAmazonDeGames" Margin="3,3,0,0" Grid.Column="1" Grid.Row="2"/>
+                        <TextBlock Text="Amazon.de" Margin="3,3,0,0" Grid.Column="2" Grid.Row="2"/>
+
+                        <Label Content="{DynamicResource lblMoviesSites}" Grid.Column="0" Grid.Row="3"/>
+                        <CheckBox Name="chkTMDBDeMovies" Margin="3,3,0,0" Grid.Column="1" Grid.Row="3"/>
+                        <TextBlock Text="The Movie DB De " Margin="3,3,0,0" Grid.Column="2" Grid.Row="3"/>
+                        <CheckBox Name="chkAmazonDeMovie" Margin="3,3,0,0" Grid.Column="3" Grid.Row="3"/>
+                        <TextBlock Text="Amazon.de" Margin="3,3,0,0" Grid.Column="4" Grid.Row="3"/>
+
+                        <Label Content="{DynamicResource lblMusicSites}" Grid.Column="0" Grid.Row="4"/>
+                        <CheckBox Name="chkAmazonDeMusic" Margin="3,3,0,0" Grid.Column="1" Grid.Row="4"/>
+                        <TextBlock Text="Amazon.de" Margin="3,3,0,0" Grid.Column="2" Grid.Row="4"/>
+
+                        <Label Content="{DynamicResource lblNdsSites}" Grid.Column="0" Grid.Row="5"/>
+                        <CheckBox Name="chkAmazonDeNds" Margin="3,3,0,0" Grid.Column="1" Grid.Row="5"/>
+                        <TextBlock Text="Amazon.de" Margin="3,3,0,0" Grid.Column="2" Grid.Row="5"/>
+
+                        <Label Content="{DynamicResource lblSeriesSites}" Grid.Column="0" Grid.Row="6"/>
+                        <CheckBox Name="chkTVDBDeSeries" Margin="3,3,0,0" Grid.Column="1" Grid.Row="6"/>
+                        <TextBlock Text="The TVDB De " Margin="3,3,0,0" Grid.Column="2" Grid.Row="6"/>
+                        <CheckBox Name="chkAmazonDeSeries" Margin="3,3,0,0" Grid.Column="3" Grid.Row="6"/>
+                        <TextBlock Text="Amazon.de" Margin="3,3,0,0" Grid.Column="4" Grid.Row="6"/>
+
+                        <Label Content="{DynamicResource lblXXXSites}" Grid.Column="0" Grid.Row="7"/>
+                    </Grid>
+                </GroupBox>
+            </TabItem>
+            <TabItem Header="{DynamicResource hedItalianSites}" FontSize="{DynamicResource SmallTextSize}">
+                <GroupBox>
+                    <GroupBox.Header>
+                        <CheckBox Name="chkItSelectAll" Content="{DynamicResource chkSelectAll}" Click="chkUsSelectAll_Click"/>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="{DynamicResource lblAppsSites}" Grid.Column="0" Grid.Row="0"/>
+                        <CheckBox Name="chkAmazonItApps" Margin="3,3,0,0" Grid.Column="1" Grid.Row="0"/>
+                        <TextBlock Text="Amazon.it" Margin="3,3,0,0" Grid.Column="2" Grid.Row="0"/>
+
+                        <Label Content="{DynamicResource lblBookSites}" Grid.Column="0" Grid.Row="1"/>
+                        <CheckBox Name="chkAmazonItBooks" Margin="3,3,0,0" Grid.Column="1" Grid.Row="1"/>
+                        <TextBlock Text="Amazon.it" Margin="3,3,0,0" Grid.Column="2" Grid.Row="1"/>
+
+                        <Label Content="{DynamicResource lblGamesSites}" Grid.Column="0" Grid.Row="2"/>
+                        <CheckBox Name="chkAmazonItGames" Margin="3,3,0,0" Grid.Column="1" Grid.Row="2"/>
+                        <TextBlock Text="Amazon.it" Margin="3,3,0,0" Grid.Column="2" Grid.Row="2"/>
+
+                        <Label Content="{DynamicResource lblMoviesSites}" Grid.Column="0" Grid.Row="3"/>
+                        <CheckBox Name="chkTMDBItMovies" Margin="3,3,0,0" Grid.Column="1" Grid.Row="3"/>
+                        <TextBlock Text="The Movie DB It " Margin="3,3,0,0" Grid.Column="2" Grid.Row="3"/>
+                        <CheckBox Name="chkAmazonItMovie" Margin="3,3,0,0" Grid.Column="3" Grid.Row="3"/>
+                        <TextBlock Text="Amazon.it" Margin="3,3,0,0" Grid.Column="4" Grid.Row="3"/>
+
+                        <Label Content="{DynamicResource lblMusicSites}" Grid.Column="0" Grid.Row="4"/>
+                        <CheckBox Name="chkAmazonItMusic" Margin="3,3,0,0" Grid.Column="1" Grid.Row="4"/>
+                        <TextBlock Text="Amazon.it" Margin="3,3,0,0" Grid.Column="2" Grid.Row="4"/>
+
+                        <Label Content="{DynamicResource lblNdsSites}" Grid.Column="0" Grid.Row="5"/>
+                        <CheckBox Name="chkAmazonItNds" Margin="3,3,0,0" Grid.Column="1" Grid.Row="5"/>
+                        <TextBlock Text="Amazon.it" Margin="3,3,0,0" Grid.Column="2" Grid.Row="5"/>
+
+                        <Label Content="{DynamicResource lblSeriesSites}" Grid.Column="0" Grid.Row="6"/>
+                        <CheckBox Name="chkTVDBItSeries" Margin="3,3,0,0" Grid.Column="1" Grid.Row="6"/>
+                        <TextBlock Text="The TVDB It " Margin="3,3,0,0" Grid.Column="2" Grid.Row="6"/>
+                        <CheckBox Name="chkAmazonItSeries" Margin="3,3,0,0" Grid.Column="3" Grid.Row="6"/>
+                        <TextBlock Text="Amazon.it" Margin="3,3,0,0" Grid.Column="4" Grid.Row="6"/>
+
+                        <Label Content="{DynamicResource lblXXXSites}" Grid.Column="0" Grid.Row="7"/>
+                    </Grid>
+                </GroupBox>
+            </TabItem>
+            <TabItem Header="{DynamicResource hedChineseSites}" FontSize="{DynamicResource SmallTextSize}">
+                <GroupBox>
+                    <GroupBox.Header>
+                        <CheckBox Name="chkCnSelectAll" Content="{DynamicResource chkSelectAll}" Click="chkUsSelectAll_Click"/>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="{DynamicResource lblAppsSites}" Grid.Column="0" Grid.Row="0"/>
+                        <CheckBox Name="chkAmazonCnApps" Margin="3,3,0,0" Grid.Column="1" Grid.Row="0"/>
+                        <TextBlock Text="Amazon.cn" Margin="3,3,0,0" Grid.Column="2" Grid.Row="0"/>
+
+                        <Label Content="{DynamicResource lblBookSites}" Grid.Column="0" Grid.Row="1"/>
+                        <CheckBox Name="chkAmazonCnBooks" Margin="3,3,0,0" Grid.Column="1" Grid.Row="1"/>
+                        <TextBlock Text="Amazon.cn" Margin="3,3,0,0" Grid.Column="2" Grid.Row="1"/>
+
+                        <Label Content="{DynamicResource lblGamesSites}" Grid.Column="0" Grid.Row="2"/>
+                        <CheckBox Name="chkAmazonCnGames" Margin="3,3,0,0" Grid.Column="1" Grid.Row="2"/>
+                        <TextBlock Text="Amazon.cn" Margin="3,3,0,0" Grid.Column="2" Grid.Row="2"/>
+
+                        <Label Content="{DynamicResource lblMoviesSites}" Grid.Column="0" Grid.Row="3"/>
+                        <CheckBox Name="chkTMDBCnMovies" Margin="3,3,0,0" Grid.Column="1" Grid.Row="3"/>
+                        <TextBlock Text="The Movie DB Cn " Margin="3,3,0,0" Grid.Column="2" Grid.Row="3"/>
+                        <CheckBox Name="chkAmazonCnMovie" Margin="3,3,0,0" Grid.Column="3" Grid.Row="3"/>
+                        <TextBlock Text="Amazon.cn" Margin="3,3,0,0" Grid.Column="4" Grid.Row="3"/>
+
+                        <Label Content="{DynamicResource lblMusicSites}" Grid.Column="0" Grid.Row="4"/>
+                        <CheckBox Name="chkAmazonCnMusic" Margin="3,3,0,0" Grid.Column="1" Grid.Row="4"/>
+                        <TextBlock Text="Amazon.cn" Margin="3,3,0,0" Grid.Column="2" Grid.Row="4"/>
+
+                        <Label Content="{DynamicResource lblNdsSites}" Grid.Column="0" Grid.Row="5"/>
+
+                        <Label Content="{DynamicResource lblSeriesSites}" Grid.Column="0" Grid.Row="6"/>
+                        <CheckBox Name="chkTVDBCnSeries" Margin="3,3,0,0" Grid.Column="1" Grid.Row="6"/>
+                        <TextBlock Text="The TVDB Cn " Margin="3,3,0,0" Grid.Column="2" Grid.Row="6"/>
+                        <CheckBox Name="chkAmazonCnSeries" Margin="3,3,0,0" Grid.Column="3" Grid.Row="6"/>
+                        <TextBlock Text="Amazon.cn" Margin="3,3,0,0" Grid.Column="4" Grid.Row="6"/>
+
+                        <Label Content="{DynamicResource lblXXXSites}" Grid.Column="0" Grid.Row="7"/>
+                    </Grid>
+                </GroupBox>
+            </TabItem>
+            <TabItem Header="{DynamicResource hedSpanishSites}" FontSize="{DynamicResource SmallTextSize}">
+                <GroupBox>
+                    <GroupBox.Header>
+                        <CheckBox Name="chkSPSelectAll" Content="{DynamicResource chkSelectAll}" Click="chkUsSelectAll_Click"/>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="{DynamicResource lblAppsSites}" Grid.Column="0" Grid.Row="0"/>
+                        <CheckBox Name="chkAmazonSpApps" Margin="3,3,0,0" Grid.Column="1" Grid.Row="0"/>
+                        <TextBlock Text="Amazon.es" Margin="3,3,0,0" Grid.Column="2" Grid.Row="0"/>
+
+                        <Label Content="{DynamicResource lblBookSites}" Grid.Column="0" Grid.Row="1"/>
+                        <CheckBox Name="chkAmazonSpBooks" Margin="3,3,0,0" Grid.Column="1" Grid.Row="1"/>
+                        <TextBlock Text="Amazon.es" Margin="3,3,0,0" Grid.Column="2" Grid.Row="1"/>
+
+                        <Label Content="{DynamicResource lblGamesSites}" Grid.Column="0" Grid.Row="2"/>
+                        <CheckBox Name="chkAmazonSpGames" Margin="3,3,0,0" Grid.Column="1" Grid.Row="2"/>
+                        <TextBlock Text="Amazon.es" Margin="3,3,0,0" Grid.Column="2" Grid.Row="2"/>
+
+                        <Label Content="{DynamicResource lblMoviesSites}" Grid.Column="0" Grid.Row="3"/>
+                        <CheckBox Name="chkTMDBSpMovies" Margin="3,3,0,0" Grid.Column="1" Grid.Row="3"/>
+                        <TextBlock Text="The Movie DB es " Margin="3,3,0,0" Grid.Column="2" Grid.Row="3"/>
+                        <CheckBox Name="chkAmazonSpMovie" Margin="3,3,0,0" Grid.Column="3" Grid.Row="3"/>
+                        <TextBlock Text="Amazon.es" Margin="3,3,0,0" Grid.Column="4" Grid.Row="3"/>
+
+                        <Label Content="{DynamicResource lblMusicSites}" Grid.Column="0" Grid.Row="4"/>
+                        <CheckBox Name="chkAmazonSpMusic" Margin="3,3,0,0" Grid.Column="1" Grid.Row="4"/>
+                        <TextBlock Text="Amazon.es" Margin="3,3,0,0" Grid.Column="2" Grid.Row="4"/>
+
+                        <Label Content="{DynamicResource lblNdsSites}" Grid.Column="0" Grid.Row="5"/>
+                        <CheckBox Name="chkAmazonSpNds" Margin="3,3,0,0" Grid.Column="1" Grid.Row="5"/>
+                        <TextBlock Text="Amazon.es" Margin="3,3,0,0" Grid.Column="2" Grid.Row="5"/>
+
+                        <Label Content="{DynamicResource lblSeriesSites}" Grid.Column="0" Grid.Row="6"/>
+                        <CheckBox Name="chkTVDBSpSeries" Margin="3,3,0,0" Grid.Column="1" Grid.Row="6"/>
+                        <TextBlock Text="The TVDB es " Margin="3,3,0,0" Grid.Column="2" Grid.Row="6"/>
+                        <CheckBox Name="chkAmazonSpSeries" Margin="3,3,0,0" Grid.Column="3" Grid.Row="6"/>
+                        <TextBlock Text="Amazon.es" Margin="3,3,0,0" Grid.Column="4" Grid.Row="6"/>
+
+                        <Label Content="{DynamicResource lblXXXSites}" Grid.Column="0" Grid.Row="7"/>
+                    </Grid>
+                </GroupBox>
+            </TabItem>
+            <TabItem Header="{DynamicResource Portuguese}" FontSize="{DynamicResource SmallTextSize}">
+                <GroupBox>
+                    <GroupBox.Header>
+                        <CheckBox Name="chkPpSelectAll" Content="{DynamicResource chkSelectAll}" Click="chkUsSelectAll_Click"/>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="{DynamicResource lblAppsSites}" Grid.Column="0" Grid.Row="0"/>
+                      
+                        <Label Content="{DynamicResource lblBookSites}" Grid.Column="0" Grid.Row="1"/>
+                      
+                        <Label Content="{DynamicResource lblGamesSites}" Grid.Column="0" Grid.Row="2"/>
+                      
+                        <Label Content="{DynamicResource lblMoviesSites}" Grid.Column="0" Grid.Row="3"/>
+                        <CheckBox Name="chkTMDBPtMovies" Margin="3,3,0,0" Grid.Column="1" Grid.Row="3"/>
+                        <TextBlock Text="The Movie DB" Margin="3,3,0,0" Grid.Column="2" Grid.Row="3"/>
+                        <CheckBox Name="chkAdoroCinemaMovies" Margin="3,3,0,0" Grid.Column="3" Grid.Row="3"/>
+                        <TextBlock Text="AdoroCinema" Margin="3,3,0,0" Grid.Column="4" Grid.Row="3"/>
+
+                        <Label Content="{DynamicResource lblMusicSites}" Grid.Column="0" Grid.Row="4"/>
+                      
+                        <Label Content="{DynamicResource lblNdsSites}" Grid.Column="0" Grid.Row="5"/>
+                      
+                        <Label Content="{DynamicResource lblSeriesSites}" Grid.Column="0" Grid.Row="6"/>
+                        <CheckBox Name="chkTVDBPtSeries" Margin="3,3,0,0" Grid.Column="1" Grid.Row="6"/>
+                        <TextBlock Text="The TVDB" Margin="3,3,0,0" Grid.Column="2" Grid.Row="6"/>
+
+                        <Label Content="{DynamicResource lblXXXSites}" Grid.Column="0" Grid.Row="7"/>
+                    </Grid>
+                </GroupBox>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Row="1" Background="{DynamicResource WorkBackgroundBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Ok" Style="{DynamicResource ButtonStyle}" Click="cmdSave_Click"  IsDefault="True" HorizontalAlignment="Right" Grid.Column="1">
+                    <Button.Content>
+                        <Image Source="/Images/check.png" ToolTip="Ok"/>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="Cancel" Style="{DynamicResource ButtonStyle}" Click="cmdCancel_Click"  IsCancel="True"  HorizontalAlignment="Left" Grid.Column="0">
+                    <Button.Content>
+                        <Image Source="/Images/cancel.png" ToolTip="Cancel"/>
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Controls:BorderLessWindow>

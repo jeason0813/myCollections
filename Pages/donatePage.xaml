@@ -1,0 +1,29 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.DonatePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:myCollections.Controls"
+        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize" Topmost="True" ShowClose="True">
+    
+    <DockPanel LastChildFill="True">
+        <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="15" FontWeight="ExtraBold"/>
+        <Button ToolTip="{DynamicResource Donate}" DockPanel.Dock="Bottom"  Click="Button_Click" 
+                    Style="{DynamicResource DonateButton}" HorizontalAlignment="Center" Margin="5">
+            <Image Source="..\Images\Donate.png"/>
+        </Button>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>    
+            <Grid.RowDefinitions>
+                <RowDefinition Height="57"/>
+                <RowDefinition Height="101"/>
+                <RowDefinition Height="43"/>
+            </Grid.RowDefinitions>
+            <TextBlock TextWrapping="Wrap" Margin="10" FontSize="15" FontWeight="Bold" Text="Thanks for your consideration in donating for my freeware projects" />
+            <TextBlock TextWrapping="Wrap" Margin="10" FontSize="15" Grid.Row="1" Text="It is through these donations that I am encouraged to release more freeware, improve my current freeware. 
+I currently process my donations through PayPal, however if you wish to donate in another way then please contact me :"/>
+            <TextBlock TextWrapping="Wrap" Margin="10" FontSize="15" Grid.Row="2" HorizontalAlignment="Center" Text="myCollections.team@gmail.com"/>
+        </Grid>
+    </DockPanel>
+</Controls:BorderLessWindow>

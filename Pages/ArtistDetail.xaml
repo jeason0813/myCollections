@@ -1,0 +1,63 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.ArtistDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:myCollections.Controls"
+    xmlns:uc="clr-namespace:myCollections.UserControls.Common"
+    WindowStartupLocation="CenterScreen" Height="600" Width="700">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        
+        <uc:UcArtistDetail x:Name="artistDetail"/>
+
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="{DynamicResource WorkBackgroundBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="cmdCancel" Grid.Column="0" Margin="9,0,0,0" IsCancel="True" Click="cmdCancel_Click" Style="{DynamicResource ButtonStyle}" >
+                <Button.Content>
+                    <Image Source="/Images/cancel.png" ToolTip="Cancel"/>
+                </Button.Content>
+            </Button>
+
+            <Controls:SplitButton Grid.Column="1" Content="{DynamicResource cmdUpdateWeb}" Margin="5" Width="150"
+                                  Click="cmdUpdateWeb_Click" x:Name="cmdUpdateWeb">
+                <Controls:SplitButton.ButtonMenuItemsSource>
+                    <MenuItem Header="The Movie DB" Click="mniTMDB_Click">
+                        <MenuItem.Icon>
+                            <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/tmdb-logo.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="AlloCine" Click="mniAlloCine_Click">
+                        <MenuItem.Icon>
+                            <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/LogoAllocine.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="AdultEmpire" Click="mniAdultEmpire_Click">
+                        <MenuItem.Icon>
+                            <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/adultdvdempirecom-logo.jpg"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Iafd" Click="mniIafd_Click"/>
+                    <MenuItem Header="Bing" Click="mniBing_Click">
+                        <MenuItem.Icon>
+                            <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/Bing.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </Controls:SplitButton.ButtonMenuItemsSource>
+            </Controls:SplitButton>
+
+            <Button Name="cmdUpdate"  Grid.Column="2" Margin="0,0,9,0" Click="cmdUpdate_Click" IsDefault="True" Style="{DynamicResource ButtonStyle}">
+                <Button.Content>
+                    <Image Source="/Images/check.png" ToolTip="Ok"/>
+                </Button.Content>
+            </Button>
+        </Grid>
+    </Grid>
+</Controls:BorderLessWindow>

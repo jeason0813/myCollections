@@ -1,0 +1,560 @@
+﻿<myControls:BorderLessWindow x:Class="myCollections.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:myControls="clr-namespace:myCollections.Controls"
+    xmlns:myUC="clr-namespace:myCollections.UserControls.Common"
+    xmlns:converters="clr-namespace:myCollections.Utils"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" d:DesignHeight="697" d:DesignWidth="952"
+    Top="{converters:SettingBinding Top}" Left="{converters:SettingBinding Left}" 
+    Height="{converters:SettingBinding Height}" Width="{converters:SettingBinding Width}" 
+    WindowState="{converters:SettingBinding WindowState}" WindowStartupLocation="CenterScreen"                        
+    ContentRendered="BorderLessWindow_ContentRendered" ShowClose="True"
+    Title="myCollections " KeyUp="MainStack_KeyUp" Closing="MainPage_Closing">
+    <Window.Resources>
+        <converters:ImageHeightConverter x:Key="imageHeightConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" Name="MainColumn" />
+            <ColumnDefinition Width="20" Name="panelColumn" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Name="MainRow" Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Name="MainMenu" Panel.ZIndex="6">
+            <MenuItem Header="{DynamicResource Actions}" Style="{DynamicResource ForeGroundMenuFirst}">
+                <MenuItem Header="{DynamicResource Add}">
+                    <MenuItem Header="{DynamicResource AddApps}" IsEnabled="True"
+                              Click="mniAddApps_Click"  ToolTip="{DynamicResource ToolTipAddApps}"/>
+                    <MenuItem Header="{DynamicResource AddBook}" IsEnabled="True"
+                              Click="mniAddBooks_Click" ToolTip="{DynamicResource ToolTipAddBook}"/>
+                    <MenuItem Header="{DynamicResource AddGames}" Click="mniAddGamez_Click" ToolTip="{DynamicResource ToolTipAddGames}"/>
+                    <MenuItem Header="{DynamicResource AddMedia}" Click="mniAddMedia_Click" 
+                              ToolTip="{DynamicResource ToolTipAddMedia}" InputGestureText="Ctrl+A">
+                        <MenuItem.Icon>
+                            <Image Source="pack://application:,,,/myCollections;component/Images/AddMedia25.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource AddMovie}" Click="mniAddMovie_Click" ToolTip="{DynamicResource ToolTipAddMovie}"/>
+                    <MenuItem Header="{DynamicResource AddMusic}" Click="mniAddMusic_Click" ToolTip="{DynamicResource ToolTipAddMusic}"/>
+                    <MenuItem Header="{DynamicResource AddNds}" Click="mniAddNds_Click" ToolTip="{DynamicResource ToolTipAddNDS}"/>
+                    <MenuItem Header="{DynamicResource AddSeries}" Click="mniAddSeries_Click" ToolTip="{DynamicResource ToolTipAddSeries}"/>
+                    <MenuItem Header="{DynamicResource AddXXX}" Click="mniAddXXX_Click" ToolTip="{DynamicResource ToolTipAddXXX}"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="{DynamicResource Delete}">
+                    <MenuItem Header="{DynamicResource DeleteMedia}" Name="mnuDelMedia" Click="mnuDelMedia_Click"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="{DynamicResource Export}" IsEnabled="True">
+                    <MenuItem Header="HTML" IsEnabled="True" >
+                        <MenuItem Header="{DynamicResource ExportAll}" Name="mnuExportAll" Click="mnuExport_Click" CommandParameter="All" ToolTip="{DynamicResource ToolTipExportAll}"/>
+                        <MenuItem Header="{DynamicResource Apps}" Name="mnuExportApps" 
+                             Click="mnuExport_Click" CommandParameter="Apps" ToolTip="{DynamicResource ToolTipExportApps}"/>
+                        <MenuItem Header="{DynamicResource Books}" Name="mnuExportBooks" 
+                              Click="mnuExport_Click" CommandParameter="Books" ToolTip="{DynamicResource ToolTipExportBooks}"/>
+                        <MenuItem Header="{DynamicResource Gamez}" Name="mnuExportGames"  
+                              Click="mnuExport_Click" CommandParameter="Games" ToolTip="{DynamicResource ToolTipExportGames}"/>
+                        <MenuItem Header="{DynamicResource Movies}" Name="mnuExportMovie"  
+                              Click="mnuExport_Click" CommandParameter="Movies" ToolTip="{DynamicResource ToolTipExportMovie}"/>
+                        <MenuItem Header="{DynamicResource Music}" Name="mnuExportMusic"  
+                              Click="mnuExport_Click" CommandParameter="Music" ToolTip="{DynamicResource ToolTipExportMusic}"/>
+                        <MenuItem Header="{DynamicResource NDS}" Name="mnuExportNds"   
+                             Click="mnuExport_Click" CommandParameter="Nds" ToolTip="{DynamicResource ToolTipExportNds}"/>
+                        <MenuItem Header="{DynamicResource Series}" Name="mnuExportSeries"  
+                             Click="mnuExport_Click" CommandParameter="Series" ToolTip="{DynamicResource ToolTipExportSeries}"/>
+                        <MenuItem Header="{DynamicResource XXX}" Name="mnuExportXXX"  
+                               Click="mnuExport_Click" CommandParameter="XXX" ToolTip="{DynamicResource ToolTipExportXXX}"/>
+                    </MenuItem>
+                    <MenuItem Header="XML" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ExportAll}" Name="mnuExportAllXML"  
+                              Click="mnuExportXML_Click"  CommandParameter="All" ToolTip="{DynamicResource ToolTipExportAllXML}"/>
+                        <MenuItem Header="{DynamicResource Apps}" Name="mnuExportAppsXML"  
+                             Click="mnuExportXML_Click" CommandParameter="Apps" ToolTip="{DynamicResource ToolTipExportAppsXML}"/>
+                        <MenuItem Header="{DynamicResource Books}" Name="mnuExportBooksXML"  
+                              Click="mnuExportXML_Click" CommandParameter="Books" ToolTip="{DynamicResource ToolTipExportBooksXML}"/>
+                        <MenuItem Header="{DynamicResource Gamez}" Name="mnuExportGamesXML"  
+                              Click="mnuExportXML_Click" CommandParameter="Games" ToolTip="{DynamicResource ToolTipExportGamesXML}"/>
+                        <MenuItem Header="{DynamicResource Movies}" Name="mnuExportMovieXML"  
+                              Click="mnuExportXML_Click" CommandParameter="Movies" ToolTip="{DynamicResource ToolTipExportMovieXML}"/>
+                        <MenuItem Header="{DynamicResource Music}" Name="mnuExportMusicXML"  
+                              Click="mnuExportXML_Click" CommandParameter="Music" ToolTip="{DynamicResource ToolTipExportMusicXML}"/>
+                        <MenuItem Header="{DynamicResource NDS}" Name="mnuExportNdsXML"   
+                             Click="mnuExportXML_Click" CommandParameter="Nds" ToolTip="{DynamicResource ToolTipExportNdsXML}"/>
+                        <MenuItem Header="{DynamicResource Series}" Name="mnuExportSeriesXML"  
+                             Click="mnuExportXML_Click" CommandParameter="Series" ToolTip="{DynamicResource ToolTipExportSeriesXML}"/>
+                        <MenuItem Header="{DynamicResource XXX}" Name="mnuExportXXXXML"  
+                               Click="mnuExportXML_Click" CommandParameter="XXX" ToolTip="{DynamicResource ToolTipExportXXXXML}"/>
+                    </MenuItem>
+                    <MenuItem Header="PDF" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ExportAll}" Name="mnuExportAllPDF"  
+                              Click="mnuExportPDF_Click"  CommandParameter="All" ToolTip="{DynamicResource ToolTipExportAllPDF}"/>
+                        <MenuItem Header="{DynamicResource Apps}" Name="mnuExportAppsPDF"  
+                             Click="mnuExportPDF_Click" CommandParameter="Apps" ToolTip="{DynamicResource ToolTipExportAppsPDF}"/>
+                        <MenuItem Header="{DynamicResource Books}" Name="mnuExportBooksPDF"  
+                              Click="mnuExportPDF_Click" CommandParameter="Books" ToolTip="{DynamicResource ToolTipExportBooksPDF}"/>
+                        <MenuItem Header="{DynamicResource Gamez}" Name="mnuExportGamesPDF"  
+                              Click="mnuExportPDF_Click" CommandParameter="Games" ToolTip="{DynamicResource ToolTipExportGamesPDF}"/>
+                        <MenuItem Header="{DynamicResource Movies}" Name="mnuExportMoviePDF"  
+                              Click="mnuExportPDF_Click" CommandParameter="Movies" ToolTip="{DynamicResource ToolTipExportMoviePDF}"/>
+                        <MenuItem Header="{DynamicResource Music}" Name="mnuExportMusicPDF"  
+                              Click="mnuExportPDF_Click" CommandParameter="Music" ToolTip="{DynamicResource ToolTipExportMusicPDF}"/>
+                        <MenuItem Header="{DynamicResource NDS}" Name="mnuExportNdsPDF"   
+                             Click="mnuExportPDF_Click" CommandParameter="Nds" ToolTip="{DynamicResource ToolTipExportNdsPDF}"/>
+                        <MenuItem Header="{DynamicResource Series}" Name="mnuExportSeriesPDF"  
+                             Click="mnuExportPDF_Click" CommandParameter="Series" ToolTip="{DynamicResource ToolTipExportSeriesPDF}"/>
+                        <MenuItem Header="{DynamicResource XXX}" Name="mnuExportXXXPDF"  
+                               Click="mnuExportPDF_Click" CommandParameter="XXX" ToolTip="{DynamicResource ToolTipExportXXXPDF}"/>
+                    </MenuItem>
+                    <MenuItem Header="CSV" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ExportAll}" 
+                              Click="mnuExportCSV_Click"  CommandParameter="All" ToolTip="{DynamicResource ToolTipExportAllCSV}"/>
+                        <MenuItem Header="{DynamicResource Apps}"  
+                             Click="mnuExportCSV_Click" CommandParameter="Apps" ToolTip="{DynamicResource ToolTipExportAppsCSV}"/>
+                        <MenuItem Header="{DynamicResource Books}" 
+                              Click="mnuExportCSV_Click" CommandParameter="Books" ToolTip="{DynamicResource ToolTipExportBooksCSV}"/>
+                        <MenuItem Header="{DynamicResource Gamez}" 
+                              Click="mnuExportCSV_Click" CommandParameter="Games" ToolTip="{DynamicResource ToolTipExportGamesCSV}"/>
+                        <MenuItem Header="{DynamicResource Movies}" 
+                              Click="mnuExportCSV_Click" CommandParameter="Movies" ToolTip="{DynamicResource ToolTipExportMovieCSV}"/>
+                        <MenuItem Header="{DynamicResource Music}" 
+                              Click="mnuExportCSV_Click" CommandParameter="Music" ToolTip="{DynamicResource ToolTipExportMusicCSV}"/>
+                        <MenuItem Header="{DynamicResource NDS}" 
+                             Click="mnuExportCSV_Click" CommandParameter="Nds" ToolTip="{DynamicResource ToolTipExportNdsCSV}"/>
+                        <MenuItem Header="{DynamicResource Series}" 
+                             Click="mnuExportCSV_Click" CommandParameter="Series" ToolTip="{DynamicResource ToolTipExportSeriesCSV}"/>
+                        <MenuItem Header="{DynamicResource XXX}" 
+                               Click="mnuExportCSV_Click" CommandParameter="XXX" ToolTip="{DynamicResource ToolTipExportXXXCSV}"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Import}" IsEnabled="True"  >
+                    <MenuItem Header="{DynamicResource Apps}" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ImportXml}" CommandParameter="Apps"
+                              Click="mnuImportXml_OnClick" ToolTip="{DynamicResource ToolTipImportXML}"/>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource Books}" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ImportBibtex}" Name="mnuImportBibtex" 
+                              Click="mnuImportBibtex_Click"  
+                              ToolTip="{DynamicResource ToolTiImportBibtex}"/>
+                        <MenuItem Header="{DynamicResource ImportXml}" CommandParameter="Books"
+                              Click="mnuImportXml_OnClick" ToolTip="{DynamicResource ToolTipImportXML}"/>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource Gamez}" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ImportXml}" CommandParameter="Games"
+                              Click="mnuImportXml_OnClick" ToolTip="{DynamicResource ToolTipImportXML}"/>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource Movies}" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ImportFilmotechXML}" Name="mnuImportFilmotechXML" 
+                              Click="MnuImportFilmotechXML_OnClick" 
+                              ToolTip="{DynamicResource ToolTiImportFilmotechXML}"/>
+                        <MenuItem Header="{DynamicResource ImportXml}" CommandParameter="Movie"
+                              Click="mnuImportXml_OnClick" ToolTip="{DynamicResource ToolTipImportXML}"/>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource Music}" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ImportCSV}" Name="mnuImportMusicCsv" Click="mnuImportMusicCsv_Click"  
+                              ToolTip="{DynamicResource ToolTiImportMusicCsv}"/>
+                        <MenuItem Header="{DynamicResource ImportXml}" CommandParameter="Music"
+                              Click="mnuImportXml_OnClick" ToolTip="{DynamicResource ToolTipImportXML}"/>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource NDS}" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ImportXml}" CommandParameter="Nds"
+                              Click="mnuImportXml_OnClick" ToolTip="{DynamicResource ToolTipImportXML}"/>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource Series}" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ImportXml}" CommandParameter="Series"
+                              Click="mnuImportXml_OnClick" ToolTip="{DynamicResource ToolTipImportXML}"/>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource XXX}" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ImportXml}" CommandParameter="XXX"
+                              Click="mnuImportXml_OnClick" ToolTip="{DynamicResource ToolTipImportXML}"/>
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource Loaner}" IsEnabled="True"  >
+                        <MenuItem Header="{DynamicResource ImportCSV}" Name="mnuImportLoanerCsv" 
+                              Click="mnuImportLoanerCsv_Click"  
+                              ToolTip="{DynamicResource ToolTiImporLoanerCsv}"/>
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource View}"  Style="{DynamicResource ForeGroundMenuFirst}">
+                <MenuItem Header="{DynamicResource ViewAll}" Name="mniViewAll" Click="mniViewAll_Click" IsChecked="True" />
+                <MenuItem Header="{DynamicResource ToBeDeleted}" Name="mniViewToBeDeleted" Click="mniViewToBeDeleted_Click" />
+                <MenuItem Header="{DynamicResource Deleted}" Name="mniViewDelete" Click="mniViewDelete_Click" />
+                <MenuItem Header="{DynamicResource Wish}" Name="mniViewWish" Click="mniViewWish_Click" />
+                <MenuItem Header="{DynamicResource ViewComplete}" Name="mniViewComplete" Click="mniViewComplete_Click" />
+                <MenuItem Header="{DynamicResource NotComplete}" Name="mniViewNotComplete" Click="mniViewNotComplete_Click" />
+                <MenuItem Header="{DynamicResource WithoutCover}" Name="mniViewNoCovers" Click="mniViewNoCovers_Click" />
+                <MenuItem Header="{DynamicResource WithCover}" Name="mniViewCovers" Click="mniViewCovers_Click" />
+                <MenuItem Header="{DynamicResource ViewSeen}" Name="mniViewSeen" Click="mniViewSeen_Click" />
+                <MenuItem Header="{DynamicResource NotSeen}" Name="mniViewNotSeen" Click="mniViewNotSeen_Click" />
+                <MenuItem Header="{DynamicResource ToWatch}" Name="mniViewToWatch" Click="mniViewToWatch_Click"  />
+                <Separator/>
+                <MenuItem Header="{DynamicResource CoverView}" IsCheckable="True" IsChecked="True" Name="mnuCoverView" Click="mnuCoverView_Click" />
+                <MenuItem Header="{DynamicResource CardView}" IsCheckable="True" Name="mnuCardView" Click="mnuCardView_Click" />
+                <MenuItem Header="{DynamicResource CoverFlowView}" IsCheckable="True" Name="mnuCoverFlowView" Click="mnuCoverFlowView_Click"  />
+                <MenuItem Header="{DynamicResource CubeView}" IsCheckable="True" Name="mnuCubeView" Click="mnuCubeView_Click"  />
+                <MenuItem Header="{DynamicResource ArtistView}" IsCheckable="True" Name="mnuArtistView" Click="mnuArtistView_Click"  />
+                <Separator/>
+                <MenuItem Header="{DynamicResource OrderBy}" >
+                    <MenuItem Header="{DynamicResource OrderByName}"  IsChecked="True" Name="mniOrderByName" Click="mniOrderByName_Click" />
+                    <MenuItem Header="{DynamicResource OrderByLastAdded}" IsChecked="False" Name="mniOrderByAdded" Click="mniOrderByAdded_Click" />
+                    <MenuItem Header="{DynamicResource OrderByRunTime}" IsChecked="False" Name="mniOrderByRunTime" Click="mniOrderByRunTime_Click" />
+                    <MenuItem Header="{DynamicResource OrderByRating}" IsChecked="False" Name="mniOrderByNote"  Click="mniOrderByNote_Click" />
+                    <MenuItem Header="{DynamicResource OrderByPublicRating}" IsChecked="False" Name="mniOrderByPublicRating"  Click="mniOrderByPublicRating_Click" />
+                    <MenuItem Header="{DynamicResource OrderByMedia}" IsChecked="False" Name="mniOrderByMedia"  Click="mniOrderByMedia_Click" />
+                    <MenuItem Header="{DynamicResource OrderByArtist}" IsChecked="False" Name="mniOrderByArtist"  Click="mniOrderByArtist_Click" />
+                    <MenuItem Header="{DynamicResource NumId}" IsChecked="False" Name="mniOrderByNumID"  Click="mniOrderByNumId_Click" />
+                </MenuItem>
+                <MenuItem Header="{DynamicResource GroupBy}"  Name="mniGroupBy">
+                    <MenuItem Header="{DynamicResource GroupByDefault}" Name="mniGroupByDefault" IsChecked="True" Click="mniGroupByDefault_Click" />
+                    <MenuItem Header="{DynamicResource GroupByGenre}" IsChecked="False" Name="mniGroupByGenre" Click="mniGroupByGenre_Click"  />
+                    <MenuItem Header="{DynamicResource GroupByMedia}" IsChecked="False" Name="mniGroupByMedia" Click="mniGroupByMedia_Click"  />
+                    <MenuItem Header="{DynamicResource GroupByArtist}" IsChecked="False" Name="mniGroupByArtist" Click="mniGroupByArtist_Click" IsEnabled="False" />
+                    <MenuItem Header="{DynamicResource GroupBySeries}" IsChecked="False" Name="mniGroupBySeries" Click="mniGroupBySeries_Click" Visibility="Collapsed" />
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Options}" Style="{DynamicResource ForeGroundMenuFirst}">
+                <MenuItem Header="{DynamicResource WebUpdateConfiguration}" IsEnabled="True" Click="mniWebUpdateConf_Click" />
+                <MenuItem Header="{DynamicResource Preferences}" IsEnabled="True" Click="mniPreferences_Click" />
+                <MenuItem Header="{DynamicResource TvixThemeManager}" IsEnabled="True" Click="mniTvixThemeManager_Click" />
+                <MenuItem Header="{DynamicResource ProxySettings}" IsEnabled="True" Click="mniProxySettings_Click" />
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Loan}" Style="{DynamicResource ForeGroundMenuFirst}">
+                <MenuItem Header="{DynamicResource ViewLoan}" IsEnabled="True"
+                              Name="mniViewLoan" Click="mniViewLoan_Click"
+                              ToolTip="{DynamicResource ToolViewLoan}" />
+                <MenuItem Header="{DynamicResource ViewLateLoan}" IsEnabled="True"
+                              Name="mniViewLateLoans" Click="mniViewLateLoans_Click"
+                              ToolTip="{DynamicResource ToolTipViewLateLoan}" />
+                <MenuItem Header="{DynamicResource ManageFriends}" IsEnabled="True"
+                              Name="mniManageFriends" Click="mniManageFriends_Click"
+                              ToolTip="{DynamicResource ToolTipManageFriends}" />
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Tools}"  Style="{DynamicResource ForeGroundMenuFirst}">
+                <MenuItem Header="{DynamicResource UpdateAllFromWeb}" Name="mniUpdateAll" Click="mniUpdateAll_Click" />
+                <MenuItem Header="{DynamicResource FindDuplicate}" Name="mniFindDupe" Click="mniFindDupe_Click" />
+                <MenuItem Header="{DynamicResource ToolsDatabase}" >
+                    <MenuItem Header="{DynamicResource CommonData}" >
+                        <MenuItem Header="{DynamicResource ManageLanguage}" IsEnabled="True" Name="mniManageLanguage" Click="mniManageLanguage_Click" />
+                        <MenuItem Header="{DynamicResource ManageCleanTitle}" IsEnabled="True" Name="mniManageCleanTitle" Click="mniManageCleanTitle_Click" />
+                        <MenuItem Header="{DynamicResource ManageMetaData}" IsEnabled="True" Name="mniManageMetaData" Click="mniManageMetaData_Click" />
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource AppsData}" >
+                        <MenuItem Header="{DynamicResource ManageType}" IsEnabled="True" Name="mniManageAppsType" Click="mniManageAppsType_Click" />
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource BookData}" >
+                        <MenuItem Header="{DynamicResource ManageEditor}" IsEnabled="True" Name="mniManageBookEditor" Click="mniManageBookEditor_Click"  />
+                        <MenuItem Header="{DynamicResource ManageType}" IsEnabled="True" Name="mniManageBookType" Click="mniManageBookType_Click" />
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource GamesData}" >
+                        <MenuItem Header="{DynamicResource ManageType}" IsEnabled="True" Name="mniManageGamezType" Click="mniManageGamezType_Click" />
+                        <MenuItem Header="{DynamicResource ManagePlateform}" IsEnabled="True"  Click="mniManagePlateform_Click" />
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource MovieData}" >
+                        <MenuItem Header="{DynamicResource ManageMovieGenre}" IsEnabled="True" Name="mniManageMovieGenre" Click="mniManageMovieGenre_Click" />
+                        <MenuItem Header="{DynamicResource ManageMovieStudio}" IsEnabled="True" Name="mniManageMovieStudio" Click="mniManageMovieStudio_Click" />
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource MusicData}" >
+                        <MenuItem Header="{DynamicResource ManageMusicGenre}" IsEnabled="True" Name="mniManageMusicGenre" Click="mniManageMusicGenre_Click" />
+                        <MenuItem Header="{DynamicResource ManageMusicStudio}" IsEnabled="True" Name="mniManageMusicStudio" Click="mniManageMusicStudio_Click" />
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource XXXData}" >
+                        <MenuItem Header="{DynamicResource ManageXXXGenre}" IsEnabled="True" Name="mniManageXXXGenre" Click="mniManageXXXGenre_Click" />
+                        <MenuItem Header="{DynamicResource ManageXXXStudio}" IsEnabled="True" Name="mniManageXXXStudio" Click="mniManageXXXStudio_Click"  />
+                    </MenuItem>
+                    <MenuItem Header="{DynamicResource ChangeMediaInformations}" IsEnabled="True" Name="mniChangeMediaPath" Click="mniChangeMediaPath_Click" />
+                    <MenuItem Header="{DynamicResource ResetDatabase}" IsEnabled="True" Name="mniResetDatabase" Click="mniResetDatabase_Click" />
+                    <MenuItem Header="{DynamicResource CleanDatabase}" Name="mniCleanDatabase" Click="mniCleanDatabase_Click" />
+                    <MenuItem Header="{DynamicResource BackupDatabase}" IsEnabled="True" Name="mniBackupDataBase" Click="mniBackupDataBase_Click" />
+                </MenuItem>
+                <MenuItem Header="{DynamicResource RefreshImage}" Name="mniRefreshImage" IsEnabled="true" Click="mniRefreshImage_Click" />
+                <MenuItem Header="{DynamicResource ExtractTo}" IsEnabled="False" />
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Skin}" Name="mniSkin" MenuItem.Click="mniSkin_Click"  Style="{DynamicResource ForeGroundMenuFirst}">
+                <MenuItem Name="SugarBrown" CommandParameter="\Skins\SugarBrown\SugarBrown.xaml" IsChecked="False">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="SugarBrown" VerticalAlignment="Center" Margin="2,0,5,0"/>
+                            <Rectangle Width="50" Height="20" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#595841" Offset="0"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Mellow" CommandParameter="\Skins\Mellow\Mellow.xaml">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="Mellow" VerticalAlignment="Center" Margin="2,0,5,0" />
+                            <Rectangle Width="50" Height="20">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FFBAA797" Offset="0"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Lavande" CommandParameter="\Skins\Lavande\Lavande.xaml">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="Lavande" VerticalAlignment="Center" Margin="2,0,5,0" />
+                            <Rectangle Width="50" Height="20">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FF6A5C8D" Offset="0"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Baby" CommandParameter="\Skins\Baby\Baby.xaml">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="Baby" VerticalAlignment="Center" Margin="2,0,5,0" />
+                            <Rectangle Width="50" Height="20">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FFFFCCE8" Offset="0"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Facebook" CommandParameter="\Skins\Facebook\Facebook.xaml">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="Facebook" VerticalAlignment="Center" Margin="2,0,5,0" />
+                            <Rectangle Width="50" Height="20">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FF6D84B4" Offset="0"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="OtherSide" CommandParameter="\Skins\OtherSide\OtherSide.xaml">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="OtherSide" VerticalAlignment="Center" Margin="2,0,5,0" />
+                            <Rectangle Width="50" Height="20">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FFC3BEBB" Offset="0"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Green" CommandParameter="\Skins\Green\Green.xaml">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="Green" VerticalAlignment="Center" Margin="2,0,5,0" />
+                            <Rectangle Width="50" Height="20">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FF005417" Offset="0"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Christas" CommandParameter="\Skins\Christas\Christas.xaml">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="Christas" VerticalAlignment="Center" Margin="2,0,5,0" />
+                            <Rectangle Width="50" Height="20">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FF788FA1" Offset="0"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Metro" CommandParameter="\Skins\Metro\Metro.xaml" IsChecked="True">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="100" Content="Metro" VerticalAlignment="Center" Margin="2,0,5,0"/>
+                            <Rectangle Width="50" Height="20" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#FFE2E2E2" Offset="0"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Charts}" IsEnabled="True" Style="{DynamicResource ForeGroundMenuFirst}">
+                <MenuItem Header="{DynamicResource Apps}" IsEnabled="True" >
+                    <MenuItem Header="{DynamicResource AppsTypeCharts}" IsEnabled="True" Name="mniChartAppsType" 
+                              Click="mniChartAppsType_Click"  >
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Books}" IsEnabled="True" >
+                    <MenuItem Header="{DynamicResource BooksTypeCharts}" IsEnabled="True" Name="mniChartBooksType" 
+                              Click="mniChartBooksType_Click"  >
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Gamez}" IsEnabled="True" >
+                    <MenuItem Header="{DynamicResource GamesTypeCharts}" IsEnabled="True" Name="mniChartGamesType" 
+                              Click="mniChartGamesType_Click"  >
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Movies}" IsEnabled="True" >
+                    <MenuItem Header="{DynamicResource MovieGenreCharts}" IsEnabled="True" Name="mniChartMovieGenre" 
+                              Click="mniChartMovieGenre_Click" >
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Music}" IsEnabled="True" >
+                    <MenuItem Header="{DynamicResource MusicGenreCharts}" IsEnabled="True" Name="mniChartMusicGenre" 
+                              Click="mniChartMusicGenre_Click" >
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource NDS}" IsEnabled="True" >
+                    <MenuItem Header="{DynamicResource NdsTypeCharts}" IsEnabled="True" Name="mniChartNdsType" 
+                              Click="mniChartNdsType_Click"  >
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Series}" IsEnabled="True" >
+                    <MenuItem Header="{DynamicResource SeriesGenreCharts}" IsEnabled="True" Name="mniChartSeriesGenre" 
+                              Click="mniChartSeriesGenre_Click"  >
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource XXX}" IsEnabled="True" >
+                    <MenuItem Header="{DynamicResource XXXGenreCharts}" IsEnabled="True" Name="mniChartXXXGenre" 
+                              Click="mniChartXXXGenre_Click"  >
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Language}" Name="mniLanguage" IsEnabled="True" MenuItem.Click="mniLanguage_Click" Style="{DynamicResource ForeGroundMenuFirst}">
+                <MenuItem Header="{DynamicResource English}" IsEnabled="True" CommandParameter=".\Language\English.xaml" Name="mniEnglish" IsChecked="True" />
+                <MenuItem Header="{DynamicResource French}" IsEnabled="True" CommandParameter=".\Language\French.xaml" Name="mniFrench" IsChecked="False" />
+                <MenuItem Header="{DynamicResource Dutch}" IsEnabled="True" CommandParameter=".\Language\Dutch.xaml" Name="mniDutch" IsChecked="False" />
+                <MenuItem Header="{DynamicResource Spanish}" IsEnabled="True" CommandParameter=".\Language\Spanish.xaml" Name="mniSpanish" IsChecked="False" />
+                <MenuItem Header="{DynamicResource German}" IsEnabled="True" CommandParameter=".\Language\German.xaml" Name="mniGerman" IsChecked="False" />
+                <MenuItem Header="{DynamicResource Portuguese}" IsEnabled="True" CommandParameter=".\Language\Portuguese.xaml" Name="mniPortuguese" IsChecked="False" />
+                <MenuItem Header="{DynamicResource Russian}" IsEnabled="True" CommandParameter=".\Language\Russian.xaml" Name="mniRussian" IsChecked="False" />
+                <MenuItem Header="{DynamicResource Ukranian}" IsEnabled="True" CommandParameter=".\Language\Ukranian.xaml" Name="mniUkraniane" IsChecked="False" />
+                <MenuItem Header="{DynamicResource Turkish}" IsEnabled="True" CommandParameter=".\Language\Turkish.xaml" Name="mniTurkish" IsChecked="False" />
+                <MenuItem Header="{DynamicResource Italian}" IsEnabled="True" CommandParameter=".\Language\Italian.xaml" Name="mniItalian" IsChecked="False" />
+                <MenuItem Header="{DynamicResource Persian}" IsEnabled="True" CommandParameter=".\Language\Persian.xaml" Name="mniPersian" IsChecked="False" />
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Help}" IsEnabled="True" >
+                <MenuItem Header="{DynamicResource About}" Click="mniAbout_Click" Style="{DynamicResource ForeGroundMenuFirst}" Background="Transparent"/>
+                <MenuItem Header="{DynamicResource Documentation}" Click="mniDocumentation_Click" Style="{DynamicResource ForeGroundMenuFirst}" Background="Transparent"/>
+                <MenuItem Header="{DynamicResource Video}" IsEnabled="True" >
+                    <MenuItem Header="{DynamicResource Video3}" Click="mniVideo3_Click" Style="{DynamicResource ForeGroundMenuFirst}" Background="Transparent"/>
+                    <MenuItem Header="{DynamicResource Video1}" Click="mniVideo1_Click" Style="{DynamicResource ForeGroundMenuFirst}" Background="Transparent"/>
+                    <MenuItem Header="{DynamicResource Video2}" Click="mniVideo2_Click" Style="{DynamicResource ForeGroundMenuFirst}" Background="Transparent"/>
+                    </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <myControls:UcToolBar Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Height="Auto" x:Name="tblToolBar" Background="Transparent"/>
+
+        <StackPanel Width="100" Height="Auto" Name="stcToggleButton" Background="Transparent" Grid.Column="0" Grid.Row="2" >
+            <ToggleButton Margin="5,5,5,5" Width="Auto" Height="Auto" Content="{DynamicResource Apps}" Name="cmdApps" Click="cmdApps_Click"/>
+            <ToggleButton Margin="5,5,5,5" Width="Auto" Height="Auto" Content="{DynamicResource Books}" Name="cmdBooks" Click="cmdBooks_Click" IsEnabled="True"/>
+            <ToggleButton Margin="5,5,5,5" Width="Auto" Height="Auto" Content="{DynamicResource Gamez}"  Name="cmdGamez" Click="cmdGamez_Click" IsEnabled="True"/>
+            <ToggleButton Margin="5,5,5,5" Width="Auto" Height="Auto" Content="{DynamicResource Movies}" Name="cmdMovies" Click="cmdMovies_Click" />
+            <ToggleButton Margin="5,5,5,5" Width="Auto" Height="Auto" Content="{DynamicResource Music}" Name="cmdMusic" Click="cmdMusic_Click" />
+            <ToggleButton Margin="5,5,5,5" Width="Auto" Height="Auto" Content="{DynamicResource NDS}" Name="cmdNds" Click="cmdNds_Click" />
+            <ToggleButton Margin="5,5,5,5" Width="Auto" Height="Auto" Content="{DynamicResource Series}" Name="cmdSeries" Click="cmdSeries_Click" IsEnabled="True"/>
+            <ToggleButton Margin="5,5,5,5" Width="Auto" Height="Auto" Content="{DynamicResource XXX}" Name="cmdXXX" Click="cmdXXX_Click" />
+        </StackPanel>
+
+        <myUC:UcFastBrowse x:Name="BrowseView" Grid.Column="1" Grid.Row="2" 
+                           ItemHeight="{Binding ElementName=sldZoom, Path='Value',Converter={StaticResource imageHeightConverter}}"/>
+        <myUC:UcCoverFlow x:Name="CoverFlowView" Grid.Column="1" Grid.Row="2" Visibility="Collapsed" ClipToBounds="True"/>
+        <myUC:ucArtistView x:Name="ArtistView" Grid.Column="1" Grid.Row="2" Visibility="Collapsed" ClipToBounds="True"/>
+
+
+        <Canvas Name="cnvNavPanel" Width="260" Grid.Column="2" Grid.Row="2" Background="{DynamicResource ToolbarBackGroundColor}"
+                MouseEnter="cnvNavPanel_MouseEnter" MouseLeave="cnvNavPanel_MouseLeave">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    <SkewTransform AngleX="0" AngleY="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform X="0" Y="0"/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Button Click="pinButton_Click" Name="pinButton" Style="{DynamicResource TransparentButton}" Margin="20,20,0,5">
+                <Button.Content>
+                    <Image Height="25" Width="25" Source="pack://application:,,,/myCollections;component/Images/PushPin.png"/>
+                </Button.Content>
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="180"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Click="lockButton_Click" Name="lockButton" 
+                    Style="{DynamicResource TransparentButton}" Canvas.Left="-3" Canvas.Top="24">
+                <Button.Content>
+                    <Image Height="25" Width="25" Name="lockImage" Source="pack://application:,,,/myCollections;component/Images/lock-unlock.png" />
+                </Button.Content>
+            </Button>
+            <!-- Nav button Text -->
+            <TextBlock Name="ItemDetail" Canvas.Top="55" FontSize="15" FontWeight="Bold" 
+                               HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"
+                               Text="{DynamicResource DetailsPane}" Style="{DynamicResource DetailPanelTextBlock}">
+                <TextBlock.LayoutTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="90"/>
+                    </TransformGroup>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+
+            <Border Canvas.Top="5" Canvas.Left="15" BorderThickness="1" x:Name="DetailsForm" Padding="7" Background="Transparent"/>
+
+        </Canvas>
+
+        <StackPanel Orientation="Horizontal" Name="BottomStack" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" >
+            <TextBlock Width="Auto" Name="lblStatutBar" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <TextBlock Text="Zoom :" VerticalAlignment="Center" Margin="80,0,0,0" Name="lblZoom"/>
+            <Slider x:Name="sldZoom" Margin="10,0,0,0" Orientation="Horizontal" 
+                    Minimum="10" Maximum="400" Width="300" Thumb.DragCompleted="sldZoom_DragCompleted"
+                    TickFrequency="50" TickPlacement="BottomRight" SmallChange="10" LargeChange="50" >
+            </Slider>
+            <ProgressBar Height="25" HorizontalAlignment="Left" Margin="60,0,0,0" Name="DownloadProgress" Style="{DynamicResource MyProgressBarStyle}"
+                         VerticalAlignment="Top" Width="400" Maximum="100" Visibility="Collapsed" FontSize="12" FontStyle="Italic" />
+            <Button Name="cmdCancel" Height="25" Margin="9,0,0,0" Click="cmdCancel_Click" Style="{DynamicResource ButtonStyle}" 
+                    Visibility="Collapsed">
+                <Button.Content>
+                    <Image Source="/Images/Close.png" ToolTip="Stop Copy"/>
+                </Button.Content>
+            </Button>
+
+        </StackPanel>
+    </Grid>
+</myControls:BorderLessWindow>

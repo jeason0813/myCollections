@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="myCollections.UserControls.Common.UcArtist"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Margin="5" Height="50"  Background="Transparent">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Column="0">
+            <Image Name="imgPicture" VerticalAlignment="Center" />
+            <TextBlock Name="txtName" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="{DynamicResource TextColor}"/>
+            <Image Name="imgDirector" VerticalAlignment="Center" Height="22" ToolTip="{DynamicResource tltDirector}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+            <Button Name="cmdDetails" ToolTip="{DynamicResource tltDetails}" Width="22" Click="cmdDetails_Click" Style="{DynamicResource ButtonStyle}" 
+                    VerticalAlignment="Center">
+                <Image Source="..\..\Images\gthumb.png" />
+            </Button>
+            <Button Name="cmdChange" ToolTip="{DynamicResource tltChangePicture}" Width="22" Click="cmdChange_Click" Style="{DynamicResource ButtonStyle}"
+                VerticalAlignment="Center">
+                <Image Source="..\..\Images\graphicsoftware14.png" />
+            </Button>
+            <Button Name="cmdUpdate" ToolTip="{DynamicResource tltUpdateWeb}" Width="22" Click="cmdUpdate_Click" Style="{DynamicResource ButtonStyle}"
+                VerticalAlignment="Center">
+                <Image Source="..\..\Images\UpadteInternet.png" />
+            </Button>
+            <Button Name="cmdDelete" ToolTip="{DynamicResource tltDelete}" Width="22" Click="cmdDelete_Click" Style="{DynamicResource ButtonStyle}"
+                VerticalAlignment="Center">
+                <Image Source="..\..\Images\Sup.ico" />
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

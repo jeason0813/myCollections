@@ -1,0 +1,28 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.showNfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:myCollections.Controls"
+    WindowStartupLocation="CenterScreen" Height="500" Width="700"
+    Loaded="Window_Loaded">
+    <DockPanel LastChildFill="True">
+        <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="0,20,0,0" 
+                   Style="{DynamicResource WaitTextStyle}" Name="txtTitle"/>
+        <Grid Grid.Row="2" DockPanel.Dock="Bottom" Background="{DynamicResource WorkBackgroundBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="2" Margin="0,0,9,0" Click="Close_Click"  Style="{DynamicResource ButtonStyle}">
+                <Button.Content>
+                    <Image Source="/Images/check.png" ToolTip="Ok"/>
+                </Button.Content>
+            </Button>
+        </Grid>
+        <RichTextBox Name="rtbNfoViewer"  VerticalScrollBarVisibility="Auto"/>
+
+    </DockPanel>
+</Controls:BorderLessWindow>

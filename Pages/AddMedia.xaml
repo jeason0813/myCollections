@@ -1,0 +1,12 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.AddMedia"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:myUserControls="clr-namespace:myCollections.UserControls"
+    xmlns:Controls="clr-namespace:myCollections.Controls"
+    ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowClose="True"                    
+    Height="420" Width="600">
+    <Grid>
+        <myUserControls:UcAddMedia x:Name="objAddMedia" Margin="5,25,5,5" />
+        <myUserControls:UcAddResults x:Name="objAddResults" Margin="800,25,5,5"/>
+    </Grid>
+</Controls:BorderLessWindow>

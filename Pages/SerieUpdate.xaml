@@ -1,0 +1,265 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.SerieUpdate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:myCollections.UserControls"   
+    xmlns:Common="clr-namespace:myCollections.UserControls.Common"
+    xmlns:Controls="clr-namespace:myCollections.Controls" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" 
+    ResizeMode="NoResize" Loaded="Window_Loaded" Closing="Window_Closing">
+
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="520"/>
+            <ColumnDefinition Width="450"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="540"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+
+        <Controls:BusyIndicator Grid.ColumnSpan="3" Height="595" Width="1020" IsBusy="{Binding IsBusy}" x:Name="busyIndicator" />
+
+        <Grid Grid.Column="2" Grid.Row="0" x:Name="imgGrid">
+            <Image Source="/myCollections;component/Images/Series.png"  Margin="3,3,0,0"  Name="imgCover"
+                   AllowDrop="True" Drop="imgCover_Drop" >
+                <Image.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="{DynamicResource AddImage}" Name="mniAddImage" Click="mniAddImage_Click"/>
+                        <MenuItem Header="{DynamicResource DeleteImage}" Name="mniDeleteImage" Click="mniDeleteImage_Click"/>
+                        <MenuItem Header="{DynamicResource ReplaceImage}" Name="mniReplaceImage" Click="mniReplaceImage_Click"/>
+                        <Separator/>
+                        <MenuItem Header="{DynamicResource SetCover}" Name="mniSetCover" Click="mniSetCover_Click"/>
+                        <MenuItem Header="{DynamicResource SetBackground}" Name="mniSetBackground" Click="mniSetBackground_Click"/>
+                        <Separator/>
+                        <MenuItem Header="{DynamicResource ScanBarCode}" Click="mniScan_Click"/>
+                        <MenuItem Header="{DynamicResource TakePicture}" Click="mniTakePicture_Click"/>
+                        <Separator/>
+                        <MenuItem Header="Print" Click="mniPrint_Click"/>
+                    </ContextMenu>
+                </Image.ContextMenu>
+            </Image>
+
+            <Button x:Name="btnBack" Style="{DynamicResource BackButton}" Click="btnBack_Click"/>
+            <Button x:Name="btnNext" Style="{DynamicResource NextButton}" Click="btnNext_Click"/>
+            <Button x:Name="btnTakePicture" Style="{DynamicResource TakePictureButton}" Click="btnTakePicture_Click"/>
+            <Button x:Name="btnCancelPicture" Style="{DynamicResource CancelPictureButton}" Click="btnCancelPicture_Click"/>
+
+            <Grid.Triggers>
+                <EventTrigger>
+                    <EventTrigger.RoutedEvent>MouseEnter</EventTrigger.RoutedEvent>
+                    <EventTrigger.Actions>
+                        <BeginStoryboard Storyboard="{DynamicResource btnNextBackVisible}" />
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger>
+                    <EventTrigger.RoutedEvent>MouseLeave</EventTrigger.RoutedEvent>
+                    <EventTrigger.Actions>
+                        <BeginStoryboard Storyboard="{DynamicResource btnNextBackCollapsed}" />
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Grid.Triggers>
+        </Grid>
+
+        <local:UcSeriesInfo Grid.Column="1" Grid.Row="0" x:Name="CurrentEntityInfo"/>
+        <Common:UcSeriesGenres Grid.Column="1" Grid.Row="0" x:Name="CurrentType" Margin="800,0,0,0"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Name="CastPanel" Orientation="Vertical" Margin="800,0,0,0">
+            <Common:UcCastToolbar x:Name="CastToolbar"/>
+            <ScrollViewer Height="470">
+                <StackPanel x:Name="CurrentCast" Orientation="Vertical"/>
+            </ScrollViewer>
+        </StackPanel>
+        <Common:UcTechnicalInfo Grid.Column="1" Grid.Row="0" x:Name="CurrentTechnicalInfo" Margin="800,0,0,0" />
+
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Background="{DynamicResource WorkBackgroundBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="cmdCancel" Grid.Column="0" Margin="9,0,0,0" Click="cmdCancel_Click" Style="{DynamicResource ButtonStyle}" >
+                <Button.Content>
+                    <Image Source="/Images/cancel.png" ToolTip="Cancel"/>
+                </Button.Content>
+            </Button>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+                <Button Name="cmdClean" Content="{DynamicResource cmdClean}" Margin="5" Click="cmdClean_Click"/>
+                <Button Name="cmdReadNfo" Content="{DynamicResource cmdReadNfo}" Margin="5" Click="cmdReadNfo_Click" Width="120"/>
+                <Button Name="cmdViewNfo" Content="{DynamicResource cmdViewNfo}" Margin="5" Click="cmdViewNfo_Click"/>
+                <Controls:SplitButton Content="{DynamicResource cmdUpdateWeb}" Width="140"
+                                  VerticalAlignment="Center" HorizontalAlignment="Center"
+                                  Margin="9,0,0,0" Click="cmdUpdateWeb_Click" x:Name="cmdUpdateWeb">
+                    <Controls:SplitButton.ButtonMenuItemsSource>
+                        <MenuItem Header="TVDB" Name="mniTvdb" Click="mniTvdb_Click">
+                            <MenuItem.Icon>
+                                <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/thetvdbwhite.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="IMDB" Name="mniIMDB" Click="mniIMDB_Click">
+                            <MenuItem.Icon>
+                                <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/imdb-logo.jpg"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Amazon.com" Name="mniAmazonUs" Click="mniAmazonUs_Click">
+                            <MenuItem.Icon>
+                                <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/AmazonLogo.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Bing" Name="mniBing" Click="mniBing_Click">
+                            <MenuItem.Icon>
+                                <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/Bing.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource French}">
+                            <MenuItem.Icon>
+                                <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Flags/French.png"/>
+                            </MenuItem.Icon>
+                            <MenuItem Header="TVDB Fr" Name="mniTvdbFr" Click="mniTvdbFr_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/thetvdbwhite.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="AlloCine" Name="mniAlloCine" Click="mniAlloCine_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/LogoAllocine.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Amazon.fr" Name="mniAmazonFr" Click="mniAmazonFr_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/AmazonLogo.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource German}">
+                            <MenuItem.Icon>
+                                <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Flags/Germany.png"/>
+                            </MenuItem.Icon>
+                            <MenuItem Header="TVDB De" Name="mniTvdbDe" Click="mniTvdbDe_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/thetvdbwhite.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Amazon.de" Name="mniAmazonDe" Click="mniAmazonDe_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/AmazonLogo.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource Italian}">
+                            <MenuItem.Icon>
+                                <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Flags/Italy.png"/>
+                            </MenuItem.Icon>
+                            <MenuItem Header="TVDB It" Name="mniTvdbIt" Click="mniTvdbIt_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/thetvdbwhite.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Amazon.it" Name="mniAmazonIt" Click="mniAmazonIt_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/AmazonLogo.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource Chinese}">
+                            <MenuItem.Icon>
+                                <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Flags/Chinese.png"/>
+                            </MenuItem.Icon>
+                            <MenuItem Header="TVDB Cn" Name="mniTvdbCn" Click="mniTvdbCn_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30"  Source="pack://application:,,,/myCollections;component/Images/Logos/thetvdbwhite.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Amazon.cn" Name="mniAmazonCn" Click="mniAmazonCn_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/AmazonLogo.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource Spanish}">
+                            <MenuItem.Icon>
+                                <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Flags/Spain.png"/>
+                            </MenuItem.Icon>
+                            <MenuItem Header="TVDB Es" Click="mniTvdbEs_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/thetvdbwhite.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Amazon.es" Click="mniAmazonSp_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/AmazonLogo.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource Portuguese}">
+                            <MenuItem.Icon>
+                                <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Flags/Portugal.png"/>
+                            </MenuItem.Icon>
+                            <MenuItem Header="TVDB" Click="mniTvdbPt_Click">
+                                <MenuItem.Icon>
+                                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Logos/thetvdbwhite.png"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                    </Controls:SplitButton.ButtonMenuItemsSource>
+                </Controls:SplitButton>
+                <Controls:SplitButton x:Name="cmdTvix" Content="{DynamicResource cmdTvixCover}" Margin="9,0,0,0"  Width="140" Click="cmdTvix_Click">
+                    <Controls:SplitButton.ButtonMenuItemsSource>
+                        <MenuItem Header="{DynamicResource mniPreviewTvix}" Name="mniPreview" Click="mniPreview_Click"/>
+                        <MenuItem Header="{DynamicResource mniChangeTheme}" Name="mniChangeTheme" Click="mniChangeTheme_Click"/>
+                    </Controls:SplitButton.ButtonMenuItemsSource>
+                </Controls:SplitButton>
+            </StackPanel>
+            <Button Name="cmdUpdate" Grid.Column="2" Margin="0,0,9,0" Click="cmdUpdate_Click" Style="{DynamicResource ButtonStyle}">
+                <Button.Content>
+                    <Image Source="/Images/check.png" ToolTip="Ok"/>
+                </Button.Content>
+            </Button>
+        </Grid>
+
+        <Canvas Grid.Row="0" Grid.Column="0">
+            <Canvas Name="cnvNavPanel" Width="266" Height="313" Canvas.Top="80" Canvas.Left="-182.5" 
+                        RenderTransformOrigin="0.5,0.5" RenderTransform="{StaticResource navPanelTransform}"
+                        MouseEnter="cnvNavPanel_MouseEnter" MouseLeave="cnvNavPanel_MouseLeave">
+
+                <Rectangle Width="210" Height="260" RadiusX="10" RadiusY="10" Opacity="0.11" 
+                               StrokeThickness="1" Canvas.Left="10.503" Canvas.Top="15.5"
+                               OpacityMask="{DynamicResource navPanelBrush1}" Fill="{DynamicResource navPanelBrush2}"/>
+
+                <Rectangle Width="220" Height="260" Fill="#3AEFEECB" RadiusX="10" RadiusY="10" 
+                               Opacity="1" StrokeThickness="1" Stroke="{DynamicResource navPanelBrush3}"/>
+
+                <Rectangle Width="220" Height="260" RadiusX="10" RadiusY="10" Opacity="1" 
+                               StrokeThickness="1" Fill="{DynamicResource navPanelBrush4}"/>
+
+                <!-- Nav buttons -->
+                <Rectangle Width="178" Height="40" Fill="{DynamicResource ToolbarBackGroundColor}" Stroke="#FFEFEECB" RadiusX="17" RadiusY="20" Canvas.Left="39" Canvas.Top="19" StrokeThickness="1"/>
+                <Rectangle Width="178" Height="40" Fill="Transparent" RadiusX="17" RadiusY="20" Canvas.Left="39" Canvas.Top="19"/>
+                <Rectangle Width="178" Height="40" Fill="{DynamicResource ToolbarBackGroundColor}" Stroke="#FFEFEECB" RadiusX="17" RadiusY="20" Canvas.Left="39" Canvas.Top="80" StrokeThickness="1"/>
+                <Rectangle Width="178" Height="40" Fill="Transparent" RadiusX="17" RadiusY="20" Canvas.Left="39" Canvas.Top="80" />
+                <Rectangle Width="178" Height="40" Fill="{DynamicResource ToolbarBackGroundColor}" Stroke="#FFEFEECB" RadiusX="17" RadiusY="20" Canvas.Left="39" Canvas.Top="141" StrokeThickness="1"/>
+                <Rectangle Width="178" Height="40" Fill="Transparent" RadiusX="17" RadiusY="20" Canvas.Left="39" Canvas.Top="141" />
+                <Rectangle Width="178" Height="40" Fill="{DynamicResource ToolbarBackGroundColor}" Stroke="#FFEFEECB" RadiusX="17" RadiusY="20" Canvas.Left="39" Canvas.Top="202" StrokeThickness="1"/>
+                <Rectangle Width="178" Height="40" Fill="Transparent" RadiusX="17" RadiusY="20" Canvas.Left="39" Canvas.Top="202" />
+
+                <!-- Nav button Text -->
+                <TextBlock Width="173.997" Height="27" Name="cmdItemInfo" Foreground="#FFFFFFFF" TextWrapping="Wrap" 
+                               Canvas.Left="78" Canvas.Top="30.5" Text="{DynamicResource cmdItemInfo}" 
+                               MouseEnter="cmdItemInfo_MouseEnter" MouseLeave="cmdItemInfo_MouseLeave" MouseLeftButtonUp="cmdItemInfo_MouseLeftButtonUp"/>
+
+                <TextBlock Width="173.997" Height="27" Name="cmdGenres" Foreground="#FFFFFFFF" TextWrapping="Wrap" 
+                               Canvas.Left="78" Canvas.Top="89.666" Text="{DynamicResource cmdGenres }" 
+                               MouseEnter="cmdItemInfo_MouseEnter" MouseLeave="cmdItemInfo_MouseLeave" MouseLeftButtonUp="cmdGenres_MouseLeftButtonUp" />
+
+                <TextBlock Width="173.997" Height="27" Name="cmdCastInfo" Foreground="#FFFFFFFF" TextWrapping="Wrap" 
+                               Canvas.Left="78" Canvas.Top="150.499" Text="{DynamicResource cmdCast}" 
+                               MouseEnter="cmdItemInfo_MouseEnter" MouseLeave="cmdItemInfo_MouseLeave" MouseLeftButtonUp="cmdCastInfo_MouseLeftButtonUp"/>
+
+                <TextBlock Width="173.997" Height="27" Foreground="{DynamicResource DetailPanelForegroundBrush}" TextWrapping="Wrap" 
+                                Canvas.Left="78" Canvas.Top="213" 
+                                Text="{DynamicResource cmdTechnicalInfo}" 
+                                MouseEnter="cmdTechnicalInfo_MouseEnter"  MouseLeave="cmdTechnicalInfo_MouseLeave"
+                                MouseLeftButtonUp="cmdTechnicalInfo_MouseLeftButtonUp"/>
+            </Canvas>
+        </Canvas>
+    </Grid>
+</Controls:BorderLessWindow>

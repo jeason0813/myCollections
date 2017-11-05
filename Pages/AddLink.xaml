@@ -1,0 +1,38 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.AddLink"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:myCollections.Controls"
+        WindowStartupLocation="CenterScreen" Width="470" Height="150" x:Name="Window" ShowClose="False"
+        FocusManager.FocusedElement="{Binding ElementName=txtLink}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
+            <TextBlock Text="{DynamicResource lblValue}" Style="{DynamicResource WaitTextStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"/>
+            <TextBox Margin="5,0,0,0" Name="txtLink" Width="370" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="0" Background="{DynamicResource WorkBackgroundBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Ok" Style="{DynamicResource ButtonStyle}" Click="cmdSave_Click"  IsDefault="True" HorizontalAlignment="Right" Grid.Column="1">
+                    <Button.Content>
+                        <Image Source="/Images/check.png" ToolTip="Ok"/>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="Cancel" Style="{DynamicResource ButtonStyle}" Click="cmdCancel_Click"  IsCancel="True"  HorizontalAlignment="Left" Grid.Column="0">
+                    <Button.Content>
+                        <Image Source="/Images/cancel.png" ToolTip="Cancel"/>
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Controls:BorderLessWindow>

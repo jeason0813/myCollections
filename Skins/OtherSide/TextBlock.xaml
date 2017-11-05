@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>
+    
+    <Style TargetType="TextBlock" x:Key="WaitTextStyle">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>
+
+    <Style x:Key="ForeGroundTextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="DetailPanelTextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Foreground" Value="{DynamicResource DetailPanelForegroundBrush}"/>
+    </Style>
+
+    <!--ItemDetails-->
+    <Style x:Key="DetailsTitle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Background" Value="{DynamicResource AlternateColor1}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style x:Key="DetailsValue" TargetType="{x:Type TextBlock}">
+        <Setter Property="Background" Value="{DynamicResource AlternateColor2}"/>
+        <Setter Property="TextAlignment" Value="Right"/>
+    </Style>
+
+
+
+</ResourceDictionary>

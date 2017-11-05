@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="02606BF4-2058-4E90-B701-950ACA20431E" Name="myCollections" Language="1033" Codepage="1252" Version="2.4.5.0"
+           Manufacturer="myCollections" UpgradeCode="dbf9756d-448e-4582-aca4-f69bde5cf4e7">
+
+    <Package Id="*" Keywords="Installer" Description="myCollections Installer"
+          Manufacturer="myCollections" InstallerVersion="310" Languages="1033"
+          Compressed="yes" SummaryCodepage="1252" InstallScope="perMachine" InstallPrivileges="elevated" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of myCollections is already installed." />
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+    <Icon Id="myCollectionsIcon.exe" SourceFile="..\bin\x86\Debug\myCollections.exe"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="myCollections">
+          <Directory Id="BLFOLDER" Name="BL">
+            <Directory Id="EXPORTFOLDER" Name="Export">
+              <Directory Id="HTMLFOLDER" Name="HTML">
+                <Directory Id="DATAEXPORTFOLDER" Name="Data">
+                  <Directory Id="CSSFOLDER" Name="Css" />
+                  <Directory Id="IMAGESEXPORT" Name="Images" />
+                  <Directory Id="JSFOLDER" Name="Js" />
+                </Directory>
+              </Directory>
+            </Directory>
+          </Directory>
+          <Directory Id="DATAFOLDER" Name="Data">
+            <Directory Id="SQLLITEFOLDER" Name="SqlLite"/>
+          </Directory>
+          <Directory Id="IMAGESFOLDER" Name="Images">
+            <Directory Id="RATINGFOLDER" Name="Rating"/>
+          </Directory>
+          <Directory Id="LANGUAGESFOLDER" Name="Language" />
+          <Directory Id="SKINSFOLDER" Name="Skins">
+            <Directory Id="BABYFOLDER" Name="Baby" />
+            <Directory Id="CHRISTASFOLDER" Name="Christas" />
+            <Directory Id="FACEBOOKFOLDER" Name="Facebook" />
+            <Directory Id="GREENFOLDER" Name="Green" />
+            <Directory Id="LAVANDEFOLDER" Name="Lavande" />
+            <Directory Id="MELLOWFOLDER" Name="Mellow" />
+            <Directory Id="OTHERSIDEFOLDER" Name="OtherSide" />
+            <Directory Id="SUGARBROWNFOLDER" Name="SugarBrown" />
+          </Directory>
+          <Directory Id="TVIXTHEMEFOLDER" Name="TvixTheme">
+            <Directory Id="BBTXTFOLDER" Name="BBT-XT"/>
+            <Directory Id="DEFAULTFOLDER" Name="Default" />
+          </Directory>
+          <Directory Id="X64" Name="x64" />
+          <Directory Id="X86" Name="x86" />
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ProgramMenuDir" Name="myCollections">
+          <Component Id="ProgramMenuDir" Guid="451517bc-44f2-4d84-9db9-97d2692228f0">
+            <RemoveFolder Id="ProgramMenuDir" On="uninstall"/>
+            <RegistryValue Root="HKCU" Key="Software\myCollections\myCollections" Type="string" Value="" KeyPath="yes"/>
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="DesktopFolder" Name ="Destop"/>
+    </Directory>
+
+    
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="MainExecutable" Guid="7bec43c1-a31e-48a6-b5de-8b8f59a81db8">
+        <CreateFolder Directory="INSTALLFOLDER" >
+          <Permission User="Everyone" GenericAll="yes"/>
+        </CreateFolder>
+        <CreateFolder Directory="DATAFOLDER" >
+          <Permission User="Everyone" GenericAll="yes"/>
+        </CreateFolder>
+        <CreateFolder Directory="SQLLITEFOLDER" >
+          <Permission User="Everyone" GenericAll="yes"/>
+        </CreateFolder>
+        <File Id="myCollectionEXE" Name="myCollections.exe" DiskId="1" Vital="yes"
+             Source="..\bin\x86\Debug\myCollections.exe" KeyPath="yes"/>
+
+        <Shortcut Id="myCollectionsStartMenu" Directory="ProgramMenuDir" Name="myCollections" WorkingDirectory="INSTALLFOLDER"
+                        Icon="myCollectionsIcon.exe" IconIndex="0" Advertise="yes"/>
+        <Shortcut Id="myCollectionsDesktop" Directory="DesktopFolder" Name="myCollections" WorkingDirectory="INSTALLFOLDER"
+                   Icon="myCollectionsIcon.exe" IconIndex="0" Advertise="yes"/>
+
+        <RegistryKey Id="myCollectionsInstallDir" Root="HKLM" Key="Software\myCollections\myCollections" Action="createAndRemoveOnUninstall">
+          <RegistryValue Type="string" Name="InstallFolder" Value="[INSTALLFOLDER]"/>
+          <RegistryValue Type="integer" Name="Flag" Value="0"/>
+        </RegistryKey>
+
+      <RemoveFile Id="LogFile" On="uninstall" Name="*.log"/>
+      </Component>
+      <Component Id="AmCharts.Windows" Guid="e1305350-840d-43e5-a8ab-10b69d0e219d">
+        <File Id="AmCharts.WindowsDLL" Name="AmCharts.Windows.dll" DiskId="1" Vital="yes" Hidden="yes"
+             Source="..\bin\x86\Debug\AmCharts.Windows.dll" KeyPath="yes"/>
+      </Component>
+      <Component Id="IdSharp" Guid="C8FC4933-338B-4AC0-BC42-89C1CCDB9B40">
+        <File Id="IdSharpDLL" KeyPath="yes" Source="..\bin\x86\Debug\IdSharp.dll" DiskId="1" Vital="yes" Hidden="yes" />
+      </Component>
+      <Component Id="ITextSharp" Guid="88303952-DBBC-4B1E-94EF-860EC5449FEE">
+        <File Id="ItextsharpDLL" KeyPath="yes" Source="..\bin\x86\Debug\itextsharp.dll" DiskId="1" Vital="yes" Hidden="yes" />
+      </Component>
+      <Component Id="Xiph" Guid="C196B72F-6DAD-4438-A04D-84963B77CCB9">
+        <File Id="XiphDLL" KeyPath="yes" Source="..\bin\x86\Debug\Luminescence.Xiph.dll" DiskId="1" Vital="yes" Hidden="yes" />
+      </Component>
+      <Component Id="MediaInfo" Guid="E88DA622-D17C-4C51-A01E-2C1E4C9E90D2">
+        <File Id="MediaInfoDLL" KeyPath="yes" Source="..\bin\x86\Debug\MediaInfo.dll" DiskId="1" Vital="yes" Hidden="yes" />
+      </Component>
+      <Component Id="MainConfig" Guid="FE84AB08-CF41-42DA-8AEA-E5F30D956F95">
+        <File Id="myCollectionsCONFIG" KeyPath="yes" Source="..\bin\x86\Debug\myCollections.exe.Config" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="mysql" Guid="D36B9B2A-394B-48B6-B408-0EB311B5FF17">
+        <File Id="mysqlDLL" KeyPath="yes" Source="..\bin\x86\Debug\mysql.data.dll" DiskId="1" Vital="yes" Hidden="yes" />
+      </Component>
+      <Component Id="FlowControls" Guid="40ECA4B2-D7D3-4FE0-AF41-6A0C7F36A5AB">
+        <File Id="FlowControlsDLL" KeyPath="yes" Source="..\bin\x86\Debug\SStuff.FlowControls.dll" DiskId="1" Vital="yes" Hidden="yes" />
+      </Component>
+      <Component Id="WpfEffects" Guid="713D3115-9FEE-4688-A1CF-FB09DC23BF77">
+        <File Id="WpfEffectsDLL" KeyPath="yes" Source="..\bin\x86\Debug\SStuff.WpfEffects.dll" DiskId="1" Vital="yes" Hidden="yes" />
+      </Component>
+      <Component Id="SQLite" Guid="82CFEE1E-B146-43BE-83E0-58D4159D02B6">
+        <File Id="SQLiteDLL" KeyPath="yes" Source="..\bin\x86\Debug\System.Data.SQLite.dll" DiskId="1" Vital="yes" Hidden="yes"/>
+      </Component>
+      <Component Id="SQLiteLinq" Guid="4DB47D61-A447-496E-99FA-B0E3A669E6A6">
+        <File Id="SQLiteLinqDLL" KeyPath="yes" Source="..\bin\x86\Debug\System.Data.SQLite.Linq.dll" DiskId="1" Vital="yes" Hidden="yes" />
+      </Component>
+     <Component Id="OData" Guid="1637B13E-59C3-40EA-9D94-10B34D3AE53A">
+        <File Id="ODataDLL" KeyPath="yes" Source="..\bin\x86\Debug\Microsoft.Data.OData.dll" DiskId="1" Vital="yes" Hidden="yes"/>
+      </Component>
+      <Component Id="ClientService" Guid="66D7B20F-252C-4889-97AF-7F3072E8AF26">
+        <File Id="ClientServiceDLL" KeyPath="yes" Source="..\bin\x86\Debug\Microsoft.Data.Services.Client.dll" DiskId="1" Vital="yes" Hidden="yes" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="HtmlElements" Directory="HTMLFOLDER">
+      <Component Id="SimpleWebpage" Guid="F11A758F-59AE-4C1A-9D98-C8F742CFCF1F">
+        <File Id="SimpleWebpageXSLT" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\SimpleWebpage.xslt" DiskId="1" Vital="yes" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="CSSElements" Directory="CSSFOLDER">
+      <Component Id="lightbox" Guid="9B17C8DC-32BC-43FB-965E-F65D7EFF879A">
+        <File Id="lightboxCSS" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Css\lightbox.css" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="style" Guid="7995FF1B-A0B9-4CBB-87ED-3CB6936D3707">
+        <File Id="styleCSS" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Css\style.css" DiskId="1" Vital="yes"/>
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="ImagesExportElements" Directory="IMAGESEXPORT">
+      <Component Id="backgroundExport" Guid="5988908D-35FA-4FC6-AF4B-5065808DE49F">
+        <File Id="backgroundExportJPG" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Images\background.jpg" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="blank" Guid="447DF0F2-77A8-4BDE-875F-24C8DB38B77A">
+        <File Id="blankGIF" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Images\blank.gif" />
+      </Component>
+      <Component Id="closelabel" Guid="F67FE0AD-160B-4E71-8E58-2BE49B6F113D">
+        <File Id="closelabelGIF" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Images\closelabel.gif" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="loading" Guid="59C5D07B-2798-4743-9748-8B75C403A83D">
+        <File Id="loadingGIF" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Images\loading.gif" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="nextlabel" Guid="964A12A1-0068-4CE6-BCE6-FB7A9A6CAFD1">
+        <File Id="nextlabelGIF" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Images\nextlabel.gif" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="prevlabel" Guid="C06FA75B-DBA7-40E0-BCB2-B260F78E5383">
+        <File Id="prevlabelGIF" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Images\prevlabel.gif" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="shelf" Guid="9BC99240-1415-4368-A2C7-439FCA8D046B">
+        <File Id="shelfJPG" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Images\shelf.jpg" DiskId="1" Vital="yes" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="JsExportElements" Directory="JSFOLDER">
+      <Component Id="litebox" Guid="9CDE0645-8533-4783-BA5C-7D110DDFD0E1">
+        <File Id="liteboxJS" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Js\litebox-1.0.js" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="moo" Guid="80AEF23F-A1CC-4198-A9F9-FBA87CC0F279">
+        <File Id="mooJS" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Js\moo.fx.js" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="prototype" Guid="C0B42095-44A0-4F74-B443-BE036300BD77">
+        <File Id="prototypeJS" KeyPath="yes" Source="..\bin\x86\Debug\BL\Export\HTML\Data\Js\prototype.lite.js" DiskId="1" Vital="yes"/>
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="ImagesElements" Directory="IMAGESFOLDER">
+      <Component Id="AddMedia" Guid="C7EEB03C-40AE-41E2-A00C-A012A2CD6304">
+        <File Id="AddMediaPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\AddMedia.png" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="Apps" Guid="58761482-4032-4BBD-9477-953EF6D9A8BC">
+        <File Id="AppsPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Apps.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="BlackBackground_1700_955" Guid="3EB20282-0ED1-481C-B0D8-25CB8C08CDAC">
+        <File Id="BlackBackground_1700_955JPG" KeyPath="yes" Source="..\bin\x86\Debug\Images\BlackBackground_1700_955.jpg" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="BlackBackground_1920_1080" Guid="118E3857-B2CE-4BA9-889A-7EC2CA75AC40">
+        <File Id="BlackBackground_1920_1080JPG" KeyPath="yes" Source="..\bin\x86\Debug\Images\BlackBackground_1920_1080.jpg" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Books" Guid="DBFD518E-0B00-46FF-941B-9C5EFFB3437E">
+        <File Id="BooksPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Books.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Charts" Guid="AD40AEF1-B177-43A3-8551-0C9F221C004B">
+        <File Id="ChartsPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Charts.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="ChartsGrey" Guid="E0EE1E1F-B257-40D2-AC6C-BCF942ECB895">
+        <File Id="ChartsGreyPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\ChartsGrey.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Delete" Guid="610AF4C1-9718-4967-8EAE-226B1CE2E382">
+        <File Id="DeletePNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Delete.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Gamez" Guid="905D97B0-5983-4189-8B23-A8080E51D27E">
+        <File Id="GamezPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Gamez.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Movie" Guid="D35F05E6-DD2F-4F00-B864-2D24B0D55FEB">
+        <File Id="MoviePNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Movie.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Music" Guid="3DD16D99-593E-4931-9349-FA4FEA91C18E">
+        <File Id="MusicPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Music.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Nds" Guid="F80BC577-5961-42E3-8F59-C89ADE0B0FDD">
+        <File Id="NdsPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Nds.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Search" Guid="C96B949D-ECC1-457A-B075-967BA59470D5">
+        <File Id="SearchPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Search.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Series" Guid="C3E8029C-6F45-40C5-8CA7-5EEACF0270E6">
+        <File Id="SeriesPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Series.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="XXX" Guid="B35274A4-C3DF-4442-9A2D-86F950D60B60">
+        <File Id="XXXPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\XXX.png" DiskId="1" Vital="yes"/>
+      </Component>
+     <Component Id="Rename" Guid="F3DEB3B0-DDBD-4555-91A4-768EE5E3CCEC">
+        <File Id="RENAMEPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\rename.png" DiskId="1" Vital="yes"/>
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="RatingElements" Directory="RATINGFOLDER">
+      <Component Id="star_empty" Guid="C70BB1A8-2963-4FDB-ACE7-B839662D34D5">
+        <File Id="star_emptyPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Rating\star_empty.png" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="star_gold_full" Guid="9AF62D1C-35AE-483F-A1B3-6C20985BD26E">
+        <File Id="star_gold_fullPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Rating\star_gold_full.png" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="star_gold_half" Guid="C9F31892-0E40-4E9F-A5F6-F212A40C77FE">
+        <File Id="star_gold_halfPNG" KeyPath="yes" Source="..\bin\x86\Debug\Images\Rating\star_gold_half.png" DiskId="1" Vital="yes" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="LanguageElements" Directory="LANGUAGESFOLDER">
+      <Component Id="Dutch" Guid="C9BAACD7-D1EA-45C4-82D7-3DC7B3E7F0AE">
+        <File Id="DutchXAML" KeyPath="yes" Source="..\bin\x86\Debug\Language\Dutch.xaml" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="French" Guid="31A494DC-A884-4C89-8617-F43AEADB4B79">
+        <File Id="FrenchXAML" KeyPath="yes" Source="..\bin\x86\Debug\Language\French.xaml" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="German" Guid="B4611656-C795-4003-8F78-F20D2BC2E5E7">
+        <File Id="GermanXAML" KeyPath="yes" Source="..\bin\x86\Debug\Language\German.xaml" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="Italian" Guid="49CC17BE-8431-45F5-AA2F-7326B1987E75">
+        <File Id="ItalianXAML" KeyPath="yes" Source="..\bin\x86\Debug\Language\Italian.xaml" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="Portuguese" Guid="D8735D38-A9B1-4FD9-ABE7-C6F0437C4DEF">
+        <File Id="PortugueseXAML" KeyPath="yes" Source="..\bin\x86\Debug\Language\Portuguese.xaml" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Russian" Guid="0F92D084-31E7-42BE-873A-78097126B6D9">
+        <File Id="RussianXAML" KeyPath="yes" Source="..\bin\x86\Debug\Language\Russian.xaml" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Spanish"  Guid="FC29161B-2399-4BC1-B464-FF7ECCCF24A6">
+        <File Id="SpanishXAML" KeyPath="yes" Source="..\bin\x86\Debug\Language\Spanish.xaml" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Turkish" Guid="26BD86E9-37E0-4B63-8410-ACA5657D66EE">
+        <File Id="TurkishXAML" KeyPath="yes" Source="..\bin\x86\Debug\Language\Turkish.xaml" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Ukranian" Guid="3551B4BD-6774-4E5D-AC6A-E75B02DA1CDC">
+        <File Id="UkranianXAML" KeyPath="yes" Source="..\bin\x86\Debug\Language\Ukranian.xaml" DiskId="1" Vital="yes"/>
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="SkinsElements">
+      <Component Id="Baby" Directory="BABYFOLDER" Guid="BE6CB84A-2260-4A3D-B3AC-A68E437F9542">
+        <File Id="BabyXAML" KeyPath="yes" Source="..\bin\x86\Debug\Skins\Baby\Baby.xaml" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="Christas" Directory="CHRISTASFOLDER" Guid="8B7FFEE4-911F-43D2-9C34-3848AC62B6DC">
+        <File Id="ChristasXAML" KeyPath="yes" Source="..\bin\x86\Debug\Skins\Christas\Christas.xaml" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="Facebook" Directory="FACEBOOKFOLDER" Guid="8F9F4A20-A1FA-4461-8712-A02F4611C61C">
+        <File Id="FacebookXAML" KeyPath="yes" Source="..\bin\x86\Debug\Skins\Facebook\Facebook.xaml" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="Green" Directory="GREENFOLDER" Guid="85CDD657-2D96-42CD-9E5F-5FD37B7969AB">
+        <File Id="GreenXAML" KeyPath="yes" Source="..\bin\x86\Debug\Skins\Green\Green.xaml" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="Lavande" Directory="LAVANDEFOLDER" Guid="054ED139-C8C5-4DE0-8437-63B8329492CB">
+        <File Id="LavandeXAML" KeyPath="yes" Source="..\bin\x86\Debug\Skins\Lavande\Lavande.xaml" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="Mellow" Directory="MELLOWFOLDER" Guid="F16543CE-78D9-4E74-BC66-D892F0D24381">
+        <File Id="MellowXAML" KeyPath="yes" Source="..\bin\x86\Debug\Skins\Mellow\Mellow.xaml" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="OtherSide" Directory="OTHERSIDEFOLDER" Guid="D445376F-2535-4ADF-A8B2-D68FD6E4D872">
+        <File Id="OtherSideXAML" KeyPath="yes" Source="..\bin\x86\Debug\Skins\OtherSide\OtherSide.xaml" DiskId="1" Vital="yes"/>
+      </Component>
+      <Component Id="SugarBrown" Directory="SUGARBROWNFOLDER" Guid="22766318-F784-4780-A2C8-603F9F55E97C">
+        <File Id="SugarBrownXAML" KeyPath="yes" Source="..\bin\x86\Debug\Skins\SugarBrown\SugarBrown.xaml" DiskId="1" Vital="yes" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="TVIXElements">
+      <Component Id="BBTXT" Directory="BBTXTFOLDER" Guid="F52F296D-078D-4F5A-A7CF-54F059B5070E">
+        <File Id="BBTXTXML" KeyPath="yes" Source="..\bin\x86\Debug\TvixTheme\BBT-XT\BBT-XT.xml" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="Fond" Directory="BBTXTFOLDER" Guid="29078AA8-068C-4E05-AE5C-6AB25015B8C4">
+        <File Id="FondJPG" KeyPath="yes" Source="..\bin\x86\Debug\TvixTheme\BBT-XT\Fond.jpg" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="FondInfo" Directory="BBTXTFOLDER" Guid="68FA9BC1-71AC-41CD-881C-CD6371C801FA">
+        <File Id="FondInfoPNG" KeyPath="yes" Source="..\bin\x86\Debug\TvixTheme\BBT-XT\FondInfo.png" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="LB" Directory="BBTXTFOLDER" Guid="A5D3BA64-32F6-4500-9AC4-A6A2A022A01B">
+        <File Id="LBPNG" KeyPath="yes" Source="..\bin\x86\Debug\TvixTheme\BBT-XT\LB.png" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="LH1" Directory="BBTXTFOLDER" Guid="4FA661AE-1D38-47F5-8D10-FA814BB95409">
+        <File Id="LH1PNG" KeyPath="yes" Source="..\bin\x86\Debug\TvixTheme\BBT-XT\LH1.png" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="star_yellow_24x24" Directory="BBTXTFOLDER" Guid="5FF0F00C-F31C-4786-B722-B4227B7F30F9">
+        <File Id="star_yellow_24x24PNG" KeyPath="yes" Source="..\bin\x86\Debug\TvixTheme\BBT-XT\star_yellow_24x24.png" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="Default" Directory="DEFAULTFOLDER" Guid="622C0DD5-9020-4B83-BDF6-9646F5352929">
+        <File Id="DefaultXML" KeyPath="yes" Source="..\bin\x86\Debug\TvixTheme\Default\Default.xml" DiskId="1" Vital="yes" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="SqlLiteInterOp">
+      <Component Id="InterOp64" Directory="X64" Guid="CDBF74E9-E98B-4BD8-8E45-E555E1340D15">
+        <File Id="InterOp64Dll" KeyPath="yes" Source="..\bin\x86\Debug\x64\SQLite.Interop.dll" DiskId="1" Vital="yes" />
+      </Component>
+      <Component Id="InterOp86" Directory="X86" Guid="F100AA7E-3D7D-469D-B9D6-003A32889250">
+        <File Id="InterOp86Dll" KeyPath="yes" Source="..\bin\x86\Debug\x86\SQLite.Interop.dll" DiskId="1" Vital="yes" />
+      </Component>
+    </ComponentGroup>
+
+    <Component Id="SqliteDB" Guid="8e4daec5-497a-4be5-86b6-5ff978764d08" Directory="SQLLITEFOLDER" Permanent="yes">
+      <File Id="SqliteDBFile" Name="myCollections.db" DiskId="1" Vital="yes" ReadOnly="no"
+            Source="..\bin\x86\Debug\Data\SqlLite\myCollections.db" KeyPath="yes"/>
+    </Component> 
+
+    <Property Id="DBEXIST">
+      <DirectorySearch Id="CheckDbFolder" Path="[SQLLITEFOLDER]" Depth="0">
+        <FileSearch Id="CheckDbFile" Name="myCollections.db"/>
+      </DirectorySearch>
+    </Property>
+
+    <Feature Id="Complete" Title="myCollections" Description="Complete package"
+             Display="expand"  ConfigurableDirectory="INSTALLFOLDER" Level="1">
+      <Feature Id="ProductFeature" Title="Program"  Description="Main Component" Level="1" >
+        <ComponentGroupRef Id="ProductComponents" />
+        <ComponentGroupRef Id="HtmlElements" />
+        <ComponentGroupRef Id="CSSElements" />
+        <ComponentGroupRef Id="ImagesExportElements" />
+        <ComponentGroupRef Id="JsExportElements" />
+        <ComponentGroupRef Id="ImagesElements" />
+        <ComponentGroupRef Id="RatingElements" />
+        <ComponentGroupRef Id="LanguageElements" />
+        <ComponentGroupRef Id="SkinsElements" />
+        <ComponentGroupRef Id="TVIXElements" />
+        <ComponentGroupRef Id="SqlLiteInterOp" />
+        <ComponentRef Id="ProgramMenuDir"/>
+      </Feature>
+
+      <Feature Id="DatabaseFeature" Title="Database" Level="1" Description="Empty database" >
+        <ComponentRef Id="SqliteDB"/>
+        <Condition Level="0">DBEXIST</Condition>
+      </Feature>
+    </Feature>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"/>
+
+    <UIRef Id="WixUI_InstallDir"/>
+    <UIRef Id="WixUI_ErrorProgressText"/>
+
+    <PropertyRef Id="NETFRAMEWORK40CLIENT"/>
+    <Condition Message="This setup requires the .Net Framework 4">
+      <![CDATA[Installed or NETFRAMEWORK40CLIENT]]>
+    </Condition>
+    
+    <!--Add/Remove Entry-->
+    <Icon Id="AppIcone.ico" SourceFile="..\Images\AppIcone.ico"/>
+    <Property Id="ARPCONTACT">myCollections.team@gmail.com</Property>
+    <Property Id="ARPPRODUCTICON">AppIcone.ico</Property>
+
+  </Product>
+</Wix>

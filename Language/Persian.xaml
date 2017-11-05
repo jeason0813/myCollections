@@ -1,0 +1,645 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--Common-->
+    <system:String x:Key="cmdCancel">انصراف</system:String>
+    <system:String x:Key="cmdClean">پاک کردن</system:String>
+    <system:String x:Key="cmdReadNfo">Nfo آپدیت</system:String>
+    <system:String x:Key="cmdViewNfo">Nfo مشاهده</system:String>
+    <system:String x:Key="cmdUpdateWeb">آپدیت از وب</system:String>
+    <system:String x:Key="cmdUpdate">ذخیره</system:String>
+    <system:String x:Key="cmdItemInfo">اطلاعات</system:String>
+    <system:String x:Key="cmdTypes">نوع</system:String>
+    <system:String x:Key="cmdGenres">ژانر</system:String>
+    <system:String x:Key="cmdOk">تایید</system:String>
+    <system:String x:Key="cmdDelete">حذف</system:String>
+    <system:String x:Key="cmdAdd">افزودن</system:String>
+    <system:String x:Key="cmdBrowse">بازکردن</system:String>
+    <system:String x:Key="cmdTvixCover">ساخت کاور</system:String>
+    <system:String x:Key="cmdCast">بیوگرافی</system:String>
+    <system:String x:Key="hedRealName">نام واقعی</system:String>
+    <system:String x:Key="hedDisplayName">نمایش نام</system:String>
+    <system:String x:Key="hedStatus">وضعیت :</system:String>
+    <system:String x:Key="lblMedia">رسانه :</system:String>
+    <system:String x:Key="lblBarcode">بارکد :</system:String>
+    <system:String x:Key="lblFilePath">مسیر فایل :</system:String>
+    <system:String x:Key="lblFileName">نام فایل :</system:String>
+    <system:String x:Key="lblDateAdded">تاریخ افزودن :</system:String>
+    <system:String x:Key="lblDateReleased">تاریخ منتشر شدن :</system:String>
+    <system:String x:Key="lblLanguage">زبان ها :</system:String>
+    <system:String x:Key="lblLinks">لینک :</system:String>
+    <system:String x:Key="lblType">نوع :</system:String>
+    <system:String x:Key="lblRating">امتیاز :</system:String>
+    <system:String x:Key="lblDescription">توضیحات :</system:String>
+    <system:String x:Key="lblComments">نظرات :</system:String>
+    <system:String x:Key="lblEditor">ویرایشگر :</system:String>
+    <system:String x:Key="lblTested">تست شده :</system:String>
+    <system:String x:Key="lblToBeDeleted">برای حذف :</system:String>
+    <system:String x:Key="lblDeleted">حذف شده :</system:String>
+    <system:String x:Key="lblComplete">تکمیل شده :</system:String>
+    <system:String x:Key="lblWish">دلخواه :</system:String>
+    <system:String x:Key="lblLinksDelete">حذف تمامی لینک ها</system:String>
+    <system:String x:Key="lblFormat">فرمت :</system:String>
+    <system:String x:Key="lblRated">ارزیابی شده :</system:String>
+    <system:String x:Key="lblGenre">ژانر :</system:String>
+    <system:String x:Key="lblRunTime">زمان اجرا :</system:String>
+    <system:String x:Key="lblSeen">دیده شده :</system:String>
+    <system:String x:Key="lblStudio">استودیو :</system:String>
+    <system:String x:Key="lblSelectAll">انتخاب همه</system:String>
+    <system:String x:Key="lblUnselectAll">انتخاب هیچ یک</system:String>
+    <system:String x:Key="lblLinksAdd">افزودن لینک</system:String>
+    <system:String x:Key="lblTitle">عنوان :</system:String>
+    <system:String x:Key="cmdTechnicalInfo">اطلاعات فنی</system:String>
+    <system:String x:Key="lblAudio">صدا :</system:String>
+    <system:String x:Key="lblSub">زیرنویس :</system:String>
+    <system:String x:Key="lblToWatch">برای دیدن :</system:String>
+    <system:String x:Key="lblToTest">برای تست :</system:String>
+    <system:String x:Key="lblToRead">برای خوانده شدن :</system:String>
+    <system:String x:Key="lblToHear">برای شنیدن :</system:String>
+
+    <!--!Main Screen-->
+    <system:String x:Key="Apps">نرم افزار ها</system:String>
+    <system:String x:Key="Books">کتاب ها</system:String>
+    <system:String x:Key="Gamez">بازی ها</system:String>
+    <system:String x:Key="Movies">فیلم</system:String>
+    <system:String x:Key="Music">موزیک</system:String>
+    <system:String x:Key="NDS">نینتندو</system:String>
+    <system:String x:Key="Series">سریال ها</system:String>
+    <system:String x:Key="XXX">XXX</system:String>
+    <system:String x:Key="DetailsPane">جزئیات</system:String>
+    <system:String x:Key="Search">...جستجو</system:String>
+    <system:String x:Key="Search2">جستجو</system:String>
+    <system:String x:Key="InCategories">در</system:String>
+    <system:String x:Key="Donate">حمایت کنید</system:String>
+
+    <!--Messages-->
+    <system:String x:Key="BackupErrorMessageConfirmation">متاسفانه ما قادر به تهیه بکاپ نیستیم!لطفا بصورت دستی اقدام به تهیه بکاپ کنید. ادامه میدهید؟</system:String>
+    <system:String x:Key="DBUpgradeSucess">دیتابیس با موفقیت آپگرید شد با نسخه :</system:String>
+    <system:String x:Key="AccesDenied">دسترسی گرفته شده</system:String>
+    <system:String x:Key="ExportFolder">پوشه ای را جهت استخراج انتخاب کنید :</system:String>
+    <system:String x:Key="ExportDone">استخراج اطلاعات به پایان رسید</system:String>
+    <system:String x:Key="CantDupe">لطفا ابتدا یک دسته بندی را انتخاب کنید</system:String>
+    <system:String x:Key="DBDirty">دیتابیس همچنان مشکل دارد فایل لوگ را بخوانید</system:String>
+    <system:String x:Key="EraseDB">این عمل تمامی اطلاعات دیتابیس را حذف خواهد کرد ادامه میدهید؟</system:String>
+    <system:String x:Key="EraseDBTitle">حذف تمامی اطلاعات</system:String>
+    <system:String x:Key="DBEmpty">دیتابیس خالی است</system:String>
+    <system:String x:Key="ImportBooksDone">کتاب ها وارد شدند</system:String>
+    <system:String x:Key="ImportMusicDone">موزیک ها وارد شدند</system:String>
+    <system:String x:Key="ImportLoanerDone">مقرض ها وارد شدند</system:String>
+    <system:String x:Key="UpdateDbFromPrevious">آیا میخواهید اطلاعات دیتابیس قبلی را وارد کنید؟</system:String>
+    <system:String x:Key="EveythingOk">با موفقیت اطلاعات وارد شدند.برنامه را رستارت کنید</system:String>
+
+    <!--Maine Menu-->
+    <system:String x:Key="Actions">فعالیت ها</system:String>
+    <system:String x:Key="Add">افزودن</system:String>
+    <system:String x:Key="AddApps">افزودن نرم افزار</system:String>
+    <system:String x:Key="ToolTipAddApps">افزودن برنامه جدید</system:String>
+    <system:String x:Key="AddBook">افزودن کتاب</system:String>
+    <system:String x:Key="ToolTipAddBook">افزودن یک کتاب</system:String>
+    <system:String x:Key="AddGames">افزودن بازی</system:String>
+    <system:String x:Key="ToolTipAddGames">افزودن یک بازی</system:String>
+    <system:String x:Key="AddMedia">افزودن رسانه</system:String>
+    <system:String x:Key="ToolTipAddMedia">(HD,DVD..) افزودن یک رسانه از</system:String>
+    <system:String x:Key="AddMovie">افزودن فیلم</system:String>
+    <system:String x:Key="ToolTipAddMovie">افزودن یک فیلم</system:String>
+    <system:String x:Key="AddMusic">افزودن موزیک</system:String>
+    <system:String x:Key="ToolTipAddMusic">افزودن یک موزیک</system:String>
+    <system:String x:Key="AddNds">افزودن نینتندو</system:String>
+    <system:String x:Key="ToolTipAddNDS">افزودن یک نینتندو</system:String>
+    <system:String x:Key="AddSeries">افزودن سریال ها</system:String>
+    <system:String x:Key="ToolTipAddSeries">افزودن فصل جدید سریال</system:String>
+    <system:String x:Key="AddXXX">XXX افزودن</system:String>
+    <system:String x:Key="ToolTipAddXXX">افزودن یک فیلم پورن</system:String>
+
+    <system:String x:Key="Delete">حذف</system:String>
+    <system:String x:Key="DeleteMedia">حذف رسانه</system:String>
+
+    <system:String x:Key="Export">استخراج</system:String>
+    <system:String x:Key="ExportAll">همه</system:String>
+    <system:String x:Key="ToolTipExportAll">HTML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportApps">HTML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportBooks">HTML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportGames">HTML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportMovie">HTML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportMusic">HTML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportNds">HTML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportSeries">HTML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportXXX">HTML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportAllXML">XML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportAppsXML">XML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportBooksXML">XML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportGamesXML">XML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportMovieXML">XML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportMusicXML">XML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportNdsXML">XML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportSeriesXML">XML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportXXXXML">XML استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportAllCSV">CSV استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportAppsCSV">CSV استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportBooksCSV">CSV استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportGamesCSV">CSV استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportMovieCSV">CSV استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportMusicCSV">CSV استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportNdsCSV">CSV استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportSeriesCSV">CSV استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportXXXCSV">CSV استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportAllPDF">PDF استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportAppsPDF">PDF استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportBooksPDF">PDF استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportGamesPDF">PDF استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportMoviePDF">PDF استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportMusicPDF">PDF استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportNdsPDF">PDF استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportSeriesPDF">PDF استخراج به فرمت</system:String>
+    <system:String x:Key="ToolTipExportXXXPDF">PDF استخراج به فرمت</system:String>
+
+    <system:String x:Key="Import">وارد کردن</system:String>
+    <system:String x:Key="ImportBibtex">Bibtex از فایل</system:String>
+    <system:String x:Key="ToolTiImportBibtex">Bibtex XML وارد کردن کتاب ها از فایل</system:String>
+    <system:String x:Key="ImportCSV">Csv از فایل</system:String>
+    <system:String x:Key="ToolTiImportMusicCsv">Csv وارد کردن موزیک از فایل</system:String>
+    <system:String x:Key="Loaner">مقرض</system:String>
+    <system:String x:Key="ToolTiImporLoanerCsv">Csv وارد کردن مقرض از فایل</system:String>
+
+    <system:String x:Key="View">نما</system:String>
+    <system:String x:Key="ViewAll">همه</system:String>
+    <system:String x:Key="ToBeDeleted">برای حذف کردن</system:String>
+    <system:String x:Key="Deleted">حذف شده</system:String>
+    <system:String x:Key="Wish">مورد علاقه</system:String>
+    <system:String x:Key="ViewComplete">تکمیل شده</system:String>
+    <system:String x:Key="NotComplete">تکمیل نشده</system:String>
+    <system:String x:Key="WithoutCover">بدون کاور</system:String>
+    <system:String x:Key="WithCover">دارای کاور</system:String>
+    <system:String x:Key="ViewSeen">دیده شده</system:String>
+    <system:String x:Key="NotSeen">دیده نشده</system:String>
+    <system:String x:Key="Tested">تست شده</system:String>
+    <system:String x:Key="NotTested">تست نشده</system:String>
+    <system:String x:Key="Read">خوانده شده</system:String>
+    <system:String x:Key="NotRead">خوانده نشده</system:String>
+    <system:String x:Key="Heard">شنیده شده</system:String>
+    <system:String x:Key="NotHeard">شنیده نشده</system:String>
+    <system:String x:Key="ToWatch">برای دیدن</system:String>
+    <system:String x:Key="ToHear">برای شنیدن</system:String>
+    <system:String x:Key="ToTest">برای تست</system:String>
+    <system:String x:Key="ToRead">برای خواندن</system:String>
+
+    <system:String x:Key="CoverView">نمای کاور</system:String>
+    <system:String x:Key="CardView">نمای کارت</system:String>
+    <system:String x:Key="CoverFlowView">نمای کاور فلو</system:String>
+    <system:String x:Key="CubeView">نمای مکعبی</system:String>
+    <system:String x:Key="ArtistView">نمای هنرمند</system:String>
+
+    <system:String x:Key="OrderBy">مرتب کردن بر اساس</system:String>
+    <system:String x:Key="OrderByName">نام</system:String>
+    <system:String x:Key="OrderByLastAdded">آخرین افزودن</system:String>
+    <system:String x:Key="OrderByRunTime">مدت زمان</system:String>
+    <system:String x:Key="OrderByRating">امتیاز</system:String>
+    <system:String x:Key="OrderByMedia">رسانه</system:String>
+    <system:String x:Key="GroupBy">گروه بندی</system:String>
+    <system:String x:Key="GroupByDefault">پیشفرض</system:String>
+    <system:String x:Key="GroupByGenre">ژانر</system:String>
+    <system:String x:Key="GroupByMedia">رسانه</system:String>
+    <system:String x:Key="GroupByAlbum">آلبوم</system:String>
+    <system:String x:Key="GroupByArtist">هنرمند</system:String>
+    <system:String x:Key="GroupBySeries">سریال</system:String>
+    <system:String x:Key="GroupByAuthor">نویسنده</system:String>
+
+    <system:String x:Key="Options">گزینه ها</system:String>
+    <system:String x:Key="WebUpdateConfiguration">تنظیم آپدیت از وب</system:String>
+    <system:String x:Key="Preferences">تنظیمات</system:String>
+    <system:String x:Key="TvixThemeManager">مدیریت قالب</system:String>
+    <system:String x:Key="ProxySettings">تنظیم پروکسی</system:String>
+
+    <system:String x:Key="Loan">قرض</system:String>
+    <system:String x:Key="ViewLoan">مشاهده تمام قرض ها</system:String>
+    <system:String x:Key="ToolViewLoan">مشاهده تمام قرض ها</system:String>
+    <system:String x:Key="ViewLateLoan">مشاهده تمام قرض های عقب افتاده</system:String>
+    <system:String x:Key="ToolTipViewLateLoan">مشاهده قرض های عقب افتاده فقط</system:String>
+    <system:String x:Key="ManageFriends">مدیریت دوستان</system:String>
+    <system:String x:Key="ToolTipManageFriends">افزودن/حذف مقرض</system:String>
+
+    <system:String x:Key="Tools">ابزار</system:String>
+    <system:String x:Key="UpdateAllFromWeb">آپدیت همه از وب</system:String>
+    <system:String x:Key="FindDuplicate">یافتن متشابهات</system:String>
+    <system:String x:Key="ToolsDatabase">دیتابیس</system:String>
+    <system:String x:Key="CommonData">اطلاعات عمومی</system:String>
+    <system:String x:Key="ManageLanguage">مدیریت زبان</system:String>
+    <system:String x:Key="AppsData">اطلاعات نرم افزار ها</system:String>
+    <system:String x:Key="ManageType">مدیریت نوع</system:String>
+    <system:String x:Key="BookData">اطلاعات کتاب</system:String>
+    <system:String x:Key="GamesData">اطلاعات بازی ها</system:String>
+    <system:String x:Key="MovieData">اطلاعات فیلم</system:String>
+    <system:String x:Key="ManageMovieGenre">مدیریت ژانر فیلم</system:String>
+    <system:String x:Key="ManageMovieStudio">مدیریت استودیوی فیلم</system:String>
+    <system:String x:Key="MusicData">اطلاعات موزیک</system:String>
+    <system:String x:Key="ManageMusicGenre">مدیریت ژانر موزیک</system:String>
+    <system:String x:Key="ManageMusicStudio">مدیریت استودیوی موزیک</system:String>
+    <system:String x:Key="XXXData">XXX اطلاعات</system:String>
+    <system:String x:Key="ManageXXXGenre">XXX مدیریت ژانر</system:String>
+    <system:String x:Key="ManageXXXStudio">XXX مدیریت استودیوی</system:String>
+    <system:String x:Key="ChangeMediaInformations">تغییر اطلاعات رسانه</system:String>
+    <system:String x:Key="ResetDatabase">ریست دیتابیس</system:String>
+    <system:String x:Key="CleanDatabase">پاک کردن دیتابیس</system:String>
+    <system:String x:Key="BackupDatabase">بکاپ از دیتابیس</system:String>
+    <system:String x:Key="RefreshImage">تازه سازی</system:String>
+    <system:String x:Key="ExtractTo">استخراج به</system:String>
+    <system:String x:Key="ManageEditor">مدیریت ویرایشگر</system:String>
+    <system:String x:Key="ManageCleanTitle">مدیریت پاک کردن عنوان</system:String>
+
+    <system:String x:Key="Skin">پوسته</system:String>
+
+    <system:String x:Key="Charts">نمودار ها</system:String>
+    <system:String x:Key="AppsTypeCharts">نمودار نرم افزار ها</system:String>
+    <system:String x:Key="BooksTypeCharts">نمودار کتاب ها</system:String>
+    <system:String x:Key="GamesTypeCharts">نمودار بازی ها</system:String>
+    <system:String x:Key="MovieGenreCharts">نمودار از ژانر فیلم</system:String>
+    <system:String x:Key="MusicGenreCharts">نمودار از ژانر موزیک</system:String>
+    <system:String x:Key="NdsTypeCharts">نمودار نینتندو</system:String>
+    <system:String x:Key="SeriesGenreCharts">نمودار از ژانر سریال ها</system:String>
+    <system:String x:Key="XXXGenreCharts">XXX نمودار از ژانر</system:String>
+
+    <system:String x:Key="Language">زبان</system:String>
+    <system:String x:Key="English">انگلیسی</system:String>
+    <system:String x:Key="French">زبان فرانسه</system:String>
+    <system:String x:Key="Dutch">هلندی</system:String>
+    <system:String x:Key="Spanish">اسپانیایی</system:String>
+    <system:String x:Key="German">آلمانی</system:String>
+    <system:String x:Key="Portuguese">پرتغالی</system:String>
+    <system:String x:Key="Russian">روسی</system:String>
+    <system:String x:Key="Ukranian">اوکراین</system:String>
+    <system:String x:Key="Chinese">چینی</system:String>
+    <system:String x:Key="Italian">ایتالیایی</system:String>
+    <system:String x:Key="Turkish">ترکی</system:String>
+
+    <system:String x:Key="About">درباره</system:String>
+
+    <system:String x:Key="AddImage">افزودن عکس جدید</system:String>
+    <system:String x:Key="DeleteImage">حذف عکس</system:String>
+    <system:String x:Key="ReplaceImage">جاگذاری عکس</system:String>
+
+    <system:String x:Key="SetCover">تایین به عنوان کاور</system:String>
+    <system:String x:Key="SetBackground">تایین به عنوان صفحه زمینه</system:String>
+
+    <!--Main Screen Context Menu -->
+    <system:String x:Key="Play">پخش</system:String>
+    <system:String x:Key="ManualUpdate">آپدیت دستی</system:String>
+    <system:String x:Key="UpdateFromWeb">آپدیت از وب</system:String>
+    <system:String x:Key="SetNotComplete">تایین به عنوان تکمیل نشده</system:String>
+    <system:String x:Key="LoanTo">قرض به</system:String>
+    <system:String x:Key="LoanInfo">مشاهده اطلاعات مقرض</system:String>
+    <system:String x:Key="SetBack">تایین برگشت از قرض</system:String>
+    <system:String x:Key="GenerateTvix">ایجاد کاور</system:String>
+    <system:String x:Key="CleanSelected">پاک کردن</system:String>
+    <system:String x:Key="SetGenre">تعریف ژانر</system:String>
+
+    <!--About Screen-->
+    <system:String x:Key="TitleAbout">درباره</system:String>
+    <system:String x:Key="Version">نسخه</system:String>
+    <system:String x:Key="Contact">تماس :</system:String>
+    <system:String x:Key="Home">وب سایت :</system:String>
+    <system:String x:Key="Credits">تیم توسعه :</system:String>
+    <system:String x:Key="AboutCharts">طراح نمودار ها :</system:String>
+    <system:String x:Key="Mp3">توسط Mp3 تگ های :</system:String>
+    <system:String x:Key="SqlLite">توسط SqlLite اتصال دیتابیس :</system:String>
+    <system:String x:Key="PDF">توسط PDF :</system:String>
+    <system:String x:Key="HtmlExport">توسط Html استخراج :</system:String>
+    <system:String x:Key="FLAC">توسط FLAC تگ های :</system:String>
+    <system:String x:Key="CoverFlowBy">کاورفلو توسط :</system:String>
+    <system:String x:Key="TesterLead">تست کننده :</system:String>
+
+    <!--Add Media Screen-->
+    <system:String x:Key="TitleAddMedia">افزودن رسانه</system:String>
+    <system:String x:Key="lblMediaType">نوع رسانه :</system:String>
+    <system:String x:Key="lblPath">مسیر :</system:String>
+    <system:String x:Key="lblSearchPattern">جستجوی الگو :</system:String>
+    <system:String x:Key="lblSubFolder">جستجوی زیر پوشه :</system:String>
+    <system:String x:Key="lblFolderImage">انتخاب از عکس پوشه</system:String>
+    <system:String x:Key="lblUseNfo">Nfo تجزیه فایل</system:String>
+    <system:String x:Key="cmdNext">ادامه >></system:String>
+    <system:String x:Key="cmdFinish">پایان</system:String>
+    <system:String x:Key="tltNext">تجزیه نام قبل از اضافه کردن فایل ها</system:String>
+    <system:String x:Key="tltFinish">افزودن مستقیم فایل ها</system:String>
+    <system:String x:Key="lblResults">تعداد آیتم های پیدا شده :</system:String>
+    <system:String x:Key="lblParseFrom">تجزیه الگو :</system:String>
+    <system:String x:Key="lblMapping">انتخاب نقشه برداری شما :</system:String>
+    <system:String x:Key="cmdBack">برگشت</system:String>
+
+
+    <!--Apps Update Screen-->
+    <system:String x:Key="TitleAppsUpdate">آپدیت نرم افزار ها</system:String>
+    <system:String x:Key="AppsDeleteImage">حذف عکس</system:String>
+
+    <!--Artist Detail Screen-->
+    <system:String x:Key="TitleArtistDetail">اطلاعات هنرمند</system:String>
+
+    <!--Book Update Screen-->
+    <system:String x:Key="TitleBooksUpdate">آپدیت کتاب ها</system:String>
+    <system:String x:Key="BooksDeleteImage">حذف عکس</system:String>
+
+    <!--Browser Screen-->
+    <system:String x:Key="TitleBrowser">درحال باز کردن</system:String>
+
+    <!--Media Info Screen-->
+    <system:String x:Key="TitleMediaInfo">اطلاعات رسانه</system:String>
+    <system:String x:Key="txbMedia">رسانه :</system:String>
+    <system:String x:Key="txbMediaName">نام رسانه :</system:String>
+    <system:String x:Key="txbMediaCurentPath">مسیر فعلی :</system:String>
+    <system:String x:Key="txbMediaFreeSpace">فضای خالی :</system:String>
+    <system:String x:Key="txbMediaTotalSpace">کل فضا :</system:String>
+    <system:String x:Key="txbMediaLastUpdate">آخرین آپدیت :</system:String>
+
+    <!--Chart Screen-->
+    <system:String x:Key="TitleChart">نمودار ها</system:String>
+
+    <!--MessageBox Screen-->
+    <system:String x:Key="TitleMsgBox">اطلاعات</system:String>
+
+    <!--DeleteMedia Screen-->
+    <system:String x:Key="TitleDeleteMedia">حذف رسانه</system:String>
+    <system:String x:Key="txbDeleteMedia">رسانه ای را که میخواهید حذف کنید انتخاب کنید :</system:String>
+
+    <!--Game Update Screen-->
+    <system:String x:Key="TitleGamesUpdate">آپدیت بازی ها</system:String>
+    <system:String x:Key="GamesDeleteImage">حذف عکس</system:String>
+    <system:String x:Key="lblPlateform">پلتفرم :</system:String>
+
+    <!--LoanTo Screen-->
+    <system:String x:Key="TitleLoanTo">...قرض به</system:String>
+    <system:String x:Key="txbTitleToLoan">عنوان قرض :</system:String>
+    <system:String x:Key="txbLoanTo">قرض به:</system:String>
+    <system:String x:Key="txbLoanBegin">شروع قرض :</system:String>
+    <system:String x:Key="txbLoanEnd">پایان قرض :</system:String>
+
+    <!--Manage Apps Type  Screen-->
+    <system:String x:Key="TitleManageAppsType">مدیریت نوع نرم افزار ها</system:String>
+
+    <!--Manage Studio Screen-->
+    <system:String x:Key="TitleManageStudio">افزودن،آپدیت یا حذف نام</system:String>
+    <system:String x:Key="hedStudio">نام</system:String>
+
+    <!--Manage Books Type  Screen-->
+    <system:String x:Key="TitleManageBooksType">مدیریت نوع کتاب ها</system:String>
+
+    <!--Manage Friends  Screen-->
+    <system:String x:Key="TitleManageFriends">مدیریت دوستان</system:String>
+    <system:String x:Key="hedUsers">کاربران :</system:String>
+    <system:String x:Key="hedUsersInfos">اطلاعات کاربر :</system:String>
+    <system:String x:Key="lblAlias">نام مستعار :</system:String>
+    <system:String x:Key="lblFirstName">نام اول :</system:String>
+    <system:String x:Key="lblLastName">نام خانوادگی :</system:String>
+    <system:String x:Key="lblBirthDate">تاریخ تولد :</system:String>
+    <system:String x:Key="lblSex">جنسیت :</system:String>
+    <system:String x:Key="lblEmail">ایمیل :</system:String>
+    <system:String x:Key="lblAdress">آدرس :</system:String>
+    <system:String x:Key="lblPhoneNumber">شماره تلفن :</system:String>
+    <system:String x:Key="lblCurrentLoan">شماره مقرض فعلی :</system:String>
+    <system:String x:Key="lblMaxLoan">شماره مقرض :</system:String>
+
+    <!--Manage Games Type  Screen-->
+    <system:String x:Key="TitleManageGamesType">مدیریت نوع بازی ها ها</system:String>
+
+    <!--Manage Language Screen-->
+    <system:String x:Key="TitleManageLanguage">مدیریت زبان</system:String>
+    <system:String x:Key="hedShortName">نام کوچک</system:String>
+    <system:String x:Key="hedLongName">نام بزرگ</system:String>
+
+    <!--Manage Movie Genre  Screen-->
+    <system:String x:Key="TitleManageMovieGenre">مدیریت ژانر فیلم</system:String>
+
+    <!--Manage Music Genre  Screen-->
+    <system:String x:Key="TitleManageMusicGenre">مدیریت ژانر موزیک</system:String>
+
+    <!--Manage Clean Title-->
+    <system:String x:Key="TitleManageCleanTitle">مدیریت پاک کردن عنوان</system:String>
+    <system:String x:Key="hedValue">مقدار</system:String>
+    <system:String x:Key="hedCategory">دسته بندی</system:String>
+
+    <!--Preferences  Screen-->
+    <system:String x:Key="TitlePreferences">تنظیمات من</system:String>
+    <system:String x:Key="hedShowCatgerory">نمایش دسته بندی</system:String>
+    <system:String x:Key="lblHideApps">مخفی کردن نرم افزار ها(Alt-A)</system:String>
+    <system:String x:Key="lblHideBooks">مخفی کردن کتاب ها(Alt-B)</system:String>
+    <system:String x:Key="lblHideGames">مخفی کردن بازی ها(Alt-G)</system:String>
+    <system:String x:Key="lblHideMovies">مخفی کردن فیلم ها(Alt-M)</system:String>
+    <system:String x:Key="lblHideMusic">مخفی کردن موزیک(Alt-U)</system:String>
+    <system:String x:Key="lblHideNds">مخفی کردن نینتندو(Alt-N)</system:String>
+    <system:String x:Key="lblHideSeries">مخفی کردن سریال(Alt-S)</system:String>
+    <system:String x:Key="lblHideXXX">XXX مخفی کردن(Alt-X)</system:String>
+    <system:String x:Key="lblCleanTitle">پاک کردن خودکار عنوان</system:String>
+    <system:String x:Key="lblDbClick">با دابل کلیک :</system:String>
+    <system:String x:Key="rdbLaunch">اجرا شود</system:String>
+    <system:String x:Key="rdbUpdate">آپدیت شود</system:String>
+    <system:String x:Key="lblXXXPassword">XXX رمز :</system:String>
+    <system:String x:Key="lblCurrentDb">دیتابیس فعلی :</system:String>
+    <system:String x:Key="lblCheckUpdate">چک کردن آپدیت جدید با اجرای برنامه</system:String>
+    <system:String x:Key="lblTvixOutput2">یا در :</system:String>
+    <system:String x:Key="tlpTvixOutput">تغییر پوشه خروجی</system:String>
+    <system:String x:Key="hedOthers">دیگر</system:String>
+    <system:String x:Key="tlpChangeDb">تغییر دیتابیس</system:String>
+    <system:String x:Key="chkTvixFolder">تولید در پوشه آیتم ها</system:String>
+    <system:String x:Key="lblHideDetails">مخفی کردن پنل جزئیات</system:String>
+
+    <!--Manage Sites  Screen-->
+    <system:String x:Key="TitleManageSites">مدیریت وب سایت ها</system:String>
+    <system:String x:Key="hedUsSites">سایت های انگلیسی</system:String>
+    <system:String x:Key="chkSelectAll">انتخاب همه</system:String>
+    <system:String x:Key="lblAppsSites">نرم افزار ها:</system:String>
+    <system:String x:Key="lblBookSites">کتاب ها:</system:String>
+    <system:String x:Key="lblGamesSites">بازی ها:</system:String>
+    <system:String x:Key="lblMoviesSites">فیلم ها:</system:String>
+    <system:String x:Key="lblMusicSites">موزیک ها:</system:String>
+    <system:String x:Key="lblNdsSites">نینتندو دی اس:</system:String>
+    <system:String x:Key="lblSeriesSites">سریال:</system:String>
+    <system:String x:Key="lblXXXSites">XXX:</system:String>
+    <system:String x:Key="hedFrenchSites">فرانسه</system:String>
+    <system:String x:Key="lblBing">Bing</system:String>
+    <system:String x:Key="hedGermanSites">آلمان</system:String>
+    <system:String x:Key="hedItalianSites">ایتالیا</system:String>
+    <system:String x:Key="hedChineseSites">چین</system:String>
+    <system:String x:Key="hedSpanishSites">اسپانیا</system:String>
+
+    <!--Manage XXX Genre  Screen-->
+    <system:String x:Key="TitleManageXXXGenre">XXX مدیریت ژانر</system:String>
+
+    <!--Movie Update Screen-->
+    <system:String x:Key="TitleMoviesUpdate">آپدیت فیلم ها</system:String>
+
+    <!--Music Update Screen-->
+    <system:String x:Key="TitleMusicUpdate">آپدیت موزیک</system:String>
+    <system:String x:Key="MusicDeleteImage">حذف عکس</system:String>
+    <system:String x:Key="cmdTracks">ترک ها</system:String>
+
+    <!--Nds Update Screen-->
+    <system:String x:Key="TitleNdsUpdate">آپدیت بازی نینتندو دی اس</system:String>
+    <system:String x:Key="NdsDeleteImage">حذف عکس</system:String>
+
+    <!--Parental Control Screen-->
+    <system:String x:Key="TitleParentalControl">کنترل والدین</system:String>
+    <system:String x:Key="lblPassword">رمز :</system:String>
+
+    <!--Partial Match Screen-->
+    <system:String x:Key="TitlePartialMatch">عنوان صحیح انتخاب کنید</system:String>
+    <system:String x:Key="hedImage">عکس</system:String>
+    <system:String x:Key="hedTitle">عنوان</system:String>
+    <system:String x:Key="hedArtist">هنرمند</system:String>
+
+    <!--Progress Bar Screen-->
+    <system:String x:Key="TitleProgressBar">...لطفا صبر کنید</system:String>
+    <system:String x:Key="lblProcess">درحال پردازش:</system:String>
+    <system:String x:Key="lblOf">از</system:String>
+
+    <!--Select File Screen-->
+    <system:String x:Key="TitleSelectFile">فایل را جهت اجرا انتخاب کنید</system:String>
+    <system:String x:Key="hedSelection">انتخاب</system:String>
+
+    <!--Series Update Screen-->
+    <system:String x:Key="TitleSeriesUpdate">آپدیت سریال</system:String>
+    <system:String x:Key="SeriesDeleteImage">حذف عکس</system:String>
+
+    <!--Show Nfo Screen-->
+    <system:String x:Key="TitleShowNfo">NFO نمایش</system:String>
+
+    <!--XXX Update Screen-->
+    <system:String x:Key="TitleXXXUpdate">XXX آپدیت</system:String>
+    <system:String x:Key="XXXDeleteImage">حذف عکس</system:String>
+
+    <!--Apps-->
+    <system:String x:Key="appsVersion">نسخه :</system:String>
+    <system:String x:Key="hedAppsInfo">اطلاعات نرم افزار</system:String>
+
+    <!--Books-->
+    <system:String x:Key="hedBooksInfo">اطلاعات کتاب ها</system:String>
+    <system:String x:Key="lblISBN">ISBN :</system:String>
+    <system:String x:Key="lblAuthor">نویسنده :</system:String>
+    <system:String x:Key="lblPages">تعداد صفحات :</system:String>
+    <system:String x:Key="lblRead">خوانده شده :</system:String>
+
+    <!--Artist-->
+    <system:String x:Key="tltDetails">جزئیات</system:String>
+    <system:String x:Key="tltChangePicture">تغییر عکس</system:String>
+    <system:String x:Key="tltDelete">حذف</system:String>
+    <system:String x:Key="tltUpdateWeb">پیدا کردن اطلاعات از وب</system:String>
+    <system:String x:Key="tltDirector">کارگردان</system:String>
+    <system:String x:Key="tltAddArtist">افزودن هنرمند</system:String>
+    <system:String x:Key="lblAge">ساله</system:String>
+
+    <!--Games-->
+    <system:String x:Key="hedGamesInfo">اطلاعات بازی ها</system:String>
+
+    <!--Movies-->
+    <system:String x:Key="hedMoviesInfo">اطلاعات فیلم ها</system:String>
+    <system:String x:Key="lblFileFormat">فرمت فایل :</system:String>
+    <system:String x:Key="lblOriginalTitle">عنوان اصلی :</system:String>
+    <system:String x:Key="lblAlloCineRating">AlloCine امتیاز سایت :</system:String>
+    <system:String x:Key="lblIMDBRating">IMDB امتیاز سایت :</system:String>
+    <system:String x:Key="lblTagLine">تگ :</system:String>
+    <system:String x:Key="lblAspectRatio">نرخ سیما :</system:String>
+
+    <!--Music-->
+    <system:String x:Key="hedMusicInfo">اطلاعات موزیک</system:String>
+    <system:String x:Key="lblMusicArtist">خواننده :</system:String>
+    <system:String x:Key="lblAlbum">آلبوم :</system:String>
+    <system:String x:Key="lblBitRate">بیت ریت :</system:String>
+    <system:String x:Key="lblHeared">شنیده شده :</system:String>
+    <system:String x:Key="lblArtistName">نام هنرمند :</system:String>
+
+    <!--Series-->
+    <system:String x:Key="hedSeriesInfo">اطلاعات سریال</system:String>
+    <system:String x:Key="lblTotalEpisodes">کل قسمت ها :</system:String>
+    <system:String x:Key="lblOwnEpisodes">قسمت های شما :</system:String>
+    <system:String x:Key="lblMissingEpisodes">قسمت های مفقودی :</system:String>
+    <system:String x:Key="lblSeason">فصل :</system:String>
+    <system:String x:Key="cmdAddSeason">افزودن فصل جدید</system:String>
+
+    <!--XXX-->
+    <system:String x:Key="hedXXXInfo">XXX اطلاعات</system:String>
+
+    <!--Tvix Theme Manager-->
+    <system:String x:Key="hedTvixUsed">انتخاب این تم برای :</system:String>
+    <system:String x:Key="hedTvixOutput">انتخاب فایل ها در :</system:String>
+    <system:String x:Key="cmdGenerate">تولید نمونه</system:String>
+    <system:String x:Key="mniPreviewTvix">پیشنمایش</system:String>
+    <system:String x:Key="mniChangeTheme">تغییر تم</system:String>
+    <system:String x:Key="cmdGenerateFile">ذخیره عکس</system:String>
+    <system:String x:Key="hedSelectTheme">انتخاب تم ها</system:String>
+
+    <!--newVersionViewer-->
+    <system:String x:Key="lblNewVersion">یک نسخه جدید پیدا شد</system:String>
+    <system:String x:Key="lblDownloadHere">از اینجا دانلود کنید :</system:String>
+
+    <!--Proxy-->
+    <system:String x:Key="lbluseProxy">سرور پروکسی</system:String>
+    <system:String x:Key="lblIpAdress">آدرس :</system:String>
+    <system:String x:Key="lblIpPort">پورت :</system:String>
+    <system:String x:Key="lblLogin">لوگین :</system:String>
+    <system:String x:Key="lblPWD">رمز :</system:String>
+
+    <system:String x:Key="WrapPanelOptim">طراح پنل توسط :</system:String>
+    <system:String x:Key="MetroStyleBy">استایل مترو توسط :</system:String>
+
+    <system:String x:Key="tltRename">تغییر نام فایل با عنوان</system:String>
+    <system:String x:Key="lblAutoRename">تغییر خودکار نام فایل از عنوان</system:String>
+    <system:String x:Key="lblAddCustomType">افزودن نوع جدید</system:String>
+    <system:String x:Key="lblValue">مقدار :</system:String>
+    <system:String x:Key="OrderByArtist">هنرمند</system:String>
+    <system:String x:Key="lblFastSearch">انتخاب جستجوی سریع / نتیجه ها ناقص خواهند شد</system:String>
+    <system:String x:Key="hedSelectDevice">انتخاب دستگاه شما</system:String>
+    <system:String x:Key="cmdUpdateId3">Id3 آپدیت</system:String>
+    <system:String x:Key="AutoUpdateId3">موزیک ID3 آپدیت</system:String>
+    <system:String x:Key="ImportXml">XML از فایل</system:String>
+    <system:String x:Key="ToolTipImportXML">XML وارد کردن کتاب ها از فایل</system:String>
+    <system:String x:Key="ImportFilmotechCSV">Filmotech CSV از فایل</system:String>
+    <system:String x:Key="ToolTiImportFilmotechCsv">Filmotech CSV وارد کردن فیلم ها از فایل</system:String>
+    <system:String x:Key="ImportFilmotechXML">Filmotech XML از فایل</system:String>
+    <system:String x:Key="ToolTiImportFilmotechXML">Filmotech XML وارد کردن فیلم ها از فایل</system:String>
+    <system:String x:Key="ImportMoviesDone">فیلم(ها)وارد شدند</system:String>
+    <system:String x:Key="ManagePlateform">مدیریت پلتفرم</system:String>
+    <system:String x:Key="Folders">پوشه ها</system:String>
+    <system:String x:Key="Files">فایل ها</system:String>
+    <system:String x:Key="ImportDone">آیتم وارد شد</system:String>
+    <system:String x:Key="HtmlTransform">لطفا صبر کنید Html درحال ساخت فایل</system:String>
+    <system:String x:Key="CorrectTitle">لطفا عنوان صحیح انتخاب کنید</system:String>
+    <system:String x:Key="GettingInfo1">گرفتن اطلاعات برای</system:String>
+    <system:String x:Key="GettingInfo2">از</system:String>
+    <system:String x:Key="NoResults">نتیجه ای یافت نشد</system:String>
+    <system:String x:Key="Processing1">پردازش اطلاعات برای</system:String>
+    <system:String x:Key="PleaseWait">جستجوی اطلاعات از</system:String>
+    <system:String x:Key="Preparing1">آماده سازی اطلاعات برای نمایش</system:String>
+    <system:String x:Key="Searching1">لطفا صبر کنید</system:String>
+    <system:String x:Key="SendLog">ارسال اطلاعات انتخابی</system:String>
+    <system:String x:Key="SendError">ارسال اطلاعات خطاها</system:String>
+    <system:String x:Key="AutoBackupDB">بکاپ خودکار دیتابیس</system:String>
+    <system:String x:Key="Help">کمک</system:String>
+    <system:String x:Key="Documentation">مستندات</system:String>
+    <system:String x:Key="Video">فیلم های آموزشی</system:String>
+    <system:String x:Key="Video1">چگونگی افزودن یک فیلم</system:String>
+    <system:String x:Key="Video2">چگونگی افزودن چندین فیلم</system:String>
+    <system:String x:Key="Video3">نمایش معمولی</system:String>
+    <system:String x:Key="SendKindle">Kindle ارسال به</system:String>
+    <system:String x:Key="CopyKindleOK">شما موجود است Kindle حالا بر روی</system:String>
+    <system:String x:Key="CopyKindleKO">Kindle عدم توانایی در کپی به</system:String>
+    <system:String x:Key="NoKindle">متصل نیست Kindle</system:String>
+    <system:String x:Key="ShowToolbarIcons">نمیشا آیکون های تولبار</system:String>
+    <system:String x:Key="Yes">بله</system:String>
+    <system:String x:Key="No">خیر</system:String>
+    <system:String x:Key="DeleteConfirmation">آیا میخواهید حذف کنید؟</system:String>
+    <system:String x:Key="ShowDeleteConfirmation">نمایش پیام تایید قبل از حذف</system:String>
+    <system:String x:Key="CopyTo">کپی به</system:String>
+    <system:String x:Key="OpenLocation">باز کردن پوشه ها</system:String>
+    <system:String x:Key="Persian">فارسی</system:String>
+    <system:String x:Key="ScanBarCode">اسکن بارکد</system:String>
+    <system:String x:Key="TakePicture">نگاهی به تصویر</system:String>
+    <system:String x:Key="PublicRating">امتیاز عمومی :</system:String>
+    <system:String x:Key="MyRating">رتبه من :</system:String>
+    <system:String x:Key="NumId">Coll # :</system:String>
+    <system:String x:Key="NumIdToolTip">شماره مجموعه</system:String>
+    <system:String x:Key="OrderByPublicRating">امتیاز عمومی</system:String>
+    <system:String x:Key="Saving">رستگار کننده...</system:String>
+    <system:String x:Key="OrderByNumId">Coll #</system:String>
+    <system:String x:Key="Print">چاپ</system:String>
+    <system:String x:Key="Like">آیا شما دوست دارید؟ به من نشان بده، اینجا را کلیک کنید.</system:String>
+    <system:String x:Key="MetaData">ابرداده :</system:String>
+    <system:String x:Key="ManageMetaData">مدیریت ابرداده</system:String>
+
+</ResourceDictionary>

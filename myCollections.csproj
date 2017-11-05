@@ -1,0 +1,1868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B1BEE673-74A0-4883-8BA0-E6CE9481329F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>myCollections</RootNamespace>
+    <AssemblyName>myCollections</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <ApplicationIcon>Images\AppIcone.ico</ApplicationIcon>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>myCollectionRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Optimize>false</Optimize>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AmCharts.Windows, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6a0af00bd7de39d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\AmCharts.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Awesomium.Core, Version=1.7.3.0, Culture=neutral, PublicKeyToken=e1a0d7c8071a5214, processorArchitecture=x86" />
+    <Reference Include="Awesomium.Windows.Controls, Version=1.7.3.0, Culture=neutral, PublicKeyToken=7a34e179b8b61c39, processorArchitecture=x86" />
+    <Reference Include="IdSharp, Version=0.0.0.2, Culture=neutral, PublicKeyToken=afbb2fbe078d3406, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp, Version=5.4.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\iTextSharp.5.4.4\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Luminescence.Xiph, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Luminescence.Xiph.2.4.1.0\lib\net40\Luminescence.Xiph.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="SStuff.FlowControls">
+      <HintPath>Lib\SStuff.FlowControls.dll</HintPath>
+    </Reference>
+    <Reference Include="SStuff.WpfEffects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Data.SQLite, Version=1.0.89.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\System.Data.SQLite.1.0.89.0\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.89.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\System.Data.SQLite.1.0.89.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <BlendEmbeddedFont Include="Fonts\segoeui.ttf">
+      <IsSystemFont>True</IsSystemFont>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\segoeuib.ttf">
+      <IsSystemFont>True</IsSystemFont>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\segoeuii.ttf">
+      <IsSystemFont>True</IsSystemFont>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\segoeuiz.ttf">
+      <IsSystemFont>True</IsSystemFont>
+    </BlendEmbeddedFont>
+    <Reference Include="zxing, Version=0.12.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\zxing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Resource Include="Images\Logos\Like_1.jpg" />
+    <Resource Include="Images\Like.png" />
+    <Resource Include="Images\Like2.png" />
+    <Content Include="packages\Newtonsoft.Json.5.0.8\lib\net20\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.8\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.8\lib\net35\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.8\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.8\lib\netcore45\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.8\lib\netcore45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.8\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.8\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.5.0.8\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll" />
+    <Resource Include="packages\Newtonsoft.Json.5.0.8\lib\portable-net45+wp80+win8\Newtonsoft.Json.xml" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\content\net20\x64\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\content\net20\x86\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\content\net40\x64\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\content\net40\x86\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\content\net45\x64\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\content\net45\x86\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\lib\net20\System.Data.SQLite.dll" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\lib\net20\System.Data.SQLite.Linq.dll" />
+    <Resource Include="packages\System.Data.SQLite.1.0.89.0\lib\net20\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\lib\net40\System.Data.SQLite.dll" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\lib\net40\System.Data.SQLite.Linq.dll" />
+    <Resource Include="packages\System.Data.SQLite.1.0.89.0\lib\net40\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\lib\net45\System.Data.SQLite.dll" />
+    <Content Include="packages\System.Data.SQLite.1.0.89.0\lib\net45\System.Data.SQLite.Linq.dll" />
+    <Resource Include="packages\System.Data.SQLite.1.0.89.0\lib\net45\System.Data.SQLite.xml" />
+    <Content Include="TvixTheme\BBT-XT-Square\BBT-XT-Square.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\BBT-XT-Square\Fond.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\BBT-XT-Square\FondInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\BBT-XT-Square\LB.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\BBT-XT-Square\LH1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\BBT-XT-Square\star_yellow_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="packages\iTextSharp.5.4.4\AGPL.txt" />
+    <Resource Include="Images\Logos\MusicBrainz_Logo.png" />
+    <Content Include="packages\iTextSharp.5.4.4\lib\itextsharp.dll" />
+    <Resource Include="Images\Camera.png" />
+    <Resource Include="Images\BardcodeScanner.png" />
+    <Resource Include="Images\Close.png" />
+    <Content Include="Lib\zxing.dll" />
+    <Content Include="Lib\zxing.pdb" />
+    <Content Include="packages\AForge.2.2.5\lib\AForge.dll" />
+    <Resource Include="packages\AForge.2.2.5\lib\AForge.xml" />
+    <Content Include="packages\AForge.Video.2.2.5\lib\AForge.Video.dll" />
+    <Resource Include="packages\AForge.Video.2.2.5\lib\AForge.Video.xml" />
+    <Content Include="packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll" />
+    <Resource Include="packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.xml" />
+    <Content Include="packages\ApprovalTests.3.0.01\lib\net40\ApprovalTests.dll" />
+    <Content Include="packages\ApprovalTests.3.0.01\lib\net40\ApprovalTests.pdb" />
+    <Resource Include="packages\ApprovalTests.3.0.01\lib\net40\ApprovalTests.XML" />
+    <Content Include="packages\ApprovalUtilities.3.0.01\lib\net35\ApprovalUtilities.dll" />
+    <Content Include="packages\ApprovalUtilities.3.0.01\lib\net35\ApprovalUtilities.pdb" />
+    <Resource Include="packages\ApprovalUtilities.3.0.01\lib\net35\ApprovalUtilities.XML" />
+    <Content Include="packages\MySql.Data.6.7.4\lib\net20-cf\MySql.Data.cf.dll" />
+    <Content Include="packages\MySql.Data.6.7.4\lib\net20\MySQL.Data.dll" />
+    <Content Include="packages\MySql.Data.6.7.4\lib\net40\MySql.Data.dll" />
+    <Resource Include="packages\NSubstitute.1.6.1.0\acknowledgements.txt" />
+    <Resource Include="packages\NSubstitute.1.6.1.0\BreakingChanges.txt" />
+    <Resource Include="packages\NSubstitute.1.6.1.0\CHANGELOG.txt" />
+    <Content Include="packages\NSubstitute.1.6.1.0\lib\NET35\NSubstitute.dll" />
+    <Resource Include="packages\NSubstitute.1.6.1.0\lib\NET35\NSubstitute.XML" />
+    <Content Include="packages\NSubstitute.1.6.1.0\lib\NET40\NSubstitute.dll" />
+    <Resource Include="packages\NSubstitute.1.6.1.0\lib\NET40\NSubstitute.XML" />
+    <Resource Include="packages\NSubstitute.1.6.1.0\LICENSE.txt" />
+    <Resource Include="packages\NSubstitute.1.6.1.0\README.txt" />
+    <Resource Include="Images\Logos\FilmStarts.jpg" />
+    <Resource Include="Images\Logo.png" />
+    <Content Include=".nuget\NuGet.exe" />
+    <Resource Include="Images\Add\AddBook.png" />
+    <Resource Include="Images\Add\AddApp.png" />
+    <Resource Include="Images\Add\AddGame.png" />
+    <Resource Include="Images\Add\AddMovie.png" />
+    <Resource Include="Images\Add\AddSerie.png" />
+    <Resource Include="Images\Add\AddNds.png" />
+    <Resource Include="Images\Add\AddXXX.png" />
+    <Resource Include="Images\Add\AddMusic.png" />
+    <Resource Include="Images\Logos\Nokia.jpg" />
+    <Resource Include="Images\Logos\GraceNote.png" />
+    <Resource Include="Images\Logos\AdoroCinema.jpg" />
+    <Content Include="BL\Export\HTML\Data\Images\Apps.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\Books.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\Gamez.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\line.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\Movie.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\Music.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\Nds.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\Series.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\XXX.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="packages\FluentAssertions.2.0.1\lib\net35\FluentAssertions.dll" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\net35\FluentAssertions.pdb" />
+    <Resource Include="packages\FluentAssertions.2.0.1\lib\net35\FluentAssertions.xml" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\net40\FluentAssertions.dll" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\net40\FluentAssertions.pdb" />
+    <Resource Include="packages\FluentAssertions.2.0.1\lib\net40\FluentAssertions.xml" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\net45\FluentAssertions.dll" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\net45\FluentAssertions.pdb" />
+    <Resource Include="packages\FluentAssertions.2.0.1\lib\net45\FluentAssertions.xml" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\sl4-windowsphone71\FluentAssertions.WindowsPhone.dll" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\sl4-windowsphone71\FluentAssertions.WindowsPhone.pdb" />
+    <Resource Include="packages\FluentAssertions.2.0.1\lib\sl4-windowsphone71\FluentAssertions.WindowsPhone.xml" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\sl4\FluentAssertions.Silverlight.dll" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\sl4\FluentAssertions.Silverlight.pdb" />
+    <Resource Include="packages\FluentAssertions.2.0.1\lib\sl4\FluentAssertions.Silverlight.xml" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\sl4\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\sl4\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.pdb" />
+    <Resource Include="packages\FluentAssertions.2.0.1\lib\sl4\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.xml" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\winrt45\FluentAssertions.dll" />
+    <Content Include="packages\FluentAssertions.2.0.1\lib\winrt45\FluentAssertions.pdb" />
+    <Resource Include="packages\FluentAssertions.2.0.1\lib\winrt45\FluentAssertions.xml" />
+    <Content Include="packages\xunit.1.9.1\lib\net20\xunit.dll" />
+    <Content Include="packages\xunit.1.9.1\lib\net20\xunit.runner.msbuild.dll" />
+    <Content Include="packages\xunit.1.9.1\lib\net20\xunit.runner.tdnet.dll" />
+    <Content Include="packages\xunit.1.9.1\lib\net20\xunit.runner.utility.dll" />
+    <Resource Include="packages\xunit.1.9.1\lib\net20\xunit.xml" />
+    <Content Include="Plugins\kindlegen.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\Logos\dolby-surround.png" />
+    <Page Include="Controls\Rating\RatingResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ucComboxBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\delete2.png" />
+    <Resource Include="Images\Play.png" />
+    <Resource Include="Images\Up.png" />
+    <Resource Include="Images\Down.png" />
+    <Resource Include="Data\Xml\Theme.xml" />
+    <Resource Include="Data\SqlLite\ModelInfo.txt" />
+    <Resource Include="Images\Donate.png" />
+    <Resource Include="Images\back.png" />
+    <Resource Include="Images\add.png" />
+    <Resource Include="Images\Accept.png" />
+    <Resource Include="Images\Cart.png" />
+    <Resource Include="Images\cancel.png" />
+    <Resource Include="Images\AddMedia25.png" />
+    <Content Include="Images\ChartsGrey.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\director.png" />
+    <Resource Include="Images\graphicsoftware14.png" />
+    <Resource Include="Images\Flags\French.png" />
+    <Resource Include="Images\Flags\Us.png" />
+    <Resource Include="Images\Flags\Belgium.png" />
+    <Resource Include="Images\Flags\Spain.png" />
+    <Resource Include="Images\Flags\Brazil.png" />
+    <Resource Include="Images\Flags\Germany.png" />
+    <Resource Include="Images\Flags\Italy.png" />
+    <Resource Include="Images\Flags\Argentina.png" />
+    <Resource Include="Images\Flags\Portugal.png" />
+    <Resource Include="Images\Logos\Ac3.png" />
+    <Resource Include="Images\Logos\DTS.png" />
+    <Resource Include="Images\Next.png" />
+    <Resource Include="Images\Flags\Chinese.png" />
+    <Resource Include="Images\Flags\Dutch.png" />
+    <Resource Include="Images\Flags\Russian.png" />
+    <Resource Include="Images\Flags\Japan.png" />
+    <Resource Include="Images\Flags\Thailand.png" />
+    <Resource Include="Images\Flags\Danish.png" />
+    <Resource Include="Images\PushPin.png" />
+    <Resource Include="Images\lock.png" />
+    <Resource Include="Images\lock-unlock.png" />
+    <Resource Include="Images\check.png" />
+    <Resource Include="Images\Logos\AmazonLogo.png" />
+    <Resource Include="Images\Logos\Softonic.png" />
+    <Resource Include="Images\Logos\Softpedia.png" />
+    <Resource Include="Images\Logos\Tucows.png" />
+    <Resource Include="Images\Logos\Bing.png" />
+    <Resource Include="Images\Logos\tmdb-logo.png" />
+    <Resource Include="Images\Logos\LogoAllocine.png" />
+    <Resource Include="Images\Logos\adultdvdempirecom-logo.jpg" />
+    <Resource Include="Images\Logos\JeuxVideo.jpg" />
+    <Resource Include="Images\Logos\imdb-logo.jpg" />
+    <Resource Include="Images\Logos\hotmovies.png" />
+    <Resource Include="Images\Logos\sugardvd.jpg" />
+    <Resource Include="Images\Logos\cdUniverse.png" />
+    <Resource Include="Images\Logos\orgasmik.jpg" />
+    <Resource Include="Images\Logos\dorcel.jpg" />
+    <Resource Include="Images\Logos\thetvdbwhite.png" />
+    <Resource Include="Images\Logos\LastFm.png" />
+    <Resource Include="Images\Logos\YahooMusic.png" />
+    <Resource Include="Images\Logos\Fnac.jpg" />
+    <Resource Include="Images\Logos\tgdb.png" />
+    <Content Include="Images\Rating\star_empty.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Rating\star_gold_full.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Rating\star_gold_half.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\WaitCircle.png" />
+    <Content Include="Images\rename.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Language\French.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Resource Include="Language\English.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Content Include="Language\Dutch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Language\German.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Language\Portuguese.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Language\Italian.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Language\Spanish.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Language\Russian.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Language\Turkish.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Language\Ukranian.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Page Include="Language\Persian.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AddMedia.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ArtistDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BookUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Browser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ChangeMediaInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Charts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AppsUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AddLink.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\manageItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\manageMetaData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ManagePlateform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\manageStudio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\manageCleanTitle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\donatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MessageBoxYesNo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NewsViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\newVersionViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\previewTvix.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\LoanTo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\manageFriends.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\proxySettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\selectFile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\managePreferences.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\manageWebUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\partialMatch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SerieUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ManageLanguage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\GameUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\deleteMedia.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\movieUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MusicUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ParentalControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\setTypes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\showNfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SyncPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\tvixThemeManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\VideoPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\xxxUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\NdsUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Content Include="Lib\MediaInfo.dll" />
+    <Content Include="Lib\SStuff.FlowControls.dll" />
+    <Content Include="Lib\SStuff.WpfEffects.dll" />
+    <None Include=".nuget\NuGet.Config" />
+    <None Include=".nuget\NuGet.targets" />
+    <None Include="App.Config" />
+    <None Include="Images\Logo.design" />
+    <None Include="Images\Psd\AddApps.psd" />
+    <None Include="Images\Psd\AddBook.psd" />
+    <None Include="Images\Psd\AddGamez.psd" />
+    <None Include="Images\Psd\AddMovie.psd" />
+    <None Include="Images\Psd\AddMusic.psd" />
+    <None Include="Images\Psd\AddNds.psd" />
+    <None Include="Images\Psd\AddSerie.psd" />
+    <None Include="Images\Psd\AddXXX.psd" />
+    <None Include="myCollectionRules.ruleset" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages\AForge.2.2.5\AForge.2.2.5.nupkg" />
+    <None Include="packages\AForge.2.2.5\AForge.2.2.5.nuspec" />
+    <None Include="packages\AForge.Video.2.2.5\AForge.Video.2.2.5.nupkg" />
+    <None Include="packages\AForge.Video.2.2.5\AForge.Video.2.2.5.nuspec" />
+    <None Include="packages\AForge.Video.DirectShow.2.2.5\AForge.Video.DirectShow.2.2.5.nupkg" />
+    <None Include="packages\AForge.Video.DirectShow.2.2.5\AForge.Video.DirectShow.2.2.5.nuspec" />
+    <None Include="packages\ApprovalTests.3.0.01\ApprovalTests.3.0.01.nupkg" />
+    <None Include="packages\ApprovalTests.3.0.01\ApprovalTests.3.0.01.nuspec" />
+    <None Include="packages\ApprovalUtilities.3.0.01\ApprovalUtilities.3.0.01.nupkg" />
+    <None Include="packages\ApprovalUtilities.3.0.01\ApprovalUtilities.3.0.01.nuspec" />
+    <None Include="packages\FluentAssertions.2.0.1\FluentAssertions.2.0.1.nupkg" />
+    <None Include="packages\iTextSharp.5.4.4\iTextSharp.5.4.4.nupkg" />
+    <None Include="packages\iTextSharp.5.4.4\iTextSharp.5.4.4.nuspec" />
+    <None Include="packages\Luminescence.Xiph.2.4.1.0\Luminescence.Xiph.2.4.1.0.nupkg" />
+    <None Include="packages\MySql.Data.6.7.4\MySql.Data.6.7.4.nupkg" />
+    <None Include="packages\MySql.Data.6.7.4\MySql.Data.6.7.4.nuspec" />
+    <None Include="packages\Newtonsoft.Json.5.0.8\Newtonsoft.Json.5.0.8.nupkg" />
+    <None Include="packages\Newtonsoft.Json.5.0.8\Newtonsoft.Json.5.0.8.nuspec" />
+    <None Include="packages\Newtonsoft.Json.5.0.8\tools\install.ps1" />
+    <None Include="packages\NSubstitute.1.6.1.0\NSubstitute.1.6.1.0.nupkg" />
+    <None Include="packages\NSubstitute.1.6.1.0\NSubstitute.1.6.1.0.nuspec" />
+    <None Include="packages\repositories.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages\System.Data.SQLite.1.0.89.0\System.Data.SQLite.1.0.89.0.nupkg" />
+    <None Include="packages\System.Data.SQLite.1.0.89.0\System.Data.SQLite.1.0.89.0.nuspec" />
+    <None Include="packages\System.Data.SQLite.1.0.89.0\tools\install.ps1" />
+    <None Include="packages\xunit.1.9.1\lib\net20\xunit.dll.tdnet" />
+    <None Include="packages\xunit.1.9.1\xunit.1.9.1.nupkg" />
+    <None Include="Service References\AmazonWebServices\configuration91.svcinfo" />
+    <None Include="Service References\AmazonWebServices\configuration.svcinfo" />
+    <None Include="Service References\AmazonWebServices\myCollections.AmazonWebServices.BrowseNodeLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmazonWebServices\myCollections.AmazonWebServices.CartAddResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmazonWebServices\myCollections.AmazonWebServices.CartClearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmazonWebServices\myCollections.AmazonWebServices.CartCreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmazonWebServices\myCollections.AmazonWebServices.CartGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmazonWebServices\myCollections.AmazonWebServices.CartModifyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmazonWebServices\myCollections.AmazonWebServices.ItemLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmazonWebServices\myCollections.AmazonWebServices.ItemSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmazonWebServices\myCollections.AmazonWebServices.SimilarityLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmazonWebServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="packages\Luminescence.Xiph.2.4.1.0\lib\net40\Luminescence.Xiph.dll" />
+    <Content Include="packages\Luminescence.Xiph.2.4.1.0\lib\net40\Luminescence.Xiph.pdb" />
+    <Resource Include="packages\Luminescence.Xiph.2.4.1.0\lib\net40\Luminescence.Xiph.xml" />
+    <Content Include="Skins\Baby\Baby.xaml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skins\Christas\Christas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Page Include="Skins\Common\Animations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\Border.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\BorderLessWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\BusyIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Common\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\CheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\ComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\Datagrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\Image.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\ListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\ListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\PasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\ProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\Scroll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\Separator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\TextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Content Include="Skins\SugarBrown\SugarBrown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skins\Facebook\Facebook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skins\Green\Green.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skins\Lavande\Lavande.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skins\Mellow\Mellow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Skins\OtherSide\OtherSide.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Page Include="Skins\Common\Textbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\ToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Common\Toolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Common\Validator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Metro\Border.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Metro\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Metro\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Metro\ListBoxItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Metro\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Metro\Metro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Metro\Scroll.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Metro\Slider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\Metro\ToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\OtherSide\TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\OtherSide\ToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Apps\ucAppsDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Apps\ucAppsInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Books\ucBooksDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Books\ucBooksInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucArtistDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Common\ucBuyLink.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Common\ucCastToolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Common\ucCoverFlow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Common\ucMetaData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Common\ucMusicGenres.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucArtist.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucFastBrowse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Common\ucSeriesGenres.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucAppsType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucBooksType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucGameType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucGenres.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucArtistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Gamez\ucGamezDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Gamez\ucGamezInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucTechnicalInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Movie\ucMovieInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Movie\ucMovieDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Music\ucTrack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Music\ucMusicDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Music\ucMusicInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucNdsType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Nds\ucNdsDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Nds\ucNdsInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Series\ucSeriesDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Series\ucSeriesInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ucAddMedia.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ucAddResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ucToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\XXX\ucXXXInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Common\ucXXXGenres.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\XXX\ucXXXDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\addItem.cs" />
+    <Compile Include="BL\Export\CSVExportercs.cs" />
+    <Compile Include="BL\Export\PDFExporter.cs" />
+    <Compile Include="BL\Export\XMLExporter.cs" />
+    <Compile Include="BL\fillSmallCover.cs" />
+    <Compile Include="BL\Imports\importApps.cs" />
+    <Compile Include="BL\Imports\importGames.cs" />
+    <Compile Include="BL\Imports\importLoaners.cs" />
+    <Compile Include="BL\Imports\importBooks.cs" />
+    <Compile Include="BL\Imports\importMovies.cs" />
+    <Compile Include="BL\Imports\importMoviesFilmotech.cs" />
+    <Compile Include="BL\Imports\importMusics.cs" />
+    <Compile Include="BL\Imports\importNds.cs" />
+    <Compile Include="BL\Imports\importSeries.cs" />
+    <Compile Include="BL\Imports\importXXX.cs" />
+    <Compile Include="BL\Providers\adultBluRayHdDvdServices.cs" />
+    <Compile Include="BL\Providers\adultdvdempireServices.cs" />
+    <Compile Include="BL\Providers\alloCineServices.cs" />
+    <Compile Include="BL\Providers\amazonServices.cs" />
+    <Compile Include="BL\Providers\bingServices.cs" />
+    <Compile Include="BL\Providers\cdUniverseServices.cs" />
+    <Compile Include="BL\Providers\dorcelServices.cs" />
+    <Compile Include="BL\Providers\fanArtServices.cs" />
+    <Compile Include="BL\Providers\fnacServices.cs" />
+    <Compile Include="BL\Providers\graceNoteServices.cs" />
+    <Compile Include="BL\Providers\hotMoviesServices.cs" />
+    <Compile Include="BL\Providers\iafdServices.cs" />
+    <Compile Include="BL\Providers\imdbServices.cs" />
+    <Compile Include="BL\Providers\jeuxVideoComServices.cs" />
+    <Compile Include="BL\Providers\lastFmServices.cs" />
+    <Compile Include="BL\Providers\musicbrainzServices.cs" />
+    <Compile Include="BL\Providers\nokiaServices.cs" />
+    <Compile Include="BL\Providers\orgazmikServices.cs" />
+    <Compile Include="BL\Providers\softpediaServices.cs" />
+    <Compile Include="BL\Providers\softTonicServices.cs" />
+    <Compile Include="BL\Providers\sugarVodServices.cs" />
+    <Compile Include="BL\Providers\theGamesDBServices.cs" />
+    <Compile Include="BL\Providers\theMovieDBServices.cs" />
+    <Compile Include="BL\Providers\tucowsServices.cs" />
+    <Compile Include="BL\Providers\tvdbServices.cs" />
+    <Compile Include="BL\Providers\yahooMusicServices.cs" />
+    <Compile Include="BL\Services\audioServices.cs" />
+    <Compile Include="BL\Services\BonjourServices.cs" />
+    <Compile Include="BL\Services\cleanTitleServices.cs" />
+    <Compile Include="BL\Services\commonServices.cs" />
+    <Compile Include="BL\Services\databaseServices.cs" />
+    <Compile Include="BL\Services\devicesServices.cs" />
+    <Compile Include="BL\Services\ExportServices.cs" />
+    <Compile Include="BL\Services\friendServices.cs" />
+    <Compile Include="BL\Services\audioTypeServices.cs" />
+    <Compile Include="BL\Services\genreServices.cs" />
+    <Compile Include="BL\Services\IExportServices.cs" />
+    <Compile Include="BL\Services\IServices.cs" />
+    <Compile Include="BL\Services\linksServices.cs" />
+    <Compile Include="BL\Services\mediaInfoDllServices.cs" />
+    <Compile Include="BL\Services\mediaServices.cs" />
+    <Compile Include="BL\Services\appServices.cs" />
+    <Compile Include="BL\Services\bookServices.cs" />
+    <Compile Include="BL\Converter.cs" />
+    <Compile Include="BL\Services\metaDataServices.cs" />
+    <Compile Include="BL\Services\publisherServices.cs" />
+    <Compile Include="BL\Services\ressourcesServices.cs" />
+    <Compile Include="BL\Services\SubTitleServices.cs" />
+    <Compile Include="BL\Services\thumbitemServices.cs" />
+    <Compile Include="BL\SyncItems.cs" />
+    <Compile Include="Controls\BorderLessWindow\BorderLessWindow.cs" />
+    <Compile Include="Controls\BorderLessWindow\NativeMethods.cs" />
+    <Compile Include="Controls\BorderLessWindow\RelayCommand.cs" />
+    <Compile Include="Controls\BorderLessWindow\UIHelper.cs" />
+    <Compile Include="Controls\BorderLessWindow\Win32.cs" />
+    <Compile Include="Controls\BusyIndicator.cs" />
+    <Compile Include="Controls\CustomEffects\GreyscaleEffect.cs" />
+    <Compile Include="Controls\Rating\Rating.cs" />
+    <Compile Include="Controls\VirtualizingWrapPanel.cs" />
+    <Compile Include="Data\BingSearchContainer.cs" />
+    <Compile Include="Data\CopyToFile.cs" />
+    <Compile Include="Data\EBookReaderDevices.cs" />
+    <Compile Include="Data\MediaPlayerDevices.cs" />
+    <Compile Include="Data\News.cs" />
+    <Compile Include="Data\PartialMatche.cs" />
+    <Compile Include="Data\Rest\AlloCine.cs" />
+    <Compile Include="Data\Rest\BibTex.cs" />
+    <Compile Include="Data\Rest\FanArt.cs" />
+    <Compile Include="Data\Rest\GraceNote.cs" />
+    <Compile Include="Data\Rest\LastFM.cs" />
+    <Compile Include="Data\Rest\NokiaMusic.cs" />
+    <Compile Include="Data\Rest\Softonic.cs" />
+    <Compile Include="Data\Rest\TheGamesDB.cs" />
+    <Compile Include="Data\Rest\TMDB.cs" />
+    <Compile Include="Data\Rest\TVDB.cs" />
+    <Compile Include="Data\Rest\YahooMusic.cs" />
+    <Compile Include="Data\SearchInfo.cs" />
+    <Compile Include="Data\SearchPatternObject.cs" />
+    <Compile Include="Data\SqlLite\Apps.cs" />
+    <Compile Include="Data\SqlLite\Artist.cs" />
+    <Compile Include="Data\SqlLite\ArtistCredits.cs" />
+    <Compile Include="Data\SqlLite\AspectRatio.cs" />
+    <Compile Include="Data\SqlLite\Audio.cs" />
+    <Compile Include="Data\SqlLite\AudioType.cs" />
+    <Compile Include="Data\SqlLite\Books.cs" />
+    <Compile Include="Data\SqlLite\CleanTitle.cs" />
+    <Compile Include="Data\SqlLite\Dal.cs" />
+    <Compile Include="Data\SqlLite\FileFormat.cs" />
+    <Compile Include="Data\SqlLite\Friends.cs" />
+    <Compile Include="Data\SqlLite\Gamez.cs" />
+    <Compile Include="Data\SqlLite\Genre.cs" />
+    <Compile Include="Data\SqlLite\ImyCollectionsData.cs" />
+    <Compile Include="Data\SqlLite\Job.cs" />
+    <Compile Include="Data\SqlLite\Language.cs" />
+    <Compile Include="Data\SqlLite\Links.cs" />
+    <Compile Include="Data\SqlLite\Loan.cs" />
+    <Compile Include="Data\SqlLite\Media.cs" />
+    <Compile Include="Data\SqlLite\MediaType.cs" />
+    <Compile Include="Data\SqlLite\MetaData.cs" />
+    <Compile Include="Data\SqlLite\Movie.cs" />
+    <Compile Include="Data\SqlLite\Music.cs" />
+    <Compile Include="Data\Rest\Musicbrainz.cs" />
+    <Compile Include="Data\SqlLite\MyCollectionsData.cs" />
+    <Compile Include="Data\SqlLite\mySettings.cs" />
+    <Compile Include="Data\SqlLite\Nds.cs" />
+    <Compile Include="Data\SqlLite\Platform.cs" />
+    <Compile Include="Data\SqlLite\ResourcesType.cs" />
+    <Compile Include="Data\SqlLite\Ressource.cs" />
+    <Compile Include="Data\SqlLite\Series_Season.cs" />
+    <Compile Include="Data\SqlLite\Publisher.cs" />
+    <Compile Include="Data\SqlLite\Track.cs" />
+    <Compile Include="Data\SqlLite\UpgradeScripts.cs" />
+    <Compile Include="Data\SqlLite\XXX.cs" />
+    <Compile Include="Data\ThumbItem.cs" />
+    <Compile Include="Data\Xml\Theme.cs">
+      <DependentUpon>Theme.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddLink.xaml.cs">
+      <DependentUpon>AddLink.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\manageItems.xaml.cs">
+      <DependentUpon>manageItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\manageMetaData.xaml.cs">
+      <DependentUpon>manageMetaData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ManagePlateform.xaml.cs">
+      <DependentUpon>ManagePlateform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\manageStudio.xaml.cs">
+      <DependentUpon>manageStudio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\manageCleanTitle.xaml.cs">
+      <DependentUpon>manageCleanTitle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\donatePage.xaml.cs">
+      <DependentUpon>donatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MessageBoxYesNo.xaml.cs">
+      <DependentUpon>MessageBoxYesNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewsViewer.xaml.cs">
+      <DependentUpon>NewsViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\proxySettings.xaml.cs">
+      <DependentUpon>proxySettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\setTypes.xaml.cs">
+      <DependentUpon>setTypes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SyncPage.xaml.cs">
+      <DependentUpon>SyncPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VideoPlayer.xaml.cs">
+      <DependentUpon>VideoPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AmazonWebServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="UserControls\Common\Commands.cs" />
+    <Compile Include="UserControls\Common\ucArtistDetail.xaml.cs">
+      <DependentUpon>ucArtistDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucBuyLink.xaml.cs">
+      <DependentUpon>ucBuyLink.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucCastToolbar.xaml.cs">
+      <DependentUpon>ucCastToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucCoverFlow.xaml.cs">
+      <DependentUpon>ucCoverFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucMetaData.xaml.cs">
+      <DependentUpon>ucMetaData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucMusicGenres.xaml.cs">
+      <DependentUpon>ucMusicGenres.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucArtistView.xaml.cs">
+      <DependentUpon>ucArtistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucTechnicalInfo.xaml.cs">
+      <DependentUpon>ucTechnicalInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Music\ucTrack.xaml.cs">
+      <DependentUpon>ucTrack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\AlloCineComparer.cs" />
+    <Compile Include="Utils\ArtistComparer.cs" />
+    <Compile Include="Utils\ArtistCreditComparer.cs" />
+    <Compile Include="Utils\CardHeightConverter.cs" />
+    <Compile Include="Utils\CardWidthConverter.cs" />
+    <Compile Include="Utils\CookieAwareWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BL\Services\EBookReaderDeviceFinder.cs" />
+    <Compile Include="Utils\Enums.cs" />
+    <Compile Include="BL\Mp3Header.cs" />
+    <Compile Include="BL\Services\newsServices.cs" />
+    <Compile Include="BL\QuickSort.cs" />
+    <Compile Include="BL\Services\artistServices.cs" />
+    <Compile Include="BL\Services\gameServices.cs" />
+    <Compile Include="BL\Services\languageServices.cs" />
+    <Compile Include="BL\Services\loanServices.cs" />
+    <Compile Include="BL\Services\movieServices.cs" />
+    <Compile Include="BL\Services\musicServices.cs" />
+    <Compile Include="BL\Services\ndsServices.cs" />
+    <Compile Include="BL\Services\serieServices.cs" />
+    <Compile Include="BL\Services\xxxServices.cs" />
+    <Compile Include="BL\Services\themeServices.cs" />
+    <Compile Include="BL\updateItem.cs" />
+    <Compile Include="Controls\SplitButton.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Pages\ArtistDetail.xaml.cs">
+      <DependentUpon>ArtistDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\newVersionViewer.xaml.cs">
+      <DependentUpon>newVersionViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\previewTvix.xaml.cs">
+      <DependentUpon>previewTvix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoanTo.xaml.cs">
+      <DependentUpon>LoanTo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\manageFriends.xaml.cs">
+      <DependentUpon>manageFriends.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\selectFile.xaml.cs">
+      <DependentUpon>selectFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\partialMatch.xaml.cs">
+      <DependentUpon>partialMatch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\tvixThemeManager.xaml.cs">
+      <DependentUpon>tvixThemeManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucArtist.xaml.cs">
+      <DependentUpon>ucArtist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucFastBrowse.xaml.cs">
+      <DependentUpon>ucFastBrowse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ByteArrayToBitmapImageConverter.cs" />
+    <Compile Include="Utils\htmlcssparser.cs" />
+    <Compile Include="Utils\htmllexicalanalyzer.cs" />
+    <Compile Include="Utils\htmlparser.cs" />
+    <Compile Include="Utils\htmlschema.cs" />
+    <Compile Include="Utils\htmltokentype.cs" />
+    <Compile Include="Utils\htmltoxamlconverter.cs" />
+    <Compile Include="Utils\ImageHeightConverter.cs" />
+    <Compile Include="Utils\DetailsPaneHeightConverter.cs" />
+    <Compile Include="Utils\ImageWidthConverter.cs" />
+    <Compile Include="Utils\LanguageComparer.cs" />
+    <Compile Include="Utils\PartialMatchComparer.cs" />
+    <Compile Include="Utils\PublisherComparer.cs" />
+    <Compile Include="Utils\NotBooleanToVisbilityConverter.cs" />
+    <Compile Include="Utils\NotifyChanged.cs" />
+    <Compile Include="Utils\RectConverter.cs" />
+    <Compile Include="Utils\SettingBindingExtension.cs" />
+    <Compile Include="Utils\SwitchConverter.cs" />
+    <Compile Include="Utils\TimeConverter.cs" />
+    <Compile Include="Utils\ToolTipConverter.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Controls\IProgressContext.cs" />
+    <Compile Include="Controls\ucComboxBox.xaml.cs">
+      <DependentUpon>ucComboxBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddMedia.xaml.cs">
+      <DependentUpon>AddMedia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BookUpdate.xaml.cs">
+      <DependentUpon>BookUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Browser.xaml.cs">
+      <DependentUpon>Browser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChangeMediaInfo.xaml.cs">
+      <DependentUpon>ChangeMediaInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Charts.xaml.cs">
+      <DependentUpon>Charts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppsUpdate.xaml.cs">
+      <DependentUpon>AppsUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\managePreferences.xaml.cs">
+      <DependentUpon>managePreferences.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\manageWebUpdate.xaml.cs">
+      <DependentUpon>manageWebUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SerieUpdate.xaml.cs">
+      <DependentUpon>SerieUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ManageLanguage.xaml.cs">
+      <DependentUpon>ManageLanguage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GameUpdate.xaml.cs">
+      <DependentUpon>GameUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\deleteMedia.xaml.cs">
+      <DependentUpon>deleteMedia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\movieUpdate.xaml.cs">
+      <DependentUpon>movieUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MusicUpdate.xaml.cs">
+      <DependentUpon>MusicUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ParentalControl.xaml.cs">
+      <DependentUpon>ParentalControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\showNfo.xaml.cs">
+      <DependentUpon>showNfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\xxxUpdate.xaml.cs">
+      <DependentUpon>xxxUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProgressBar.xaml.cs">
+      <DependentUpon>ProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NdsUpdate.xaml.cs">
+      <DependentUpon>NdsUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UserControls\Apps\ucAppsDetail.xaml.cs">
+      <DependentUpon>ucAppsDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Apps\ucAppsInfo.xaml.cs">
+      <DependentUpon>ucAppsInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Books\ucBooksDetail.xaml.cs">
+      <DependentUpon>ucBooksDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Books\ucBooksInfo.xaml.cs">
+      <DependentUpon>ucBooksInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucSeriesGenres.xaml.cs">
+      <DependentUpon>ucSeriesGenres.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucAppsType.xaml.cs">
+      <DependentUpon>ucAppsType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucBooksType.xaml.cs">
+      <DependentUpon>ucBooksType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucGameType.xaml.cs">
+      <DependentUpon>ucGameType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucGenres.xaml.cs">
+      <DependentUpon>ucGenres.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Gamez\ucGamezDetail.xaml.cs">
+      <DependentUpon>ucGamezDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Gamez\ucGamezInfo.xaml.cs">
+      <DependentUpon>ucGamezInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Movie\ucMovieInfo.xaml.cs">
+      <DependentUpon>ucMovieInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Movie\ucMovieDetail.xaml.cs">
+      <DependentUpon>ucMovieDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Music\ucMusicDetail.xaml.cs">
+      <DependentUpon>ucMusicDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Music\ucMusicInfo.xaml.cs">
+      <DependentUpon>ucMusicInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucNdsType.xaml.cs">
+      <DependentUpon>ucNdsType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Nds\ucNdsDetail.xaml.cs">
+      <DependentUpon>ucNdsDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Nds\ucNdsInfo.xaml.cs">
+      <DependentUpon>ucNdsInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Series\ucSeriesDetail.xaml.cs">
+      <DependentUpon>ucSeriesDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Series\ucSeriesInfo.xaml.cs">
+      <DependentUpon>ucSeriesInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucAddMedia.xaml.cs">
+      <DependentUpon>ucAddMedia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucAddResults.xaml.cs">
+      <DependentUpon>ucAddResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucToolBar.xaml.cs">
+      <DependentUpon>ucToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\XXX\ucXXXInfo.xaml.cs">
+      <DependentUpon>ucXXXInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\ucXXXGenres.xaml.cs">
+      <DependentUpon>ucXXXGenres.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\XXX\ucXXXDetail.xaml.cs">
+      <DependentUpon>ucXXXDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BL\Export\HTML\HtmlExport.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Resource Include="Controls\CustomEffects\ByteCode\Greyscale.ps" />
+    <None Include="Controls\CustomEffects\Source\Greyscale.fx" />
+    <None Include="Data\SqlLite\myCollections.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\SqlLite\myCollectionsEmpty.db" />
+    <None Include="Data\Xml\Theme.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\myCollections.Data.SqlLite.myCollectionsSQLiteEntities.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\AmazonWebServices\AWSECommerceService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Sherlock.ico" />
+    <None Include="Images\Splash2.design" />
+    <Content Include="Images\BlackBackground_1700_955.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BlackBackground_1920_1080.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\elvis64.png" />
+    <Resource Include="Images\monroe64.png" />
+    <Resource Include="Images\gthumb.png" />
+    <Content Include="Images\Music.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\AppIcone.png">
+    </Resource>
+    <Content Include="Images\Books.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AddMedia.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Gamez.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Delete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Charts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Images\Config.png" />
+    <Content Include="Images\Series.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Apps.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\AppIcone.ico" />
+    <Resource Include="Images\HD.png">
+    </Resource>
+    <Content Include="Images\Nds.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\Splash2.png" />
+    <None Include="Images\Skin.png" />
+    <Content Include="Images\Movie.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\Sup.ico" />
+    <Content Include="Images\Search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\UpadteInternet.png" />
+    <Content Include="Images\XXX.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lib\AmCharts.Windows.dll" />
+    <Content Include="Lib\IdSharp.dll" />
+    <Content Include="TvixTheme\BBT-XT\BBT-XT.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\BBT-XT\Fond.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\BBT-XT\FondInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\BBT-XT\LB.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\BBT-XT\LH1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\BBT-XT\star_yellow_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TvixTheme\Default\Default.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Css\lightbox.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Css\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\blank.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\closelabel.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\nextlabel.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\prevlabel.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Images\shelf.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Js\litebox-1.0.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Js\moo.fx.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\Data\Js\prototype.lite.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BL\Export\HTML\SimpleWebpage.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Images\iTunes.png">
+    </None>
+    <None Include="Images\Keychain.ico" />
+    <Resource Include="Images\ProgramGroup.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C8F2D6AC-F9F4-4E40-A399-22F9A9A5CBD2}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AmazonWebServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\Networks\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)Lib\MediaInfo.dll" "$(TargetDir)"
+
+</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

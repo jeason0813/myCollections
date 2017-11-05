@@ -1,0 +1,38 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.ProgressBar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:myCollections.Controls"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" x:Name="Window" Width="470" Height="115">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Name="StackProgress" Visibility="{Binding Path=ProgresseBarVisibility, ElementName=Window, Mode=OneWay}">
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <TextBlock Text="{DynamicResource lblProcess}" Style="{DynamicResource WaitTextStyle}"/>
+                <TextBlock Margin="5,0,0,0" Text="{Binding Path=Current, ElementName=Window, Mode=OneWay}" 
+                           Style="{DynamicResource WaitTextStyle}"/>
+                <TextBlock Margin="5,0,5,0" Style="{DynamicResource WaitTextStyle}">of</TextBlock>
+                <TextBlock Text="{Binding Path=Total, ElementName=Window, Mode=OneWay}" 
+                           Style="{DynamicResource WaitTextStyle}"/>
+            </StackPanel>
+            <ProgressBar Height="30" Value="{Binding Path=Current, ElementName=Window, Mode=OneWay}"
+                   Minimum="0" Maximum="{Binding Path=Total, ElementName=Window, Mode=OneWay}"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Name="StackWait" Visibility="{Binding Path=WaitVisibility, ElementName=Window, Mode=OneWay}">
+            <TextBlock Text="{Binding Path=Message, ElementName=Window, Mode=OneWay}" Style="{DynamicResource WaitTextStyle}"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="0" Background="{DynamicResource WorkBackgroundBrush}">
+            <Button x:Name="Cancel" Style="{DynamicResource ButtonStyle}" Click="CancelClick"  
+                    IsCancel="True"  HorizontalAlignment="Center">
+                <Button.Content>
+                    <Image Source="/Images/cancel.png" ToolTip="Cancel"/>
+                </Button.Content>
+            </Button>
+        </Grid>
+    </Grid>
+</Controls:BorderLessWindow>

@@ -1,0 +1,91 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:myCollections.Controls"
+    ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowClose="True"
+    Width="400" Height="360">
+    <Grid Margin="6,20,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Left" Text="myCollections" Grid.Row="0" FontSize="16" TextDecorations="None" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Right" Text="{DynamicResource Version}" Grid.Row="0" Name="lblVersion"/>
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource Contact}" Grid.Row="1"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Right">
+            <Hyperlink Click="hypMail_Click" NavigateUri="mailto:myCollections.team@gmail.com">myCollections.team@gmail.com</Hyperlink>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Text="Twitter" Grid.Row="2"/>
+        <TextBlock Grid.Row="2" HorizontalAlignment="Right">
+            <Hyperlink Click="hypMail_Click" NavigateUri="http://twitter.com/myCollections2">@myCollections2</Hyperlink>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource Home}" Grid.Row="3"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="3">
+            <Hyperlink Click="hypMail_Click" NavigateUri="http://mycollections.codeplex.com">mycollections.codeplex.com</Hyperlink>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Center" Text="{DynamicResource Credits}" Grid.Row="4" FontWeight="Bold" FontSize="14"/>
+
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource AboutCharts}" Grid.Row="5"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="5">
+            <Hyperlink Click="hypMail_Click" NavigateUri="http://www.amcharts.com">amCharts</Hyperlink>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource Mp3}" Grid.Row="6"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="6">
+            <Hyperlink Click="hypMail_Click" NavigateUri="http://www.idsharp.com">idSharp</Hyperlink>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource FLAC}" Grid.Row="7"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="7">
+            <Hyperlink Click="hypMail_Click" NavigateUri="http://xiph.codeplex.com/">Cyber Sinh</Hyperlink>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource SqlLite}" Grid.Row="8"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="8">
+            <Hyperlink Click="hypMail_Click" NavigateUri="http://sqlite.phxsoftware.com">PhxSoftware</Hyperlink>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource PDF}" Grid.Row="9"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="9">
+            <Hyperlink Click="hypMail_Click" NavigateUri="http://iTextSharp.sourceforge.net">iTextSharp</Hyperlink>
+        </TextBlock>
+        
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource HtmlExport}" Grid.Row="10"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="10" Text="Alexey Ozemko" />
+
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource CoverFlowBy}" Grid.Row="11"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="11">
+            <Hyperlink Click="hypMail_Click" NavigateUri="http://slflow.codeplex.com/">Silverlight Flow Layouts library</Hyperlink>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource TesterLead}" Grid.Row="12"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="12" Text="Mariia Akcheurova" />
+
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource WrapPanelOptim}" Grid.Row="13"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="13" >
+            <Hyperlink Click="hypMail_Click" NavigateUri="http://mediaassistant.codeplex.com/">Media Assistant</Hyperlink>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Left" Text="{DynamicResource MetroStyleBy}" Grid.Row="14"/>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="14" >
+            <Hyperlink Click="hypMail_Click" NavigateUri="http://mahapps.com//">Mahapps</Hyperlink>
+        </TextBlock>
+
+    </Grid>
+</Controls:BorderLessWindow>

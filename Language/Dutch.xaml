@@ -1,0 +1,641 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--Common-->
+    <system:String x:Key="cmdCancel">Annuleren</system:String>
+    <system:String x:Key="cmdClean">Opschonen</system:String>
+    <system:String x:Key="cmdReadNfo">Nfo Updaten</system:String>
+    <system:String x:Key="cmdViewNfo">Bekijk Nfo</system:String>
+    <system:String x:Key="cmdUpdateWeb">Web Updaten</system:String>
+    <system:String x:Key="cmdUpdate">Opslaan</system:String>
+    <system:String x:Key="cmdItemInfo">Info</system:String>
+    <system:String x:Key="cmdTypes">Soorten</system:String>
+    <system:String x:Key="cmdGenres">Genres</system:String>
+    <system:String x:Key="cmdOk">Ok</system:String>
+    <system:String x:Key="cmdDelete">Verwijderen</system:String>
+    <system:String x:Key="hedRealName">Echte Naam</system:String>
+    <system:String x:Key="hedDisplayName">Weergeef Naam</system:String>
+    <system:String x:Key="cmdAdd">Toevoegen</system:String>
+    <system:String x:Key="cmdBrowse">Browsen</system:String>
+    <system:String x:Key="cmdTvixCover">Maak dekken</system:String>
+    <system:String x:Key="cmdCast">Gegoten</system:String>
+    <system:String x:Key="lblMedia">Media :</system:String>
+    <system:String x:Key="lblBarcode">BarCode :</system:String>
+    <system:String x:Key="lblFilePath">Bestandslocatie :</system:String>
+    <system:String x:Key="lblFileName">Bestandsnaam :</system:String>
+    <system:String x:Key="lblDateAdded">Datum Toegevoegd :</system:String>
+    <system:String x:Key="lblDateReleased">Release Datum :</system:String>
+    <system:String x:Key="lblLanguage">Talen :</system:String>
+    <system:String x:Key="lblLinks">Links :</system:String>
+    <system:String x:Key="lblType">Type :</system:String>
+    <system:String x:Key="lblRating">Beoordeling :</system:String>
+    <system:String x:Key="lblDescription">Beschrijving :</system:String>
+    <system:String x:Key="lblComments">Commentaar :</system:String>
+    <system:String x:Key="lblEditor">Redacteur :</system:String>
+    <system:String x:Key="hedStatus">Status :</system:String>
+    <system:String x:Key="lblTested">Getest :</system:String>
+    <system:String x:Key="lblToBeDeleted">Te Verwijderen :</system:String>
+    <system:String x:Key="lblDeleted">Verwijderd :</system:String>
+    <system:String x:Key="lblComplete">Voltooi :</system:String>
+    <system:String x:Key="lblWish">Wens :</system:String>
+    <system:String x:Key="lblLinksDelete">Verwijder Alle Links</system:String>
+    <system:String x:Key="lblFormat">Formaat :</system:String>
+    <system:String x:Key="lblRated">Beoordeeld :</system:String>
+    <system:String x:Key="lblGenre">Genre :</system:String>
+    <system:String x:Key="lblRunTime">Speelduur :</system:String>
+    <system:String x:Key="lblSeen">Gezien :</system:String>
+    <system:String x:Key="lblStudio">Studio :</system:String>
+    <system:String x:Key="lblSelectAll">Selecteer Alles</system:String>
+    <system:String x:Key="lblUnselectAll">Deselecteer Alles</system:String>
+    <system:String x:Key="lblLinksAdd">Link Toevoegen</system:String>
+    <system:String x:Key="lblTitle">Titel :</system:String>
+    <system:String x:Key="cmdTechnicalInfo">Technische Info</system:String>
+    <system:String x:Key="lblAudio">Audio :</system:String>
+    <system:String x:Key="lblSub">Ondertitel :</system:String>
+    <system:String x:Key="lblToWatch">Om te kijken :</system:String>
+    <system:String x:Key="lblToTest">Om te testen :</system:String>
+    <system:String x:Key="lblToRead">To Read :</system:String>
+    <system:String x:Key="lblToHear">To Hear :</system:String>
+
+    <!--!Main Screen-->
+    <system:String x:Key="Apps">Applicaties</system:String>
+    <system:String x:Key="Books">Boeken</system:String>
+    <system:String x:Key="Gamez">Spellen</system:String>
+    <system:String x:Key="Movies">Films</system:String>
+    <system:String x:Key="Music">Muziek</system:String>
+    <system:String x:Key="NDS">NDS</system:String>
+    <system:String x:Key="Series">Series</system:String>
+    <system:String x:Key="XXX">XXX</system:String>
+    <system:String x:Key="DetailsPane">Details</system:String>
+    <system:String x:Key="Search">Zoeken...</system:String>
+    <system:String x:Key="Search2">Zoeken</system:String>
+    <system:String x:Key="InCategories">in </system:String>
+    <system:String x:Key="Donate">Doneer</system:String>
+
+    <!--Messages-->
+    <system:String x:Key="BackupErrorMessageConfirmation">Sorry, maar de database kan niet gebackupped worden. Gelieve handmatig te backuppen. Wilt u de update toch uitvoeren?</system:String>
+    <system:String x:Key="DBUpgradeSucess">Database is succesvol geupgrade naar versie :</system:String>
+    <system:String x:Key="AccesDenied">Toegang Geweigerd</system:String>
+    <system:String x:Key="ExportFolder">Selecteer een map om naar te exporteren :</system:String>
+    <system:String x:Key="ExportDone">Exporteren voltooid</system:String>
+    <system:String x:Key="CantDupe">Selecteer eerst een categorie.</system:String>
+    <system:String x:Key="DBDirty">Database is nog steeds corrupt, lees de log.</system:String>
+    <system:String x:Key="EraseDB">Deze actie zal alle gegevens in de database verwijderen, weet u zeker dat u wilt doorgaan ?</system:String>
+    <system:String x:Key="EraseDBTitle">Wis alle data.</system:String>
+    <system:String x:Key="DBEmpty">Database is nu leeg.</system:String>
+    <system:String x:Key="ImportBooksDone">Boek(en) geïmporteerd</system:String>
+    <system:String x:Key="ImportMusicDone">Muziek geïmporteerd</system:String>
+    <system:String x:Key="ImportLoanerDone">Loaner(s) imported</system:String>
+    <system:String x:Key="UpdateDbFromPrevious">Do you want import your data from previous version ?</system:String>
+    <system:String x:Key="EveythingOk">Import was sucessful. Please restart the application.</system:String>
+
+    <!--Maine Menu-->
+    <system:String x:Key="Actions">Acties</system:String>
+    <system:String x:Key="Add">Toevoegen</system:String>
+    <system:String x:Key="AddApps">Applicatie toevoegen</system:String>
+    <system:String x:Key="ToolTipAddApps">Voeg een nieuwe Applicatie toe</system:String>
+    <system:String x:Key="AddBook">Boek toevoegen</system:String>
+    <system:String x:Key="ToolTipAddBook">Voeg een nieuw Boek toe</system:String>
+    <system:String x:Key="AddGames">Spel toevoegen</system:String>
+    <system:String x:Key="ToolTipAddGames">Voeg een nieuw Spel toe</system:String>
+    <system:String x:Key="AddMedia">Media toevoegen</system:String>
+    <system:String x:Key="ToolTipAddMedia">Voeg een nieuw media (HD, DVD, ...) item toe</system:String>
+    <system:String x:Key="AddMovie">Film toevoegen</system:String>
+    <system:String x:Key="ToolTipAddMovie">Voeg een nieuwe Film toe</system:String>
+    <system:String x:Key="AddMusic">Muziek toevoegen</system:String>
+    <system:String x:Key="ToolTipAddMusic">Voeg een nieuwe Muziek Titel toe</system:String>
+    <system:String x:Key="AddNds">Nds toevoegen</system:String>
+    <system:String x:Key="ToolTipAddNDS">Voeg een nieuwe Nds toe</system:String>
+    <system:String x:Key="AddSeries">Series toevoegen</system:String>
+    <system:String x:Key="ToolTipAddSeries">Voeg een nieuw Serie Seizoen toe</system:String>
+    <system:String x:Key="AddXXX">XXX toegoeven</system:String>
+    <system:String x:Key="ToolTipAddXXX">Voeg een nieuwe Porno Film toe</system:String>
+
+    <system:String x:Key="Delete">Verwijderen</system:String>
+    <system:String x:Key="DeleteMedia">Verwijder Media</system:String>
+
+    <system:String x:Key="Export">Exporteer</system:String>
+    <system:String x:Key="ExportAll">Alles</system:String>
+    <system:String x:Key="ToolTipExportAll">Exporteer alle items naar naar HTML</system:String>
+    <system:String x:Key="ToolTipExportApps">Exporteer Applicaties naar HTML</system:String>
+    <system:String x:Key="ToolTipExportBooks">Exporteer Booken naar HTML</system:String>
+    <system:String x:Key="ToolTipExportGames">Exporteer Spellen naar HTML</system:String>
+    <system:String x:Key="ToolTipExportMovie">Exporteer Films naar HTML</system:String>
+    <system:String x:Key="ToolTipExportMusic">Export Muziek naar HTML</system:String>
+    <system:String x:Key="ToolTipExportNds">Exporteer Nds naar HTML</system:String>
+    <system:String x:Key="ToolTipExportSeries">Exporteer Series naar HTML</system:String>
+    <system:String x:Key="ToolTipExportXXX">Exporteer XXX naar HTML</system:String>
+    <system:String x:Key="ToolTipExportAllXML">Exporteer alle items naar naar XML</system:String>
+    <system:String x:Key="ToolTipExportAppsXML">Exporteer Applicaties naar XML</system:String>
+    <system:String x:Key="ToolTipExportBooksXML">Exporteer Booken naar XML</system:String>
+    <system:String x:Key="ToolTipExportGamesXML">Exporteer Spellen naar XML</system:String>
+    <system:String x:Key="ToolTipExportMovieXML">Exporteer Films naar XML</system:String>
+    <system:String x:Key="ToolTipExportMusicXML">Export Muziek naar XML</system:String>
+    <system:String x:Key="ToolTipExportNdsXML">Exporteer Nds naar XML</system:String>
+    <system:String x:Key="ToolTipExportSeriesXML">Exporteer Series naar XML</system:String>
+    <system:String x:Key="ToolTipExportXXXXML">Exporteer XXX naar XML</system:String>
+    <system:String x:Key="ToolTipExportAllCSV">Exporteer alle items naar naar CSV</system:String>
+    <system:String x:Key="ToolTipExportAppsCSV">Exporteer Applicaties naar CSV</system:String>
+    <system:String x:Key="ToolTipExportBooksCSV">Exporteer Booken naar CSV</system:String>
+    <system:String x:Key="ToolTipExportGamesCSV">Exporteer Spellen naar CSV</system:String>
+    <system:String x:Key="ToolTipExportMovieCSV">Exporteer Films naar CSV</system:String>
+    <system:String x:Key="ToolTipExportMusicCSV">Export Muziek naar CSV</system:String>
+    <system:String x:Key="ToolTipExportNdsCSV">Exporteer Nds naar CSV</system:String>
+    <system:String x:Key="ToolTipExportSeriesCSV">Exporteer Series naar CSV</system:String>
+    <system:String x:Key="ToolTipExportXXXCSV">Exporteer XXX naar CSV</system:String>
+    <system:String x:Key="ToolTipExportAllPDF">Exporteer alle items naar naar PDF</system:String>
+    <system:String x:Key="ToolTipExportAppsPDF">Exporteer Applicaties naar PDF</system:String>
+    <system:String x:Key="ToolTipExportBooksPDF">Exporteer Booken naar PDF</system:String>
+    <system:String x:Key="ToolTipExportGamesPDF">Exporteer Spellen naar PDF</system:String>
+    <system:String x:Key="ToolTipExportMoviePDF">Exporteer Films naar PDF</system:String>
+    <system:String x:Key="ToolTipExportMusicPDF">Export Muziek naar PDF</system:String>
+    <system:String x:Key="ToolTipExportNdsPDF">Exporteer Nds naar PDF</system:String>
+    <system:String x:Key="ToolTipExportSeriesPDF">Exporteer Series naar PDF</system:String>
+    <system:String x:Key="ToolTipExportXXXPDF">Exporteer XXX naar PDF</system:String>
+    <system:String x:Key="Import">Importeer</system:String>
+    <system:String x:Key="ImportBibtex">Van Bibtex Bestand</system:String>
+    <system:String x:Key="ToolTiImportBibtex">Importeer Boeken Van Bibtex XML Bestand</system:String>
+    <system:String x:Key="ImportCSV">Van Csv Bestand</system:String>
+    <system:String x:Key="ToolTiImportMusicCsv">Importeer Muziek Van Csv Bestand</system:String>
+    <system:String x:Key="Loaner">Loaner</system:String>
+    <system:String x:Key="ToolTiImporLoanerCsv">Import Loaner From Csv File</system:String>
+
+    <system:String x:Key="View">Bekijken</system:String>
+    <system:String x:Key="ViewAll">Alles</system:String>
+    <system:String x:Key="ToBeDeleted">Te Verwijderen</system:String>
+    <system:String x:Key="Deleted">Verwijderd</system:String>
+    <system:String x:Key="Wish">Wens</system:String>
+    <system:String x:Key="ViewComplete">Compleet</system:String>
+    <system:String x:Key="NotComplete">Niet Compleet</system:String>
+    <system:String x:Key="WithoutCover">Zonder Cover</system:String>
+    <system:String x:Key="WithCover">Met Cover</system:String>
+    <system:String x:Key="ViewSeen">Gezien</system:String>
+    <system:String x:Key="NotSeen">Niet Gezien</system:String>
+    <system:String x:Key="Tested">Getest</system:String>
+    <system:String x:Key="NotTested">Niet Getest</system:String>
+    <system:String x:Key="Read">Gelezen</system:String>
+    <system:String x:Key="NotRead">Niet Gelezen</system:String>
+    <system:String x:Key="Heard">Gehoord</system:String>
+    <system:String x:Key="NotHeard">Niet Gehoord</system:String>
+    <system:String x:Key="ToWatch">To Watch</system:String>
+    <system:String x:Key="ToHear">To Hear</system:String>
+    <system:String x:Key="ToTest">To Test</system:String>
+    <system:String x:Key="ToRead">To Read</system:String>
+
+    <system:String x:Key="CoverView">Cover Weergave</system:String>
+    <system:String x:Key="CardView">Kaart Weergave</system:String>
+    <system:String x:Key="CoverFlowView">CoverFlow Weergave</system:String>
+    <system:String x:Key="CubeView">Kubus Weergave</system:String>
+    <system:String x:Key="ArtistView">Artist View</system:String>
+
+    <system:String x:Key="OrderBy">Sorteer Op</system:String>
+    <system:String x:Key="OrderByName">Naam</system:String>
+    <system:String x:Key="OrderByLastAdded">Laatst Toegevoegd</system:String>
+    <system:String x:Key="OrderByRunTime">Speelduur</system:String>
+    <system:String x:Key="OrderByRating">Beoordeling</system:String>
+    <system:String x:Key="OrderByMedia">Media</system:String>
+    <system:String x:Key="GroupBy">Groepeer op</system:String>
+    <system:String x:Key="GroupByDefault">Standaard</system:String>
+    <system:String x:Key="GroupByGenre">Genre</system:String>
+    <system:String x:Key="GroupByMedia">Media</system:String>
+    <system:String x:Key="GroupByAlbum">Album</system:String>
+    <system:String x:Key="GroupByArtist">Artiest</system:String>
+    <system:String x:Key="GroupBySeries">Series</system:String>
+    <system:String x:Key="GroupByAuthor">Auteur</system:String>
+
+    <system:String x:Key="Options">Opties</system:String>
+    <system:String x:Key="WebUpdateConfiguration">Web Update Configuratie</system:String>
+    <system:String x:Key="Preferences">Voorkeuren</system:String>
+    <system:String x:Key="TvixThemeManager">Template Beheer</system:String>
+    <system:String x:Key="ProxySettings">Proxy Configuration</system:String>
+
+    <system:String x:Key="Loan">Lenen</system:String>
+    <system:String x:Key="ViewLoan">Bekijk Alle Leningen</system:String>
+    <system:String x:Key="ToolViewLoan">Bekijk Alle Leningen</system:String>
+    <system:String x:Key="ViewLateLoan">Bekijk Te Laate Leningen</system:String>
+    <system:String x:Key="ToolTipViewLateLoan">Bekijk Alleen Te Laate Leningen</system:String>
+    <system:String x:Key="ManageFriends">Beheer Vrienden</system:String>
+    <system:String x:Key="ToolTipManageFriends">Voeg Toe/Verwijder Lener</system:String>
+
+    <system:String x:Key="Tools">Gereedschap</system:String>
+    <system:String x:Key="UpdateAllFromWeb">Alles Updaten Van Het Web</system:String>
+    <system:String x:Key="FindDuplicate">Vind Dubbele</system:String>
+    <system:String x:Key="ToolsDatabase">Database</system:String>
+    <system:String x:Key="CommonData">Gemeenschappelijke Gegevens</system:String>
+    <system:String x:Key="ManageLanguage">Beheer Talen</system:String>
+    <system:String x:Key="AppsData">Applicatie Data</system:String>
+    <system:String x:Key="ManageType">Beheer Types</system:String>
+    <system:String x:Key="BookData">Boek Data</system:String>
+    <system:String x:Key="GamesData">Spellen Data</system:String>
+    <system:String x:Key="MovieData">Film Data</system:String>
+    <system:String x:Key="ManageMovieGenre">Beheer Film Genre</system:String>
+    <system:String x:Key="ManageMovieStudio">Beheer Film Studio</system:String>
+    <system:String x:Key="MusicData">Muziek Data</system:String>
+    <system:String x:Key="ManageMusicGenre">Beheer Muziek Genre</system:String>
+    <system:String x:Key="ManageMusicStudio">Beheer Muziek Studio</system:String>
+    <system:String x:Key="XXXData">XXX Data</system:String>
+    <system:String x:Key="ManageXXXGenre">Beheer XXX Genre</system:String>
+    <system:String x:Key="ManageXXXStudio">Beheer XXX Studio</system:String>
+    <system:String x:Key="ChangeMediaInformations">Verander Media Informatie</system:String>
+    <system:String x:Key="ResetDatabase">Reset Database</system:String>
+    <system:String x:Key="CleanDatabase">Schone Database</system:String>
+    <system:String x:Key="BackupDatabase">Backup Database</system:String>
+    <system:String x:Key="RefreshImage">Ververs Afbeelding</system:String>
+    <system:String x:Key="ExtractTo">Uitpakken Naar</system:String>
+    <system:String x:Key="ManageEditor">Beheer Redacteur</system:String>
+    <system:String x:Key="ManageCleanTitle">Beheer Niet Geleende Titel</system:String>
+
+    <system:String x:Key="Skin">Thema's</system:String>
+
+    <system:String x:Key="Charts">Grafieken</system:String>
+    <system:String x:Key="AppsTypeCharts">Type Applicaties Grafieken</system:String>
+    <system:String x:Key="BooksTypeCharts">Type Boeken Grafieken</system:String>
+    <system:String x:Key="GamesTypeCharts">Type Spellen Grafieken</system:String>
+    <system:String x:Key="MovieGenreCharts">Film Genre Grafieken</system:String>
+    <system:String x:Key="MusicGenreCharts">Muziek Genre Grafieken</system:String>
+    <system:String x:Key="NdsTypeCharts">Type Nds Grafieken</system:String>
+    <system:String x:Key="SeriesGenreCharts">Series Genre Grafieken</system:String>
+    <system:String x:Key="XXXGenreCharts">XXX Genre Grafieken</system:String>
+
+    <system:String x:Key="Language">Talen</system:String>
+    <system:String x:Key="English">Engels</system:String>
+    <system:String x:Key="French">Frans</system:String>
+    <system:String x:Key="Dutch">Nederlands</system:String>
+    <system:String x:Key="Spanish">Spaans</system:String>
+    <system:String x:Key="German">Duits</system:String>
+    <system:String x:Key="Portuguese">Portugees</system:String>
+    <system:String x:Key="Russian">Russisch</system:String>
+    <system:String x:Key="Ukranian">Oekraïens</system:String>
+    <system:String x:Key="Chinese">Chinees</system:String>
+    <system:String x:Key="Italian">Italiaans</system:String>
+    <system:String x:Key="Turkish">Turks</system:String>
+    
+    <system:String x:Key="About">Over</system:String>
+
+    <system:String x:Key="AddImage">Nieuwe Afbeelding Toevoegen</system:String>
+    <system:String x:Key="DeleteImage">Verwijder Afbeelding</system:String>
+    <system:String x:Key="ReplaceImage">Vervang Afbeelding</system:String>
+
+    <system:String x:Key="SetCover">Als Cover Instellen</system:String>
+    <system:String x:Key="SetBackground">Als Achtergrond Instellen</system:String>
+
+    <!--Main Screen Context Menu -->
+    <system:String x:Key="Play">Spelen</system:String>
+    <system:String x:Key="ManualUpdate">Handmatige Update</system:String>
+    <system:String x:Key="UpdateFromWeb">Updaten Vanaf Het Web</system:String>
+    <system:String x:Key="SetNotComplete">Zet Op Niet Compleet</system:String>
+    <system:String x:Key="LoanTo">Leen Aan</system:String>
+    <system:String x:Key="LoanInfo">Bekijk Lening Details</system:String>
+    <system:String x:Key="SetBack">Terugzetten Van Lening</system:String>
+    <system:String x:Key="GenerateTvix">Create Cover</system:String>
+    <system:String x:Key="CleanSelected">Opschonen</system:String>
+    <system:String x:Key="SetGenre">Definiëer Genre</system:String>
+
+    <!--About Screen-->
+    <system:String x:Key="TitleAbout">Over</system:String>
+    <system:String x:Key="Version">Versie</system:String>
+    <system:String x:Key="Contact">Contact :</system:String>
+    <system:String x:Key="Home">myCollections Home :</system:String>
+    <system:String x:Key="Credits">Credits :</system:String>
+    <system:String x:Key="AboutCharts">Grafieken door :</system:String>
+    <system:String x:Key="Mp3">Mp3 tags door :</system:String>
+    <system:String x:Key="SqlLite">SqlLite Connectie door :</system:String>
+    <system:String x:Key="PDF">PDF Ontleding door :</system:String>
+    <system:String x:Key="HtmlExport">Html Geëxporteerd door :</system:String>
+    <system:String x:Key="FLAC">FLAC tags door :</system:String>
+    <system:String x:Key="CoverFlowBy">Cover Flow door :</system:String>
+    <system:String x:Key="TesterLead">Test Leider :</system:String>
+
+    <!--Add Media Screen-->
+    <system:String x:Key="TitleAddMedia">Media Toevoegen</system:String>
+    <system:String x:Key="lblMediaType">Type Media :</system:String>
+    <system:String x:Key="lblPath">Locatie :</system:String>
+    <system:String x:Key="lblSearchPattern">Zoekpatroon :</system:String>
+    <system:String x:Key="lblSubFolder">Zoek in Sub Mappen :</system:String>
+    <system:String x:Key="lblFolderImage">Afbeelding in Map Gebruiken</system:String>
+    <system:String x:Key="lblUseNfo">Ontleed Nfo Bestand</system:String>
+    <system:String x:Key="cmdNext">Volgende >></system:String>
+    <system:String x:Key="cmdFinish">Voltooi</system:String>
+    <system:String x:Key="tltNext">Naam Ontleden voordat mappen worden toegevoegd</system:String>
+    <system:String x:Key="tltFinish">Bestanden Direct Toevoegen</system:String>
+    <system:String x:Key="lblResults">Aantal items gevonden :</system:String>
+    <system:String x:Key="lblParseFrom">Ontleedpatroon :</system:String>
+    <system:String x:Key="lblMapping">Kies uw Mappen:</system:String>
+    <system:String x:Key="cmdBack">Terug</system:String>
+
+    <!--Apps Update Screen-->
+    <system:String x:Key="TitleAppsUpdate">Applicaties Updaten</system:String>
+    <system:String x:Key="AppsDeleteImage">Verwijder Afbeelding</system:String>
+
+    <!--Artist Detail Screen-->
+    <system:String x:Key="TitleArtistDetail">Artiest Info</system:String>
+
+    <!--Book Update Screen-->
+    <system:String x:Key="TitleBooksUpdate">Boeken Updaten</system:String>
+    <system:String x:Key="BooksDeleteImage">Verwijder Afbeelding</system:String>
+
+    <!--Browser Screen-->
+    <system:String x:Key="TitleBrowser">Browsen</system:String>
+
+    <!--Media Info Screen-->
+    <system:String x:Key="TitleMediaInfo">Media Informatie</system:String>
+    <system:String x:Key="txbMedia">Media :</system:String>
+    <system:String x:Key="txbMediaName">Media Naam :</system:String>
+    <system:String x:Key="txbMediaCurentPath">Huidige Locatie :</system:String>
+    <system:String x:Key="txbMediaFreeSpace">Vrije Ruimte :</system:String>
+    <system:String x:Key="txbMediaTotalSpace">Totale Ruimte :</system:String>
+    <system:String x:Key="txbMediaLastUpdate">Laatste Update :</system:String>
+
+    <!--Chart Screen-->
+    <system:String x:Key="TitleChart">Grafieken</system:String>
+
+    <!--DeleteMedia Screen-->
+    <system:String x:Key="TitleDeleteMedia">Verwijder Media</system:String>
+    <system:String x:Key="txbDeleteMedia">Selecteer de media die u wilt verwijderen :</system:String>
+
+    <!--Game Update Screen-->
+    <system:String x:Key="TitleGamesUpdate">Spellen Updaten</system:String>
+    <system:String x:Key="GamesDeleteImage">Verwijder Afbeelding</system:String>
+    <system:String x:Key="lblPlateform">Platform :</system:String>
+
+    <!--LoanTo Screen-->
+    <system:String x:Key="TitleLoanTo">Leen Aan...</system:String>
+    <system:String x:Key="txbTitleToLoan">Titel om uit te lenen :</system:String>
+    <system:String x:Key="txbLoanTo">Leen aan:</system:String>
+    <system:String x:Key="txbLoanBegin">Begin van de Lening :</system:String>
+    <system:String x:Key="txbLoanEnd">Einde van de Lening :</system:String>
+
+    <!--Manage Apps Type  Screen-->
+    <system:String x:Key="TitleManageAppsType">Beheer Type Applicaties</system:String>
+
+    <!--Manage Studio Screen-->
+    <system:String x:Key="TitleManageStudio">Add, Update or Delete name</system:String>
+    <system:String x:Key="hedStudio">Naam</system:String>
+
+    <!--Manage Books Type  Screen-->
+    <system:String x:Key="TitleManageBooksType">Beheer Type Boeken</system:String>
+
+    <!--Manage Friends  Screen-->
+    <system:String x:Key="TitleManageFriends">Beheer Vrienden</system:String>
+    <system:String x:Key="hedUsers">Gebruikers :</system:String>
+    <system:String x:Key="hedUsersInfos">Gebruikers Info :</system:String>
+    <system:String x:Key="lblAlias">Alias :</system:String>
+    <system:String x:Key="lblFirstName">Voornaam :</system:String>
+    <system:String x:Key="lblLastName">Achternaam :</system:String>
+    <system:String x:Key="lblBirthDate">Geboortedatum :</system:String>
+    <system:String x:Key="lblSex">Geslacht :</system:String>
+    <system:String x:Key="lblEmail">E-Mail :</system:String>
+    <system:String x:Key="lblAdress">Adres :</system:String>
+    <system:String x:Key="lblPhoneNumber">Telefoonnummer :</system:String>
+    <system:String x:Key="lblCurrentLoan">Aantal Huidig Uitgeleend :</system:String>
+    <system:String x:Key="lblMaxLoan">Aantal Maximaal Uitgeleend :</system:String>
+
+    <!--Manage Games Type  Screen-->
+    <system:String x:Key="TitleManageGamesType">Beheer Type Spellen</system:String>
+
+    <!--Manage Language Screen-->
+    <system:String x:Key="TitleManageLanguage">Beheer Taal</system:String>
+    <system:String x:Key="hedShortName">Korte Naam</system:String>
+    <system:String x:Key="hedLongName">Lange Naam</system:String>
+
+    <!--Manage Movie Genre  Screen-->
+    <system:String x:Key="TitleManageMovieGenre">Beheer Film Genre</system:String>
+
+    <!--Manage Music Genre  Screen-->
+    <system:String x:Key="TitleManageMusicGenre">Beheer Muziek Genre</system:String>
+    
+    <!--Manage Clean Title-->
+    <system:String x:Key="TitleManageCleanTitle">Beheer Niet Geleende Titels</system:String>
+    <system:String x:Key="hedValue">Waarde</system:String>
+    <system:String x:Key="hedCategory">Categorie</system:String>
+
+    <!--Preferences  Screen-->
+    <system:String x:Key="TitlePreferences">Mijn Voorkeuren</system:String>
+    <system:String x:Key="hedShowCatgerory">Categorie Weergeven</system:String>
+    <system:String x:Key="lblHideApps">Verberg Applicaties (Beschikbaar door Alt-A in te drukken)</system:String>
+    <system:String x:Key="lblHideBooks">Verberg Boeken (Beschikbaar door Alt-B in te drukken)</system:String>
+    <system:String x:Key="lblHideGames">Verberg Spellen (Beschikbaar door Alt-G in te drukken)</system:String>
+    <system:String x:Key="lblHideMovies">Verberg Films (Beschikbaar door Alt-M in te drukken)</system:String>
+    <system:String x:Key="lblHideMusic">Verberg Muziek (Beschikbaar door Alt-U in te drukken)</system:String>
+    <system:String x:Key="lblHideNds">Verberg Nds (Beschikbaar door Alt-N in te drukken)</system:String>
+    <system:String x:Key="lblHideSeries">Verberg Series (Beschikbaar door Alt-S in te drukken)</system:String>
+    <system:String x:Key="lblHideXXX">Verberg XXX (Beschikbaar door Alt-X in te drukken)</system:String>
+    <system:String x:Key="lblCleanTitle">Automatisch Opschonen van Titel</system:String>
+    <system:String x:Key="lblDbClick">Op Db Klikken :</system:String>
+    <system:String x:Key="rdbLaunch">Lanceren</system:String>
+    <system:String x:Key="rdbUpdate">Updaten</system:String>
+    <system:String x:Key="lblXXXPassword">XXX Wachtwoord :</system:String>
+    <system:String x:Key="lblCurrentDb">Huidige Database :</system:String>
+    <system:String x:Key="lblCheckUpdate">Controleren op updates bij opstarten</system:String>
+    <system:String x:Key="lblTvixOutput2">of in :</system:String>
+    <system:String x:Key="tlpTvixOutput">Verander Folder OutPut</system:String>
+    <system:String x:Key="hedOthers">Andere</system:String>
+    <system:String x:Key="tlpChangeDb">Verander Database</system:String>
+    <system:String x:Key="chkTvixFolder">Genereer items in Map</system:String>
+    <system:String x:Key="lblHideDetails">Verberg Details Paneel</system:String>
+
+    <!--Manage Sites  Screen-->
+    <system:String x:Key="TitleManageSites">Beheer Websites</system:String>
+    <system:String x:Key="hedUsSites">Engelse Sites</system:String>
+    <system:String x:Key="chkSelectAll">Selecteer alles</system:String>
+    <system:String x:Key="lblAppsSites">Applicatie:</system:String>
+    <system:String x:Key="lblBookSites">Boeken:</system:String>
+    <system:String x:Key="lblGamesSites">Spellen:</system:String>
+    <system:String x:Key="lblMoviesSites">Film:</system:String>
+    <system:String x:Key="lblMusicSites">Muziek:</system:String>
+    <system:String x:Key="lblNdsSites">Nintendo DS:</system:String>
+    <system:String x:Key="lblSeriesSites">Series:</system:String>
+    <system:String x:Key="lblXXXSites">XXX:</system:String>
+    <system:String x:Key="hedFrenchSites">Franse</system:String>
+    <system:String x:Key="lblBing">Bing</system:String>
+    <system:String x:Key="hedGermanSites">Duitse</system:String>
+    <system:String x:Key="hedItalianSites">Italiaanse</system:String>
+    <system:String x:Key="hedChineseSites">Chinese</system:String>
+    <system:String x:Key="hedSpanishSites">Spanish</system:String>
+
+    <!--Manage XXX Genre  Screen-->
+    <system:String x:Key="TitleManageXXXGenre">Beheer Genre XXX</system:String>
+
+    <!--Movie Update Screen-->
+    <system:String x:Key="TitleMoviesUpdate">Films Updaten</system:String>
+
+    <!--Music Update Screen-->
+    <system:String x:Key="TitleMusicUpdate">Muziek Updaten</system:String>
+    <system:String x:Key="MusicDeleteImage">Verwijder Afbeelding</system:String>
+    <system:String x:Key="cmdTracks">Nummers</system:String>
+
+    <!--Nds Update Screen-->
+    <system:String x:Key="TitleNdsUpdate">Nintendo DS Spel Updaten</system:String>
+    <system:String x:Key="NdsDeleteImage">Verwijder Afbeelding</system:String>
+
+    <!--Parental Control Screen-->
+    <system:String x:Key="TitleParentalControl">Ouderlijk Toezicht</system:String>
+    <system:String x:Key="lblPassword">Wachtwoord :</system:String>
+
+    <!--Partial Match Screen-->
+    <system:String x:Key="TitlePartialMatch">Selecteer de correcte Titel</system:String>
+    <system:String x:Key="hedImage">Afbeelding</system:String>
+    <system:String x:Key="hedTitle">Titel</system:String>
+    <system:String x:Key="hedArtist">Artiest</system:String>
+
+    <!--Progress Bar Screen-->
+    <system:String x:Key="TitleProgressBar">Even Geduld aub...</system:String>
+    <system:String x:Key="lblProcess">Verwerken:</system:String>
+    <system:String x:Key="lblOf">van</system:String>
+
+    <!--Select File Screen-->
+    <system:String x:Key="TitleSelectFile">Selecteer het bestand om te lanceren</system:String>
+    <system:String x:Key="hedSelection">Selectie</system:String>
+
+    <!--Series Update Screen-->
+    <system:String x:Key="TitleSeriesUpdate">Series Updaten</system:String>
+    <system:String x:Key="SeriesDeleteImage">Verwijder Afbeelding</system:String>
+
+    <!--Show Nfo Screen-->
+    <system:String x:Key="TitleShowNfo">NFO Weergeven</system:String>
+
+    <!--XXX Update Screen-->
+    <system:String x:Key="TitleXXXUpdate">XXX Updaten</system:String>
+    <system:String x:Key="XXXDeleteImage">Verwijder Afbeelding</system:String>
+
+    <!--Apps-->
+    <system:String x:Key="appsVersion">Versie :</system:String>
+    <system:String x:Key="hedAppsInfo">Applicaties Informatie</system:String>
+
+    <!--Books-->
+    <system:String x:Key="hedBooksInfo">Boeken Informatie</system:String>
+    <system:String x:Key="lblISBN">ISBN :</system:String>
+    <system:String x:Key="lblAuthor">Auteur :</system:String>
+    <system:String x:Key="lblPages">Aantal Pagina's :</system:String>
+    <system:String x:Key="lblRead">Gelezen :</system:String>
+
+    <!--Artist-->
+    <system:String x:Key="tltDetails">Details</system:String>
+    <system:String x:Key="tltChangePicture">Verander Afbeelding</system:String>
+    <system:String x:Key="tltDelete">Verwijderen</system:String>
+    <system:String x:Key="tltUpdateWeb">Vind informatie op internet</system:String>
+    <system:String x:Key="tltDirector">Regisseur</system:String>
+    <system:String x:Key="tltAddArtist">Artiest Toevoegen</system:String>
+    <system:String x:Key="lblAge">jaren oud</system:String>
+
+    <!--Games-->
+    <system:String x:Key="hedGamesInfo">Spellen Informatie</system:String>
+
+    <!--Movies-->
+    <system:String x:Key="hedMoviesInfo">Film Informatie</system:String>
+    <system:String x:Key="lblFileFormat">Bestandsformaat :</system:String>
+    <system:String x:Key="lblOriginalTitle">Originele Titel :</system:String>
+    <system:String x:Key="lblAlloCineRating">AlloCine Beoordeling :</system:String>
+    <system:String x:Key="lblIMDBRating">IMDB Beoordeling :</system:String>
+    <system:String x:Key="lblTagLine">Slogan :</system:String>
+    <system:String x:Key="lblAspectRatio">Aspect Ratio :</system:String>
+
+    <!--Music-->
+    <system:String x:Key="hedMusicInfo">Muziek Informatie</system:String>
+    <system:String x:Key="lblMusicArtist">Zanger(es) :</system:String>
+    <system:String x:Key="lblAlbum">Album :</system:String>
+    <system:String x:Key="lblBitRate">BitRate :</system:String>
+    <system:String x:Key="lblHeared">Geluisterd :</system:String>
+    <system:String x:Key="lblArtistName">Naam Artiest :</system:String>
+
+
+    <!--Series-->
+    <system:String x:Key="hedSeriesInfo">Series Informatie</system:String>
+    <system:String x:Key="lblTotalEpisodes">Aantal Afleveringen :</system:String>
+    <system:String x:Key="lblOwnEpisodes">Eigen Afleveringen :</system:String>
+    <system:String x:Key="lblMissingEpisodes">Ontbrekende Afl. :</system:String>
+    <system:String x:Key="lblSeason">Seizoen :</system:String>
+    <system:String x:Key="cmdAddSeason">Nieuw Seizoen Toevoegen</system:String>
+
+    <!--XXX-->
+    <system:String x:Key="hedXXXInfo">XXX Informatie</system:String>
+
+    <!--Tvix Theme Manager-->
+    <system:String x:Key="hedTvixUsed">Gebruik dit thema voor :</system:String>
+    <system:String x:Key="hedTvixOutput">Creëer bestanden in :</system:String>
+    <system:String x:Key="cmdGenerate">Genereer Voorbeeld</system:String>
+    <system:String x:Key="mniPreviewTvix">Preview</system:String>
+    <system:String x:Key="mniChangeTheme">Verander Thema</system:String>
+    <system:String x:Key="cmdGenerateFile">Afbeelding Opslaan</system:String>
+    <system:String x:Key="hedSelectTheme">Selecteer Thema's</system:String>
+
+    <!--newVersionViewer-->
+    <system:String x:Key="lblNewVersion">Er is een nieuwe versie beschikbaar</system:String>
+    <system:String x:Key="lblDownloadHere">Hier Downloaden :</system:String>
+
+    <!--Proxy-->
+    <system:String x:Key="lbluseProxy">Proxy Server</system:String>
+    <system:String x:Key="lblIpAdress">Address :</system:String>
+    <system:String x:Key="lblIpPort">Port :</system:String>
+    <system:String x:Key="lblLogin">Login :</system:String>
+    <system:String x:Key="lblPWD">Password :</system:String>
+
+    <system:String x:Key="WrapPanelOptim">WrapPanel Optimisation :</system:String>
+    <system:String x:Key="MetroStyleBy">Metro Style By :</system:String>
+    
+    <system:String x:Key="tltRename">Rename file with title</system:String>
+    <system:String x:Key="lblAutoRename">Auto Rename file from title</system:String>
+    <system:String x:Key="lblAddCustomType">Add a new type</system:String>
+    <system:String x:Key="lblValue">Value :</system:String>
+    <system:String x:Key="OrderByArtist">Artist</system:String>
+    <system:String x:Key="lblFastSearch">Use Fast Search (faster but less informations retrieved)</system:String>
+    <system:String x:Key="hedSelectDevice">Select your device</system:String>
+    <system:String x:Key="cmdUpdateId3">Update Id3</system:String>
+    <system:String x:Key="AutoUpdateId3">Update Music ID3 on save</system:String>
+    <system:String x:Key="ImportXml">From XML File</system:String>
+    <system:String x:Key="ToolTipImportXML">Import Books From myCollections XML File</system:String>
+    <system:String x:Key="ImportFilmotechCSV">From Filmotech CSV File</system:String>
+    <system:String x:Key="ToolTiImportFilmotechCsv">Import Movies From Filmotech CSV File</system:String>
+    <system:String x:Key="ImportFilmotechXML">From Filmotech XML File</system:String>
+    <system:String x:Key="ToolTiImportFilmotechXML">Import Movies From Filmotech XML File</system:String>
+    <system:String x:Key="ImportMoviesDone">Movie(s) imported</system:String>
+    <system:String x:Key="ManagePlateform">Manage Platform</system:String>
+    <system:String x:Key="Folders">Folders</system:String>
+    <system:String x:Key="Files">Files</system:String>
+    <system:String x:Key="ImportDone">Item(s) imported</system:String>
+    <system:String x:Key="HtmlTransform">Creating Html file, please Wait</system:String>
+    <system:String x:Key="CorrectTitle">Please Select correct title</system:String>
+    <system:String x:Key="GettingInfo1">Getting info for </system:String>
+    <system:String x:Key="GettingInfo2"> van </system:String>
+    <system:String x:Key="NoResults">Kan geen resultaten vinden</system:String>
+    <system:String x:Key="Processing1">Verwerking van informatie voor</system:String>
+    <system:String x:Key="PleaseWait">, even geduld aub</system:String>
+    <system:String x:Key="Preparing1">Voorbereiding info voor weergave...</system:String>
+    <system:String x:Key="Searching1">Zoek info uit</system:String>
+    <system:String x:Key="SendLog">Stuur gebruik informations</system:String>
+    <system:String x:Key="SendError">Stuur fouten informations</system:String>
+    <system:String x:Key="AutoBackupDB">Automatische back-up-database</system:String>
+    <system:String x:Key="Help">Hulp</system:String>
+    <system:String x:Key="Documentation">Documentatie</system:String>
+    <system:String x:Key="Video">Video Tutorial</system:String>
+    <system:String x:Key="Video1">Hoe je enkele film toe te voegen</system:String>
+    <system:String x:Key="Video2">Hoe meerdere films toe te voegen</system:String>
+    <system:String x:Key="Video3">Algemene presentatie</system:String>
+    <system:String x:Key="SendKindle">Stuur naar Kindle</system:String>
+    <system:String x:Key="CopyKindleOK">is nu beschikbaar op je Kindle.</system:String>
+    <system:String x:Key="CopyKindleKO">Kan niet kopiëren naar de Kindle.</system:String>
+    <system:String x:Key="NoKindle">Kindle is niet aangesloten</system:String>
+    <system:String x:Key="ShowToolbarIcons">Weer pictogrammen Toolbar</system:String>
+    <system:String x:Key="Yes">Ja</system:String>
+    <system:String x:Key="No">Geen</system:String>
+    <system:String x:Key="DeleteConfirmation">Weet u zeker dat u wilt verwijderen ?</system:String>
+    <system:String x:Key="ShowDeleteConfirmation">Toon bevestigingsbericht vóór verwijdering</system:String>
+    <system:String x:Key="CopyTo">kopiëren naar</system:String>
+    <system:String x:Key="OpenLocation">Open locatie</system:String>
+    <system:String x:Key="Persian">Perzisch</system:String>
+    <system:String x:Key="ScanBarCode">Scan de streepjescode</system:String>
+    <system:String x:Key="TakePicture">Maak een foto</system:String>
+    <system:String x:Key="PublicRating">Openbare Rating :</system:String>
+    <system:String x:Key="MyRating">Mijn beoordeling :</system:String>
+    <system:String x:Key="NumId">Coll # :</system:String>
+    <system:String x:Key="NumIdToolTip">Collectie Nummer</system:String>
+    <system:String x:Key="OrderByPublicRating">Openbare Rating</system:String>
+    <system:String x:Key="Saving">Besparing...</system:String>
+    <system:String x:Key="OrderByNumId">Coll #</system:String>
+    <system:String x:Key="Print">Afdrukken</system:String>
+    <system:String x:Key="Like">Vind je het leuk? Toon mij, klik hier.</system:String>
+    <system:String x:Key="MetaData">Metagegevens :</system:String>
+    <system:String x:Key="ManageMetaData">Beheren van metadata</system:String>
+
+</ResourceDictionary>

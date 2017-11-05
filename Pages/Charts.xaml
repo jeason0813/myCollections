@@ -1,0 +1,32 @@
+﻿<Controls:BorderLessWindow x:Class="myCollections.Pages.Charts"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:am="http://schemas.amcharts.com/charts/wpf/2009/xaml"
+    xmlns:Controls="clr-namespace:myCollections.Controls"
+    WindowStartupLocation="CenterScreen" ShowClose="True">
+
+    <am:ColumnChart Name="columnChart" Orientation="Vertical" Margin="0,20,0,0"
+                    ColumnWidthAllocation="0.9" ColumnSpacing="0"
+                    StartAnimationEffect="Elastic" StartAnimationDuration="0:0:6" StartAnimationIsSequenced="False"
+                    LabelPosition="Outside" LegendEnabled="False"
+                    PlotAreaBackground="Transparent" PlotAreaMargin="10,50,0,10"
+                    BalloonCornerRadius="4" BalloonBorderBrush="#80FFFFFF" BalloonBackground="#30FFFFFF" BalloonBorderThickness="1">
+
+        <am:ColumnChart.CategoryAxisGrid>
+            <am:CategoryGrid StrokeThickness="0" />
+        </am:ColumnChart.CategoryAxisGrid>
+
+        <am:ColumnChart.LeftValueAxisGrid>
+            <am:ValueGrid StrokeThickness="1" />
+        </am:ColumnChart.LeftValueAxisGrid>
+
+        <am:ColumnChart.CategoryAxis>
+            <am:CategoryAxis StrokeThickness="0" ValuesEnabled="False" />
+        </am:ColumnChart.CategoryAxis>
+
+        <am:ColumnChart.LeftValueAxis>
+            <am:ValueAxis StrokeThickness="0" ValuesEnabled="True" Minimum="0" />
+        </am:ColumnChart.LeftValueAxis>
+
+    </am:ColumnChart>
+</Controls:BorderLessWindow>

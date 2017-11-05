@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Theme>
+  <Elements>
+    <Output height="955" width="1700" format="png"></Output>
+    
+    <Actors visible="true" Separator=", " MaximumValues="5" Orientation="H"
+            displayPic="false" picHeight="1700" picWidth="1700"
+            height="1700" width="1700" 
+            verticalPos="1665" horisontalPos="1665" 
+            fontName="Arial" fontSize="16" fontBold="true" foreColor="-16777216" 
+            title="Actors :" titleForeColor="-16777216" titleVerticalPos="1700" titleHorisontalPos="1700" ></Actors>
+    
+    <Genres visible="true" Separator=", " MaximumValues="5" Orientation="H"
+            displayPic="false" picHeight="1700" picWidth="1700"
+            height="1700" width="1200" verticalPos="700" horisontalPos="429" 
+            fontName="Arial" fontSize="16" fontBold="true" foreColor="-16777216" 
+            title="Genres :" titleForeColor="-16777216" titleVerticalPos="1700" titleHorisontalPos="1700"></Genres>
+    
+    <Rating visible="true" displayPic="false" picPath=".\star_yellow_24x24.png" picHeight="10" picWidth="10" 
+            height="955" width="1700" verticalPos="1665" horisontalPos="906" 
+            fontName="Arial" fontSize="16" fontBold="true" foreColor="-16777216" 
+            title="Rating :" titleForeColor="-16777216" titleVerticalPos="1700" titleHorisontalPos="1700"></Rating>
+    
+    <Title visible="true" height="955" width="1700" verticalPos="1700" horisontalPos="1700" 
+           fontName="Arial" fontSize="30" fontBold="true" foreColor="-16777216" ></Title>
+
+    <TagLine visible="true" height="955" width="1700" verticalPos="1700" horisontalPos="1700"
+          fontName="Arial" fontSize="16" fontBold="true" foreColor="-16777216" 
+             title="TagLine :" titleForeColor="-16777216" titleVerticalPos="1700" titleHorisontalPos="1700"></TagLine>
+    
+    <OriginalTitle visible="false" height="955" width="1700" verticalPos="1700" horisontalPos="1700" 
+                   fontName="Arial" fontSize="16" fontBold="true" foreColor="-16777216" 
+                   title="Original Title :" titleForeColor="-16777216" titleVerticalPos="1700" titleHorisontalPos="1700"></OriginalTitle>
+    
+    <Runtime visible="true" height="955" width="1700" verticalPos="1665" horisontalPos="429" 
+             fontName="Arial" fontSize="16" fontBold="true" foreColor="-16777216" 
+             title="Runtime :" titleForeColor="-16777216" titleVerticalPos="1700" titleHorisontalPos="1700"></Runtime>
+    
+    <Description visible="true" height="190" width="1200" verticalPos="490" horisontalPos="429" 
+                 fontName="Arial" fontSize="20" fontBold="true" foreColor="-16777216" 
+                 title="Summary :" titleForeColor="-16777216" titleVerticalPos="1700" titleHorisontalPos="1700"></Description>
+    
+    <RelaeseDate visible="true" height="955" width="1700" verticalPos="1700" horisontalPos="1700" 
+                 fontName="Arial" fontSize="16" fontBold="true" foreColor="-16777216" 
+                 title="Date :" titleForeColor="-16777216" titleVerticalPos="1700" titleHorisontalPos="1700"></RelaeseDate>
+    
+    <Season visible="true" height="955" width="1700" verticalPos="1700" horisontalPos="1700" 
+            fontName="Arial" fontSize="16" fontBold="true" foreColor="-16777216" 
+            title="Season :" titleForeColor="-16777216" titleVerticalPos="1700" titleHorisontalPos="1700"></Season>
+    
+    <Background visible="true" useItemBackground="true" defaultBackground="../../Images/BlackBackground_1920_1080.jpg" ></Background>
+    <Cover visible="true" height="468" width="351" verticalPos="1700" horisontalPos="1700" defaultCover="" ></Cover>
+    
+  </Elements>
+  <Separators>
+    <Image height="955" width="1700" verticalPos="1700" horisontalPos="1700" Opacity="#99" path="fondInfo.png"/>
+    <Image height="286" width="1280" verticalPos="434" horisontalPos="0" Opacity="60" path=".\TvixTheme\BBT-XT\FondInfo.png"/>
+    <Rectangle height="955" width="1700" verticalPos="1700" horisontalPos="1700" SolidBrushColor="-16777216" LinearGradientBrushColor1="-16777216" LinearGradientBrushColor2="-16777216" LinearGradientBrushDirection="Vertical"></Rectangle>
+    <Rectangle height="955" width="1700" verticalPos="1700" horisontalPos="1700" SolidBrushColor="-16777216" LinearGradientBrushColor1="-16777216" LinearGradientBrushColor2="-16777216" LinearGradientBrushDirection="Vertical"></Rectangle>
+    <Line height="955" width="1700" verticalPos="1700" horisontalPos="12"></Line>
+    <Line height="955" width="1700" verticalPos="1700" horisontalPos="1700"></Line>
+  </Separators>
+  <Effects>
+    <Effect Name=""></Effect>
+  </Effects>
+</Theme>

@@ -1,0 +1,567 @@
+﻿<UserControl x:Class="myCollections.UserControls.Common.UcFastBrowse"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:myCollections.Utils"
+             xmlns:controls="clr-namespace:myCollections.Controls"
+             xmlns:common="clr-namespace:myCollections.UserControls.Common"
+             xmlns:effects="clr-namespace:myCollections.Controls.CustomEffects"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300"
+             Name="FastBrowse">
+    <UserControl.InputBindings>
+        <KeyBinding Command="common:Commands.EditItem" Gesture="CTRL+E"></KeyBinding>
+        <KeyBinding Command="common:Commands.PlayItem" Gesture="CTRL+P"></KeyBinding>
+        <KeyBinding Command="common:Commands.DeleteItem" Gesture="CTRL+D"></KeyBinding>
+    </UserControl.InputBindings>
+    <UserControl.CommandBindings>
+        <CommandBinding Command="common:Commands.EditItem"  Executed="OnEdit" />
+        <CommandBinding Command="common:Commands.PlayItem"  Executed="OnPlay"  />
+        <CommandBinding Command="common:Commands.DeleteItem"  Executed="OnDelete"  />
+    </UserControl.CommandBindings>
+    <UserControl.Resources>
+        <converters:ByteArrayToBitmapImageConverter x:Key="byteArrayToBitmapImageConverter" />
+        <converters:ImageWidthConverter x:Key="imageWidthConverter"/>
+        <converters:CardWidthConverter x:Key="cardWidthConverter"/>
+        <converters:CardHeightConverter x:Key="cardHeightConverter"/>
+        <converters:ToolTipConverter x:Key="ToolTipConverter"></converters:ToolTipConverter>
+        <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+
+        <ContextMenu x:Key="GenericMenu">
+            <MenuItem Name="mniOpenSelected" Header="{DynamicResource Play}" 
+                          Click="mniOpenSelected_Click" IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}" />
+            <MenuItem Name="mniManualUpdate" Header="{DynamicResource ManualUpdate}" 
+                                 Click="mniManualUpdate_Click"  IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}" />
+            <MenuItem Name="mniUpdateSelected" Header="{DynamicResource UpdateFromWeb}" 
+                                 Click="mniUpdateSelected_Click"  IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}"/>
+            <MenuItem Header="{DynamicResource CleanSelected}" 
+                                 Click="mniCleanSelected_Click"  IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}" />
+            <MenuItem Name="mniDeleteSelected" Header="{DynamicResource Delete}" 
+                                 Click="mniDeleteSelected_Click"  IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}"/>
+            <MenuItem Name="mniMarkToDeleteSelected" Header="{DynamicResource ToBeDeleted}" 
+                                 Click="mniMarkToDeleteSelected_Click"  IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}">
+                <MenuItem.Icon>
+                    <Image Width="30" Source="pack://application:,,,/myCollections;component/Images/Delete.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource SetNotComplete}" IsEnabled="True" Name="mniCompleteFalse" Click="mniCompleteFalse_Click"  
+                      IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}" />
+            <MenuItem Header="{DynamicResource SetGenre}" IsEnabled="True" Click="mniSetGenre_Click" IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}" />
+            <MenuItem Header="{DynamicResource LoanTo}" IsEnabled="True" Name="mniLoanTo" 
+                                  Click="mniLoanTo_Click"  IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}"/>
+            <MenuItem Header="{DynamicResource LoanInfo}" Name="mniLoanInfo" 
+                                  Click="mniLoanInfo_Click"  IsCheckable="False" Visibility="Collapsed" Style="{DynamicResource ForeGroundMenuFirst}" />
+            <MenuItem Header="{DynamicResource SetBack}" Name="mniSetBack" 
+                                  Click="mniSetBack_Click"  IsCheckable="False" Visibility="Collapsed" Style="{DynamicResource ForeGroundMenuFirst}" />
+            <MenuItem Header="{DynamicResource GenerateTvix}" Name="mniGenerateTvix" 
+                                  Click="mniGenerateTvix_Click"  IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}" />
+            <MenuItem Header="{DynamicResource SendKindle}" Name="mniSendKindle" 
+                                  Click="mniSendKindle_OnClick"  IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}"/>
+            <MenuItem Header="{DynamicResource CopyTo}" Name="mniCopyTo" 
+                                  Click="mniCopyTo_OnClick"  IsCheckable="False" Style="{DynamicResource ForeGroundMenuFirst}"/>
+        </ContextMenu>
+
+        <DataTemplate x:Key="FullCardTemplate">
+            <Control>
+                <Control.Template>
+                    <ControlTemplate>
+                        <Border Padding="7" 
+                                Height="{Binding ElementName=FastBrowse, Path='ItemHeight', Converter={StaticResource cardHeightConverter}}" 
+                                Width="{Binding ElementName=FastBrowse, Path='ItemHeight', Converter={StaticResource cardWidthConverter}}"
+                                Background="{DynamicResource BorderColor}" ContextMenu="{StaticResource GenericMenu}"
+                                CornerRadius="10" BorderThickness="1" x:Name="bd" Margin="4" Focusable="False" 
+                                Style="{DynamicResource searchResultItemStyle}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Image Margin="0,2,7,0" Grid.Column="0" Grid.Row="0"
+                                      Height="{Binding ElementName=FastBrowse, Path='ItemHeight'}" 
+                                      Width="{Binding ElementName=FastBrowse, Path='ItemHeight', Converter={StaticResource imageWidthConverter}}"
+                                      Source="{Binding Path=Cover, Converter={StaticResource byteArrayToBitmapImageConverter}}"  />
+
+                                <TextBlock Margin="0,7,0,0" Text="{Binding Path=Description}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" 
+                                           TextWrapping="Wrap" TextTrimming="WordEllipsis" />
+
+                                <Grid Grid.Column="1" Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Margin="0,2" ToolTip="{Binding Path=Name}" Text="{Binding Path=Name}" 
+                                               FontSize="14" FontWeight="Bold" TextWrapping="NoWrap" 
+                                               TextTrimming="WordEllipsis" Grid.ColumnSpan="2" />
+
+                                    <TextBlock Margin="0,2" Text="{Binding Path=Types}" TextWrapping="NoWrap" 
+                                               TextTrimming="CharacterEllipsis" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+
+                                    <TextBlock Margin="0,2" Text="Media: " FontWeight="Bold" Grid.Row="2" Grid.Column="0" />
+                                    <TextBlock Margin="0,2" Text="{Binding Path=Media}" 
+                                               Grid.Row="2"  Grid.Column="1"
+                                               TextWrapping="Wrap" TextTrimming="WordEllipsis" />
+
+                                    <TextBlock Margin="0,2" Text="{DynamicResource PublicRating}" FontWeight="Bold" Grid.Row="3" Grid.Column="0"/>
+                                    <controls:Rating ValueSelectorBackground="{Binding ElementName=bd, Path=Background}"
+                                                     IsReadOnly="True" Value="{Binding Path=PublicRating}" 
+                                                     Height="16" Grid.Row="3" Grid.Column="1"  
+                                                     HorizontalAlignment="Left" Margin="0,2" 
+                                                     ValueBrush="{DynamicResource StarBrush}" />
+
+                                    <TextBlock Margin="0,2" Text="{DynamicResource MyRating}" FontWeight="Bold" Grid.Row="4" Grid.Column="0" />
+                                    <controls:Rating ValueSelectorBackground="{Binding ElementName=bd, Path=Background}" 
+                                                     IsReadOnly="True" Value="{Binding Path=MyRating}" 
+                                                     Height="16" Grid.Row="4" Grid.Column="1" 
+                                                     HorizontalAlignment="Left" Margin="0,2" 
+                                                     ValueBrush="{DynamicResource StarBrush}" />
+
+                                    <StackPanel Grid.Column="0" Grid.Row="5" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Right" >
+                                        <Button  x:Name="btnDelete" Visibility="Hidden"  ToolTip="Click to delete" Margin="3" 
+                                        CommandParameter="{Binding}" Command="common:Commands.DeleteItem" Style="{DynamicResource inImageButton}">
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Border Padding="3" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                        <Image Source="/myCollections;component/Images/delete2.png" Height="16" Width="16" >
+                                                            <Image.Effect>
+                                                                <effects:GreyscaleEffect />
+                                                            </Image.Effect>
+                                                        </Image>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                        <Button  x:Name="btnPlay" Visibility="Hidden"  ToolTip="Click to play" Margin="3" 
+                                        CommandParameter="{Binding}" Command="common:Commands.PlayItem" Style="{DynamicResource inImageButton}">
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Border Padding="3" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                        <Image Source="/myCollections;component/Images/Play.png" Height="16" Width="16" >
+                                                            <Image.Effect>
+                                                                <effects:GreyscaleEffect />
+                                                            </Image.Effect>
+                                                        </Image>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                        <Button  x:Name="btnEdit" Visibility="Hidden"  ToolTip="Click to edit" Margin="3" 
+                                        CommandParameter="{Binding}" Command="common:Commands.EditItem" Style="{DynamicResource inImageButton}">
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Border Padding="3" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                        <Image Source="/myCollections;component/Images/edit.png" Height="16" Width="16" >
+                                                            <Image.Effect>
+                                                                <effects:GreyscaleEffect />
+                                                            </Image.Effect>
+                                                        </Image>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="{DynamicResource MouseOverColor}" />
+                                <Setter TargetName="bd" Property="BorderBrush" Value="Black" />
+                                <Setter TargetName="btnEdit" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="btnDelete" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="btnPlay" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Control.Template>
+            </Control>
+        </DataTemplate>
+        <DataTemplate x:Key="CardTemplate">
+            <ContentControl x:Name="content" Content="{Binding}" ContentTemplate="{x:Null}" Visibility="Hidden"/>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding ShowMe}" Value="True">
+                    <Setter TargetName="content" Property="ContentTemplate" Value="{StaticResource FullCardTemplate}" />
+                    <Setter TargetName="content" Property="Visibility" Value="Visible" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <DataTemplate x:Key="FullArtistTemplate">
+            <Control>
+                <Control.Template>
+                    <ControlTemplate>
+                        <Border Padding="7" 
+                                Height="{Binding ElementName=FastBrowse, Path='ItemHeight', Converter={StaticResource cardHeightConverter}}" 
+                                Width="{Binding ElementName=FastBrowse, Path='ItemHeight', Converter={StaticResource cardWidthConverter}}"
+                                Background="{DynamicResource BorderColor}" 
+                                CornerRadius="10" BorderThickness="1" x:Name="bd" Margin="4" Focusable="False" 
+                                Style="{DynamicResource searchResultItemStyle}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Margin="0,2,7,0" Grid.Column="0" Grid.Row="0"
+                                      Height="{Binding ElementName=FastBrowse, Path='ItemHeight'}" 
+                                      Width="{Binding ElementName=FastBrowse, Path='ItemHeight', Converter={StaticResource imageWidthConverter}}"
+                                      Source="{Binding Path=Cover, Converter={StaticResource byteArrayToBitmapImageConverter}}"  />
+
+                                <Grid Grid.Column="1" Grid.Row="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="30" />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Margin="0,2" ToolTip="{Binding Path=Name}" Text="{Binding Path=Name}" 
+                                               FontSize="12" FontWeight="Bold" TextWrapping="WrapWithOverflow" 
+                                               TextTrimming="WordEllipsis" Grid.Column="0" Grid.Row="1"/>
+
+                                    <TextBlock Margin="0,7,0,0" Text="{Binding Path=Description}" 
+                                            TextWrapping="Wrap" TextTrimming="WordEllipsis" Grid.Column="0" Grid.Row="3" />
+
+                                    <StackPanel Grid.Column="0" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" >
+                                        <Button  x:Name="btnDelete" Visibility="Hidden"  ToolTip="Click to delete" Margin="3" 
+                                        CommandParameter="{Binding}" Command="common:Commands.DeleteItem" Style="{DynamicResource inImageButton}">
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Border Padding="3" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                        <Image Source="/myCollections;component/Images/delete2.png" Height="16" Width="16" >
+                                                            <Image.Effect>
+                                                                <effects:GreyscaleEffect />
+                                                            </Image.Effect>
+                                                        </Image>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                        <Button  x:Name="btnEdit" Visibility="Hidden"  ToolTip="Click to edit" Margin="3" 
+                                        CommandParameter="{Binding}" Command="common:Commands.EditItem" Style="{DynamicResource inImageButton}">
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Border Padding="3" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                        <Image Source="/myCollections;component/Images/edit.png" Height="16" Width="16" >
+                                                            <Image.Effect>
+                                                                <effects:GreyscaleEffect />
+                                                            </Image.Effect>
+                                                        </Image>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="{DynamicResource MouseOverColor}" />
+                                <Setter TargetName="bd" Property="BorderBrush" Value="Black" />
+                                <Setter TargetName="btnEdit" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="btnDelete" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Control.Template>
+            </Control>
+        </DataTemplate>
+        <DataTemplate x:Key="ArtistTemplate">
+            <ContentControl x:Name="content" Content="{Binding}" ContentTemplate="{x:Null}" Visibility="Hidden"/>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding ShowMe}" Value="True">
+                    <Setter TargetName="content" Property="ContentTemplate" Value="{StaticResource FullArtistTemplate}" />
+                    <Setter TargetName="content" Property="Visibility" Value="Visible" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <DataTemplate x:Key="FullCoverTemplate" >
+            <Control>
+                <Control.Template>
+                    <ControlTemplate>
+                        <Border x:Name="bd" Style="{DynamicResource BorderCoverView}" ContextMenu="{StaticResource GenericMenu}">
+                            <Grid>
+                                <Image IsHitTestVisible="True" 
+                                      Height="{Binding ElementName=FastBrowse, Path='ItemHeight'}" 
+                                      Source="{Binding Path=Cover, Converter={StaticResource byteArrayToBitmapImageConverter}}"
+                                      ToolTip="{Binding Converter={StaticResource ToolTipConverter}}" />
+                                <Button x:Name="btnEdit" Visibility="Collapsed" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                                         ToolTip="Click to edit" Command="common:Commands.EditItem" CommandParameter="{Binding}" Style="{DynamicResource inImageButton}">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Border Padding="2" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                <Image Source="/myCollections;component/Images/edit.png" Height="16" Width="16" >
+                                                    <Image.Effect>
+                                                        <effects:GreyscaleEffect />
+                                                    </Image.Effect>
+                                                </Image>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="btnPlay" Visibility="Collapsed" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                         ToolTip="Click to play" Command="common:Commands.PlayItem" CommandParameter="{Binding}" Style="{DynamicResource inImageButton}">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Border Padding="2" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                <Image Source="/myCollections;component/Images/Play.png" Height="16" Width="16" >
+                                                    <Image.Effect>
+                                                        <effects:GreyscaleEffect />
+                                                    </Image.Effect>
+                                                </Image>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="btnDelete" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Right"
+                                         ToolTip="Click to delete" Command="common:Commands.DeleteItem" CommandParameter="{Binding}" Style="{DynamicResource inImageButton}">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Border Padding="2" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                <Image Source="/myCollections;component/Images/delete2.png" Height="16" Width="16" >
+                                                    <Image.Effect>
+                                                        <effects:GreyscaleEffect />
+                                                    </Image.Effect>
+                                                </Image>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="{DynamicResource MouseOverColor}" />
+                                <Setter TargetName="bd" Property="BorderBrush" Value="Black" />
+                                <Setter TargetName="btnEdit" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="btnDelete" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="btnPlay" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Control.Template>
+            </Control>
+        </DataTemplate>
+        <DataTemplate x:Key="CoverTemplate" >
+            <ContentControl x:Name="content" Content="{Binding}" ContentTemplate="{x:Null}"/>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding ShowMe}" Value="True">
+                    <Setter TargetName="content" Property="ContentTemplate" Value="{StaticResource FullCoverTemplate}" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <DataTemplate x:Key="FullCubeTemplate">
+            <Control>
+                <Control.Template>
+                    <ControlTemplate>
+                        <Border x:Name="bd" Style="{DynamicResource BorderCoverView}" ContextMenu="{StaticResource GenericMenu}">
+                            <Grid>
+                                <Image IsHitTestVisible="True" 
+                                      Height="{Binding ElementName=FastBrowse, Path='ItemHeight'}" 
+                                      Width="{Binding ElementName=FastBrowse, Path='ItemHeight'}"
+                                      Stretch="Fill" StretchDirection="Both"
+                                      Source="{Binding Path=Cover, Converter={StaticResource byteArrayToBitmapImageConverter}}"
+                                     ToolTip="{Binding Converter={StaticResource ToolTipConverter}}" />
+                                <Button x:Name="btnEdit" Visibility="Collapsed" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                                         ToolTip="Click to edit" Command="common:Commands.EditItem" CommandParameter="{Binding}" Style="{DynamicResource inImageButton}">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Border Padding="2" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                <Image Source="/myCollections;component/Images/edit.png" Height="16" Width="16" >
+                                                    <Image.Effect>
+                                                        <effects:GreyscaleEffect />
+                                                    </Image.Effect>
+                                                </Image>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="btnPlay" Visibility="Collapsed" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                         ToolTip="Click to play" Command="common:Commands.PlayItem" CommandParameter="{Binding}" Style="{DynamicResource inImageButton}">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Border Padding="2" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                <Image Source="/myCollections;component/Images/Play.png" Height="16" Width="16" >
+                                                    <Image.Effect>
+                                                        <effects:GreyscaleEffect />
+                                                    </Image.Effect>
+                                                </Image>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="btnDelete" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Right"
+                                         ToolTip="Click to delete" Command="common:Commands.DeleteItem" CommandParameter="{Binding}" Style="{DynamicResource inImageButton}">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Border Padding="2" CornerRadius="6" Background="LightGray" BorderBrush="Black" BorderThickness="1">
+                                                <Image Source="/myCollections;component/Images/delete2.png" Height="16" Width="16" >
+                                                    <Image.Effect>
+                                                        <effects:GreyscaleEffect />
+                                                    </Image.Effect>
+                                                </Image>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="{DynamicResource MouseOverColor}" />
+                                <Setter TargetName="bd" Property="BorderBrush" Value="Black" />
+                                <Setter TargetName="btnEdit" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="btnDelete" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="btnPlay" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Control.Template>
+            </Control>
+        </DataTemplate>
+        <DataTemplate x:Key="CubeTemplate">
+            <ContentControl x:Name="content" Content="{Binding}" ContentTemplate="{x:Null}"/>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding ShowMe}" Value="True">
+                    <Setter TargetName="content" Property="ContentTemplate" Value="{StaticResource FullCubeTemplate}" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <Style TargetType="{x:Type ToggleButton}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="1" />
+            <Setter Property="Height" Value="24" />
+            <Setter Property="Width" Value="24" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Image x:Name="img" Source="/myCollections;component/Images/Up.png" >
+                            <Image.Effect>
+                                <effects:GreyscaleEffect />
+                            </Image.Effect>
+                        </Image>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter TargetName="img" Property="Source" Value="/myCollections;component/Images/Down.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <GroupStyle x:Key="groupStyle">
+            <GroupStyle.ContainerStyle>
+                <Style TargetType="{x:Type GroupItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type GroupItem}">
+                                <ControlTemplate.Triggers>
+                                    <DataTrigger Binding="{Binding Path=IsBottomLevel}" Value="True">
+                                        <Setter TargetName="gridTemplate" Property="Grid.Background" Value="{DynamicResource BorderColor}" />
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid Background="Black" x:Name="gridTemplate" Height="26" VerticalAlignment="Center">
+                                        <Grid.Resources>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Setter Property="FontSize" Value="14" />
+                                                <Setter Property="Foreground" Value="White" />
+                                                <Setter Property="VerticalAlignment" Value="Center" />
+                                            </Style>
+                                        </Grid.Resources>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="45" />
+                                            <ColumnDefinition Width="50" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <ToggleButton Grid.Column="0" x:Name="btnShowHide" IsChecked="False" Margin="3.5" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=Name}" Margin="3.5,0" />
+                                        <TextBlock Grid.Column="2" Text="Count:" />
+                                        <TextBlock Grid.Column="3" Text="{Binding Path=ItemCount}"  TextAlignment="Right" Margin="0,0,11,0" />
+
+                                    </Grid>
+
+                                    <ItemsPresenter Visibility="{Binding ElementName=btnShowHide, Path=IsChecked, Converter={StaticResource booleanToVisibilityConverter}}"
+                                        Grid.Row="1" Margin="11,0,0,3.5" />
+
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </GroupStyle.ContainerStyle>
+        </GroupStyle>
+
+    </UserControl.Resources>
+
+    <ListBox  Name="MainStack" KeyboardNavigation.TabNavigation="Cycle"
+               SelectionChanged="MainStack_SelectionChanged" 
+                MouseDoubleClick="MainStack_MouseDoubleClick"
+                Background="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}" 
+                Margin="5,0,0,0" SelectionMode="Extended" 
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                ScrollViewer.IsDeferredScrollingEnabled="False"
+                ScrollViewer.ScrollChanged="HandleScrollChanged"
+                VirtualizingStackPanel.IsVirtualizing="True"
+                VirtualizingStackPanel.VirtualizationMode="Recycling"
+                ItemTemplate="{StaticResource CoverTemplate}" 
+                ItemsSource="{Binding}" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}">
+        <ListBox.Resources>
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="DarkGray" />
+            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="DarkGray" />
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+        </ListBox.Resources>
+        <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel IsItemsHost="True"/>
+            </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+        <ListBox.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="{DynamicResource AddApps}" IsEnabled="True"
+                              Click="mniAddApps_Click"  ToolTip="{DynamicResource ToolTipAddApps}"/>
+                <MenuItem Header="{DynamicResource AddBook}" IsEnabled="True"
+                              Click="mniAddBooks_Click" ToolTip="{DynamicResource ToolTipAddBook}"/>
+                <MenuItem Header="{DynamicResource AddGames}" Click="mniAddGamez_Click" ToolTip="{DynamicResource ToolTipAddGames}"/>
+                <MenuItem Header="{DynamicResource AddMedia}" Click="mniAddMedia_Click" 
+                              ToolTip="{DynamicResource ToolTipAddMedia}" InputGestureText="Ctrl+A">
+                    <MenuItem.Icon>
+                        <Image Source="pack://application:,,,/myCollections;component/Images/AddMedia25.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource AddMovie}" Click="mniAddMovie_Click" ToolTip="{DynamicResource ToolTipAddMovie}"/>
+                <MenuItem Header="{DynamicResource AddMusic}" Click="mniAddMusic_Click" ToolTip="{DynamicResource ToolTipAddMusic}"/>
+                <MenuItem Header="{DynamicResource AddNds}" Click="mniAddNds_Click" ToolTip="{DynamicResource ToolTipAddNDS}"/>
+                <MenuItem Header="{DynamicResource AddSeries}" Click="mniAddSeries_Click" ToolTip="{DynamicResource ToolTipAddSeries}"/>
+                <MenuItem Header="{DynamicResource AddXXX}" Click="mniAddXXX_Click" ToolTip="{DynamicResource ToolTipAddXXX}"/>
+            </ContextMenu>
+        </ListBox.ContextMenu>
+    </ListBox>
+</UserControl>

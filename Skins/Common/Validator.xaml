@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="requiredFieldValidationStyle">
+        <Setter Property="TextBox.BorderBrush" Value="Black" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="">
+                <Setter Property="TextBox.BorderBrush" Value="{DynamicResource FaultyBorderBrush}" />
+                <Setter Property="TextBox.ToolTip" Value="This field is mandatory" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
